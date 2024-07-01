@@ -1,0 +1,6 @@
+html[data-theme='ocean'] {
+	--color-primary: #f1f1f2;
+	--color-secondary: #a1d6e2;
+	--color-background: #1995ad;
+	--color-text: #232122;
+}

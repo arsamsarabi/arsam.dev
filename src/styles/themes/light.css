@@ -1,0 +1,6 @@
+html[data-theme='light'] {
+  --color-primary: #5fac92;
+  --color-secondary: #f7dd5b;
+  --color-background: #f5f7f8;
+  --color-text: #303235;
+}

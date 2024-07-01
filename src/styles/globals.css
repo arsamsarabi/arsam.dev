@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import './themes/dark.css';
+  @import './themes/light.css';
+  @import './themes/ocean.css';
+}
+
+html,
+body {
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+}
+
+body {
+  @apply bg-background text-text font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+@layer utilities {
+  .wrapper {
+    width: 100%;
+    max-width: 1224px;
+    padding: 2rem 0.5rem;
+  }
+
+  .t-shadow {
+    --color: var(--color-primary);
+    text-shadow:
+      4px 3px 0 var(--color),
+      8px 6px 0 theme(colors.gray.300);
+  }
+
+  .b-shadow {
+    box-shadow: 2px 2px 0 2px black;
+  }
+}
