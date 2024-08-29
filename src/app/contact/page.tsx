@@ -1,9 +1,3 @@
-import { ThemeSwitch } from '#/components/theme-switch'
-
 export default function Blog() {
-	return (
-		<main>
-			contact
-		</main>
-	)
+  return <main>contact</main>
 }

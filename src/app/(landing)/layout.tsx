@@ -1,7 +1,10 @@
-import { PropsWithChildren } from 'react'
-import { Header } from './header'
+import { Header } from '#/components/header'
 
-export const Layout = ({ children }: PropsWithChildren) => {
+export default function LandingLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <main className="w-svw h-svh overflow-hidden flex flex-col items-center justify-start">
       <Header />
