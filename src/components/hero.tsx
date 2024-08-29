@@ -26,7 +26,7 @@ export const Hero = () => {
             <p className="text-center font-heading text-5xl font-bold text-brand-primary-dark">
               Content Creator
             </p>
-            <p className="mt-4 text-justify text-lg leading-normal text-gray-600">
+            <p className="text-md mt-4 text-justify leading-normal text-gray-600">
               Hi, I&apos;m{' '}
               <span className="font-heading font-bold text-brand-primary">
                 Arsam
@@ -39,27 +39,15 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="height-[40px] flex w-5/6 flex-row items-center justify-end pb-4 text-brand-primary-lightest">
-        <div className="flex items-center justify-between gap-4 self-end">
-          <Icon
-            name="github"
-            size={22}
-            className="text-brand-primary-darkest"
-          />
-          <Icon
-            name="linkedin"
-            size={22}
-            className="text-brand-primary-darkest"
-          />
-          <Icon
-            name="youtube"
-            size={22}
-            className="text-brand-primary-darkest"
-          />
+      <div className="flex h-[40px] w-5/6 flex-row items-center justify-start pb-4 text-brand-primary-lightest">
+        <div className="ml-auto flex items-center justify-center gap-4">
+          <Icon name="github" size={22} className="text-brand-primary-dark" />
+          <Icon name="linkedin" size={22} className="text-brand-primary-dark" />
+          <Icon name="youtube" size={22} className="text-brand-primary-dark" />
           <Icon
             name="instagram"
             size={22}
-            className="text-brand-primary-darkest"
+            className="text-brand-primary-dark"
           />
         </div>
       </div>

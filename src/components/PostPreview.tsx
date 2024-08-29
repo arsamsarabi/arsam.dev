@@ -22,7 +22,7 @@ export const PostPreview = ({
         <div>
           <p>{title}</p>
           <p>{excerpt}</p>
-          <p>{date}</p>
+          <p>{new Date(date).toDateString()}</p>
           <div>
             <p>{minutes} Minutes to read</p>
             <p>{wordCount} Words</p>

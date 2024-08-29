@@ -8,7 +8,7 @@ export default function Home() {
       <div className="h-full flex-1">
         <Hero />
       </div>
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden">
         <div className="h-[85vh] bg-brand-primary-darkest text-brand-light">
           <YoutubeIntro />
         </div>

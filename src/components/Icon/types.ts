@@ -5,6 +5,12 @@ export type IconProps = LucideProps & {
   className?: string
 }
 
-export const IconNames = ['instagram', 'linkedin', 'youtube', 'github'] as const
+export const IconNames = [
+  'github',
+  'instagram',
+  'linkedin',
+  'play',
+  'youtube',
+] as const
 
 export type IconNamesType = (typeof IconNames)[number]

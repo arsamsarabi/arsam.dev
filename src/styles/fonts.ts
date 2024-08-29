@@ -1,4 +1,4 @@
-import { Alegreya, Mulish } from 'next/font/google'
+import { Alegreya, Comfortaa } from 'next/font/google'
 
 export const heading = Alegreya({
   display: 'swap',
@@ -6,7 +6,7 @@ export const heading = Alegreya({
   variable: '--font-heading',
 })
 
-export const body = Mulish({
+export const body = Comfortaa({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-body',
