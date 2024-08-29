@@ -1,13 +1,68 @@
+import Image from 'next/image'
+import { Icon } from './Icon'
+
 export const Hero = () => {
   return (
-    <section className="border-b-2 border-text">
-      <p className="text-6xl font-heading t-shadow text-text">Arsam</p>
-      <p className="text-6xl font-heading t-shadow text-text">Sarabi</p>
-      <p className="text-3xl mt-10 max-w-[75%] leading-normal">
-        Hi, I&apos;m <span className="font-heading text-primary">Arsam</span>!
-        I&apos;m a software engineer, product maker, and a life-long learner. I
-        make products from scratch, and bring ideas to life!
-      </p>
+    <section className="center-child h-full flex-col">
+      <div className="fixed left-6 top-4">
+        <h1 className="text-2xl text-brand-primary-dark">
+          arsam<span className="text-text text-[14px] opacity-65">.dev</span>
+        </h1>
+      </div>
+
+      <div className="center-child w-full flex-1 flex-col">
+        <div className="flex w-5/6 items-center justify-around gap-4">
+          <Image
+            className="rounded-xl mix-blend-luminosity"
+            src="/images/arsam.JPG"
+            width={180}
+            height={180}
+            alt="Arsam"
+          />
+          <div>
+            <p className="text-center font-heading text-5xl font-bold text-brand-primary-dark">
+              Software Engineer
+            </p>
+            <p className="text-center font-heading text-5xl font-bold text-brand-primary-dark">
+              Content Creator
+            </p>
+            <p className="mt-4 text-justify text-lg leading-normal text-gray-600">
+              Hi, I&apos;m{' '}
+              <span className="font-heading font-bold text-brand-primary">
+                Arsam
+              </span>{' '}
+              👋🏼 I&apos;m a software engineer, content creator, product maker,
+              and a life-long learner. I make products from scratch, and bring
+              ideas to life!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="height-[40px] flex w-5/6 flex-row items-center justify-end pb-4 text-brand-primary-lightest">
+        <div className="flex items-center justify-between gap-4 self-end">
+          <Icon
+            name="github"
+            size={22}
+            className="text-brand-primary-darkest"
+          />
+          <Icon
+            name="linkedin"
+            size={22}
+            className="text-brand-primary-darkest"
+          />
+          <Icon
+            name="youtube"
+            size={22}
+            className="text-brand-primary-darkest"
+          />
+          <Icon
+            name="instagram"
+            size={22}
+            className="text-brand-primary-darkest"
+          />
+        </div>
+      </div>
     </section>
   )
 }

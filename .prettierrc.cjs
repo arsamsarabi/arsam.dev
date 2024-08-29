@@ -1,4 +1,5 @@
 module.exports = {
+  printWidth: 80,
   trailingComma: 'es5',
   tabWidth: 2,
   semi: false,
@@ -17,5 +18,8 @@ module.exports = {
   // A boolean value to enable or disable sorting of the specifiers
   // in an import declarations.
   importOrderSortSpecifiers: true,
-  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  plugins: [
+    '@trivago/prettier-plugin-sort-imports',
+    'prettier-plugin-tailwindcss',
+  ],
 }

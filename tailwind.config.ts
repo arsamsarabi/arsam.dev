@@ -24,6 +24,31 @@ const config = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        brand: {
+          primary: {
+            lightest: 'var(--brand-primary-lightest)',
+            light: 'var(--brand-primary-light)',
+            DEFAULT: 'var(--brand-primary)',
+            dark: 'var(--brand-primary-dark)',
+            darkest: 'var(--brand-primary-darkest)',
+          },
+          secondary: {
+            lightest: 'var(--brand-secondary-lightest)',
+            light: 'var(--brand-secondary-light)',
+            DEFAULT: 'var(--brand-secondary)',
+            dark: 'var(--brand-secondary-dark)',
+            darkest: 'var(--brand-secondary-darkest)',
+          },
+          accent: {
+            lightest: 'var(--brand-accent-lightest)',
+            light: 'var(--brand-accent-light)',
+            DEFAULT: 'var(--brand-accent)',
+            dark: 'var(--brand-accent-dark)',
+            darkest: 'var(--brand-accent-darkest)',
+          },
+          light: 'hsl(var(--brand-light))',
+          dark: 'hsl(var(--brand-dark))',
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',

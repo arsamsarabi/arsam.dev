@@ -1,12 +1,12 @@
-import { Archivo, Josefin_Sans } from 'next/font/google'
+import { Alegreya, Mulish } from 'next/font/google'
 
-export const heading = Josefin_Sans({
+export const heading = Alegreya({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-heading',
 })
 
-export const body = Archivo({
+export const body = Mulish({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-body',
