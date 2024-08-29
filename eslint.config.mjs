@@ -1,5 +1,6 @@
 import pluginJs from '@eslint/js'
 import nextPlugin from '@next/eslint-plugin-next'
+import pluginReact from 'eslint-plugin-react'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -8,6 +9,7 @@ export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
     plugins: {
       next: nextPlugin,
