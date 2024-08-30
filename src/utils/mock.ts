@@ -11,7 +11,7 @@ export const makeFakePost = (): Post => {
     excerpt: lorem.paragraph(),
     wordCount: string.numeric({ length: { min: 3, max: 4 } }),
     minutes: string.numeric({ length: { min: 1, max: 2 } }),
-    imageUrl: `https://picsum.photos/id/${string.numeric({ length: { min: 1, max: 3 } })}/200/300`,
+    imageUrl: `https://picsum.photos/id/${string.numeric({ length: { min: 1, max: 3 } })}/600`,
     body: lorem.paragraphs(),
   }
 }

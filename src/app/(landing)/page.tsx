@@ -1,3 +1,4 @@
+import { Experience } from '#/components/Experience'
 import { LatestBlogPost } from '#/components/LatestBlogPost'
 import { YoutubeIntro } from '#/components/YoutubeIntro'
 import { Hero } from '#/components/hero'
@@ -16,7 +17,7 @@ export default function Home() {
           <LatestBlogPost />
         </div>
         <div className="h-[85vh] bg-brand-primary-lightest text-brand-light">
-          Get in touch
+          <Experience />
         </div>
       </div>
     </div>
