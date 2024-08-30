@@ -27,7 +27,7 @@ export const LatestBlogPost = () => {
           size="xs"
           colour="light"
         >
-          <Link href="/blog" className="text-xs uppercase">
+          <Link href="/blog" className="text-xs">
             See more
           </Link>
         </Button>
