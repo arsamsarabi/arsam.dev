@@ -15,15 +15,24 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
   return (
     <Link href={`/blog/${slug}`}>
-      <div>
-        <div>
-          <Image src={imageUrl} width={200} height={160} alt={title} />
+      <div className="flex gap-4">
+        <div className="h-[200px] w-[200px]">
+          <Image
+            className="rounded"
+            src={imageUrl}
+            width={200}
+            height={160}
+            alt={title}
+          />
         </div>
-        <div>
-          <p>{title}</p>
-          <p>{excerpt}</p>
-          <p>{new Date(date).toDateString()}</p>
-          <div>
+        <div className="flex flex-col items-start justify-start">
+          <div className="flex w-full items-center justify-between">
+            <p className="font-heading text-2xl">{title}</p>
+            <p className="">{date}</p>
+          </div>
+          <p className="my-2 text-sm">{excerpt}</p>
+
+          <div className="flex w-full items-center justify-between">
             <p>{minutes} Minutes to read</p>
             <p>{wordCount} Words</p>
           </div>
