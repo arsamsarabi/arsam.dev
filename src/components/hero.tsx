@@ -13,11 +13,12 @@ export const Hero = () => {
       <div className="center-child w-full flex-1 flex-col">
         <div className="flex w-5/6 items-center justify-around gap-4">
           <Image
-            className="rounded-xl mix-blend-luminosity"
+            className="rounded-lg mix-blend-luminosity"
             src="/images/arsam.JPG"
             width={180}
             height={180}
             alt="Arsam"
+            priority
           />
           <div>
             <p className="text-center font-heading text-5xl font-bold text-brand-primary-dark">

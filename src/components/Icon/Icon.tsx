@@ -6,7 +6,6 @@ export const Icon = ({
   name,
   size = 18,
   strokeWidth = 1.4,
-  absoluteStrokeWidth = false,
   className,
 }: IconProps) => {
   const Icon = ICONS[name]
@@ -15,7 +14,6 @@ export const Icon = ({
     <Icon
       color={color}
       strokeWidth={strokeWidth}
-      absoluteStrokeWidth={absoluteStrokeWidth}
       size={size}
       className={className}
     />

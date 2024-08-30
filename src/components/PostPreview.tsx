@@ -16,13 +16,13 @@ export const PostPreview = ({
   return (
     <Link href={`/blog/${slug}`}>
       <div className="flex gap-4">
-        <div className="h-[200px] w-[200px]">
+        <div className="relative h-auto w-[200px] rounded-lg">
           <Image
-            className="rounded"
+            className="absolute rounded object-contain"
             src={imageUrl}
-            width={200}
-            height={160}
             alt={title}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            fill
           />
         </div>
         <div className="flex flex-col items-start justify-start">

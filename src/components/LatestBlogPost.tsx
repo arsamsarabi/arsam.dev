@@ -5,19 +5,12 @@ import { PostPreview } from './PostPreview'
 export const LatestBlogPost = () => {
   const posts = makeFakePosts()
 
-  console.group(
-    '%cLatestBlogPost',
-    'background-color: #2d6667; color: #fff9ff; padding: 6px 24px; font-size: 18px; border-radius: 12px'
-  )
-  console.log(posts)
-  console.groupEnd()
-
   return (
     <section className="center-child h-full flex-col">
       <div className="height-[40px] flex w-5/6 items-center justify-start pt-4 text-brand-primary-lightest">
         <h2 className="text-lg">Latest blog posts!</h2>
       </div>
-      <div className="center-child w-5/6 flex-1 flex-col">
+      <div className="center-child w-5/6 flex-1 flex-col gap-8">
         {posts.map((p) => (
           <PostPreview key={p.slug} {...p} />
         ))}

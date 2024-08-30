@@ -11,6 +11,7 @@ export const PlayIcon = ({
   height = 24,
   color = 'currentColor',
   className,
+  absoluteStrokeWidth: _,
 }: PlayIconProps) => {
   return (
     <svg
