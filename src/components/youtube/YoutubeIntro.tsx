@@ -1,6 +1,7 @@
 import { YouTubeEmbed } from '@next/third-parties/google'
 import { Icon } from '#/components/Icon'
 import { LandingSection } from '#/components/LandingSection'
+import { Button } from '#/components/ui/button'
 
 export const YoutubeIntro = () => {
   return (
@@ -32,16 +33,47 @@ export const YoutubeIntro = () => {
             youtube.com/@CodeAlongWithArsam
           </a>
           <div className="flex flex-row gap-4">
-            <Icon
-              name="youtube"
-              size={22}
-              className="text-brand-accent-lightest"
-            />
-            <Icon
-              name="instagram"
-              size={22}
-              className="text-brand-accent-lightest"
-            />
+            <Button
+              variant="outline"
+              size="xs"
+              colour="light"
+              RightIcon={
+                <Icon
+                  name="youtube"
+                  size={18}
+                  className="text-brand-accent-lightest"
+                />
+              }
+              className="ml-auto"
+            >
+              <a
+                href="https://gitgub.com/arsamsarabi"
+                className="text-xs text-brand-accent-lightest"
+              >
+                Subscribe
+              </a>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="xs"
+              colour="light"
+              RightIcon={
+                <Icon
+                  name="instagram"
+                  size={18}
+                  className="text-brand-accent-lightest"
+                />
+              }
+              className="ml-auto"
+            >
+              <a
+                href="https://gitgub.com/arsamsarabi"
+                className="text-xs text-brand-accent-lightest"
+              >
+                Follow
+              </a>
+            </Button>
           </div>
         </>
       }
