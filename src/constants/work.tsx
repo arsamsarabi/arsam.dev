@@ -1,46 +1,94 @@
 import Image from 'next/image'
 import { ReactNode } from 'react'
-import { MooLogo } from '#/components/MooLogo'
-import { ONILogo } from '#/components/ONILogo'
+import type { IconNamesType } from '#/components/Icon'
+import { MooLogo } from '#/components/employment/logos/MooLogo'
+import { ONILogo } from '#/components/employment/logos/ONILogo'
 
 export type WorkExperience = {
-  Logo: ReactNode
+  logo: {
+    Comp: ReactNode
+    w?: string
+    h?: string
+  }
   title: string
   role: string
   duration: string
+  link: string
+  icon: IconNamesType
 }
 
 export const MY_RECENT_EMPLOYERS: Array<WorkExperience> = [
   {
-    Logo: <ONILogo />,
+    logo: { Comp: <ONILogo /> },
     title: 'Oxford Nano Imaging',
     role: 'Senior Frontend Engineer',
-    duration: 'September 2024',
+    duration: 'Sep 2024',
+    link: 'https://oni.bio',
+    icon: 'link',
   },
   {
-    Logo: <MooLogo />,
+    logo: { Comp: <MooLogo /> },
     title: 'MOO',
     role: 'Senior Software Engineer',
-    duration: 'August 2021 - September 2024',
+    duration: 'Aug 2021 - Sep 2024',
+    link: 'https://moo.com',
+    icon: 'link',
   },
   {
-    Logo: <Image src="/images/cxLoyalty_logo.gif" fill alt="CX loyalty logo" />,
+    logo: {
+      Comp: (
+        <Image
+          src="/images/cxLoyalty.png"
+          fill
+          alt="CX loyalty logo"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      ),
+      h: '40px',
+      w: '150px',
+    },
     title: 'CX Loyalty',
     role: 'Mobile Application Developer',
-    duration: 'May 2020 - August 2021',
+    duration: 'May 2020 - Aug 2021',
+    link: 'https://www.cxloyalty.com',
+    icon: 'link',
   },
   {
-    Logo: <Image src="/images/sensyne.png" fill alt="Sensyne Health logo" />,
+    logo: {
+      Comp: (
+        <Image
+          src="/images/sensyne.png"
+          fill
+          alt="Sensyne Health logo"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      ),
+      h: '40px',
+      w: '200px',
+    },
     title: 'Sensyne Health',
     role: 'Senior Frontend Developer',
-    duration: 'Jan 2019 - April 2020',
+    duration: 'Jan 2019 - Apr 2020',
+    link: 'https://www.sensynehealth.com',
+    icon: 'link',
   },
   {
-    Logo: (
-      <Image src="/images/ContactPartners.jpg" fill alt="Sensyne Health logo" />
-    ),
+    logo: {
+      Comp: (
+        <Image
+          src="/images/ContactPartners.png"
+          fill
+          alt="ContactPartners logo"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      ),
+      h: '90px',
+      w: '90px',
+    },
     title: 'Contact Partners',
     role: 'Senior Frontend Developer',
-    duration: 'May 2017 - December 2018',
+    duration: 'May 2017 - Dec 2018',
+    link: 'https://www.google.com/search?q=contactpartners',
+    icon: 'broken-link',
   },
 ]

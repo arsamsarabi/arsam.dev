@@ -15,7 +15,7 @@ export const PostPreview = ({
 }: PostPreviewProps) => {
   return (
     <div
-      className="bg-no-cover flex h-[300px] w-[48%] items-end overflow-hidden rounded-lg bg-cover shadow-lg shadow-brand-primary-darkest"
+      className="bg-no-cover flex h-[300px] w-[48%] items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest"
       style={{
         backgroundImage: `url(${imageUrl})`,
       }}

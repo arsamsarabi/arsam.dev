@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Icon } from './Icon'
+import { Socials } from './Socials'
 
 export const Hero = () => {
   return (
@@ -41,16 +41,7 @@ export const Hero = () => {
       </div>
 
       <div className="flex h-[40px] w-5/6 flex-row items-center justify-start pb-4 text-brand-primary-lightest">
-        <div className="ml-auto flex items-center justify-center gap-4">
-          <Icon name="github" size={22} className="text-brand-primary-dark" />
-          <Icon name="linkedin" size={22} className="text-brand-primary-dark" />
-          <Icon name="youtube" size={22} className="text-brand-primary-dark" />
-          <Icon
-            name="instagram"
-            size={22}
-            className="text-brand-primary-dark"
-          />
-        </div>
+        <Socials />
       </div>
     </section>
   )

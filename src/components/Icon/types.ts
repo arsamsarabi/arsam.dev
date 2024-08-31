@@ -14,6 +14,8 @@ export const IconNames = [
   'blog',
   'forward',
   'briefcase',
+  'link',
+  'broken-link',
 ] as const
 
 export type IconNamesType = (typeof IconNames)[number]

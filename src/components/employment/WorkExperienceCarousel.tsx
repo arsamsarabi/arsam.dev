@@ -25,8 +25,8 @@ export const WorkExperienceCarousel = () => {
             className="pl-1 md:basis-1/2 2xl:basis-1/3"
           >
             <div className="p-1">
-              <Card className="h-[360px]">
-                <CardContent className="h-full p-6">
+              <Card className="h-[300px] shadow-md shadow-brand-primary-light">
+                <CardContent className="h-full p-0">
                   <EmployerCard {...work} />
                 </CardContent>
               </Card>

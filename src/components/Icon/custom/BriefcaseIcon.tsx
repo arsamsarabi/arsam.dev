@@ -1,22 +1,15 @@
+import { SVG } from './SVG'
 import { SVG_DEFAULT_COLOR, SVG_DEFAULT_DIMENSION } from './common'
 import { CustomIconProps } from './types'
 
 export const BriefcaseIcon = ({
-  width = SVG_DEFAULT_DIMENSION,
-  height = SVG_DEFAULT_DIMENSION,
-  color = SVG_DEFAULT_COLOR,
-  className,
   absoluteStrokeWidth: _,
+  className,
+  color = SVG_DEFAULT_COLOR,
+  size = SVG_DEFAULT_DIMENSION,
 }: CustomIconProps) => {
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
+    <SVG size={size} className={className}>
       <path
         d="M21.6618 8.71973C18.6519 10.6761 17.147 11.6543 15.5605 12.1472C13.2416 12.8677 10.7586 12.8677 8.43963 12.1472C6.85313 11.6543 5.34822 10.6761 2.33838 8.71973"
         stroke={color}
@@ -47,6 +40,6 @@ export const BriefcaseIcon = ({
         strokeWidth="1.5"
         strokeLinecap="round"
       />
-    </svg>
+    </SVG>
   )
 }

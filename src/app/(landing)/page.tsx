@@ -1,7 +1,7 @@
-import { Experience } from '#/components/Experience'
-import { LatestBlogPost } from '#/components/LatestBlogPost'
-import { YoutubeIntro } from '#/components/YoutubeIntro'
+import { LatestBlogPost } from '#/components/blog/LatestBlogPost'
+import { Experience } from '#/components/employment/Experience'
 import { Hero } from '#/components/hero'
+import { YoutubeIntro } from '#/components/youtube'
 
 export default function Home() {
   return (
