@@ -24,6 +24,6 @@ export default [
     },
   },
   {
-    ignores: ['.next/*'],
+    ignores: ['.next/*', '.contentlayer/*'],
   },
 ]

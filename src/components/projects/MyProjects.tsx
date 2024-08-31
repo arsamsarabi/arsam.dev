@@ -40,7 +40,7 @@ export const MyProjects = () => {
                       <Image
                         src={`https://img.shields.io/npm/dm/${name}`}
                         alt={name}
-                        layout="fill"
+                        fill
                         priority
                       />
                     </div>

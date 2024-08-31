@@ -1,6 +1,6 @@
 import Color from 'color'
 import Link from 'next/link'
-import { Post } from '#/lib/types'
+import { Post } from 'contentlayer/generated'
 
 export type PostPreviewProps = Omit<Post, 'body'>
 
@@ -9,15 +9,15 @@ export const PostPreview = ({
   title,
   excerpt,
   wordCount,
-  minutes,
-  imageUrl,
+  readingTime,
+  cover,
   slug,
 }: PostPreviewProps) => {
   return (
     <div
       className="bg-no-cover flex h-[400px] w-full items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest md:h-[300px] md:w-full lg:w-[48%]"
       style={{
-        backgroundImage: `url(${imageUrl})`,
+        backgroundImage: `url(${cover})`,
       }}
     >
       <div
@@ -40,7 +40,7 @@ export const PostPreview = ({
 
         <div className="flex w-full items-center justify-between">
           <p className="text-sm text-brand-accent-lightest md:text-xs">
-            {minutes} Minutes to read
+            {JSON.stringify(readingTime)} Minutes to read
           </p>
           <p className="text-sm text-brand-accent-lightest md:text-xs">
             {wordCount} Words

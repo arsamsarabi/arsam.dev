@@ -8,6 +8,7 @@ module.exports = {
   importOrder: [
     '#/styles/globals.css',
     '<THIRD_PARTY_MODULES>',
+    'contentlayer/generated',
     '^[#/]',
     '^[./]',
   ],
