@@ -1,13 +1,18 @@
 import { Icon } from '#/components/Icon'
-import { MY_SOCIAL_LINKS } from '#/constants/socials'
+import { MY_SOCIAL_LINKS, Socials as SocialSites } from '#/constants/socials'
 
 export const Socials = () => {
   return (
     <div className="ml-auto flex items-center justify-center gap-4">
-      {MY_SOCIAL_LINKS.map(({ link, name }) => {
+      {(Object.keys(MY_SOCIAL_LINKS) as Array<SocialSites>).map((key) => {
         return (
-          <a key={name} href={link} target="_blank" rel="noreferrer">
-            <Icon name={name} size={22} className="text-brand-primary-dark" />
+          <a
+            key={key}
+            href={MY_SOCIAL_LINKS[key]}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon name={key} size={22} className="text-brand-primary-dark" />
           </a>
         )
       })}

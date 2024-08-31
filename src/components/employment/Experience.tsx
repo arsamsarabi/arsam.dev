@@ -1,41 +1,28 @@
-import { Icon } from '#/components/Icon'
-import { LandingSection } from '#/components/LandingSection'
-import { Button } from '#/components/ui/button'
+import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
+import { MY_SOCIAL_LINKS } from '#/constants/socials'
 import { WorkExperienceCarousel } from './WorkExperienceCarousel'
 
 export const Experience = () => {
   return (
-    <LandingSection
+    <HomeSection
       Header={
-        <>
-          <Icon name="briefcase" className="text-brand-primary-dark" />
-          <h2 className="text-lg text-brand-primary-dark">
-            Recent employments
-          </h2>
-        </>
+        <SectionHeader
+          icon="briefcase"
+          text="Recent employments"
+          variant="dark"
+        />
       }
       Body={<WorkExperienceCarousel />}
       Footer={
-        <Button
-          variant="outline"
-          size="xs"
-          colour="dark"
-          RightIcon={
-            <Icon
-              name="linkedin"
-              size={18}
-              className="text-brand-primary-dark"
-            />
-          }
-          className="ml-auto"
-        >
-          <a
-            href="https://linkedin.com/in/arsam"
-            className="text-xs text-brand-primary-dark"
-          >
-            Learn more
-          </a>
-        </Button>
+        <div className="ml-auto">
+          <FooterAction
+            icon="linkedin"
+            text="Learn more"
+            link={MY_SOCIAL_LINKS.linkedin}
+            variant="dark"
+            external
+          />
+        </div>
       }
     />
   )

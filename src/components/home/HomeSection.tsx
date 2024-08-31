@@ -1,16 +1,12 @@
 import { ReactNode } from 'react'
 
-export type LandingSectionProps = {
+export type HomeSectionProps = {
   Header: ReactNode
   Body: ReactNode
   Footer: ReactNode
 }
 
-export const LandingSection = ({
-  Header,
-  Body,
-  Footer,
-}: LandingSectionProps) => {
+export const HomeSection = ({ Header, Body, Footer }: HomeSectionProps) => {
   return (
     <section className="center-child h-full flex-col">
       <div className="height-[40px] flex w-5/6 items-center justify-start gap-2 pt-4">

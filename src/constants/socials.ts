@@ -1,23 +1,8 @@
-export type Socials = {
-  name: 'github' | 'linkedin' | 'youtube' | 'instagram'
-  link: string
-}
+export type Socials = 'github' | 'linkedin' | 'youtube' | 'instagram'
 
-export const MY_SOCIAL_LINKS: Array<Socials> = [
-  {
-    name: 'github',
-    link: 'https://github.com/arsamsarabi',
-  },
-  {
-    name: 'linkedin',
-    link: 'https://linkedin.com/in/arsam',
-  },
-  {
-    name: 'youtube',
-    link: 'https://youtube.com/@CodeAlongWithArsam',
-  },
-  {
-    name: 'instagram',
-    link: 'https://instagram.com/arsamsarabi',
-  },
-]
+export const MY_SOCIAL_LINKS: Record<Socials, string> = {
+  github: 'https://github.com/arsamsarabi',
+  linkedin: 'https://linkedin.com/in/arsam',
+  youtube: 'https://youtube.com/@CodeAlongWithArsam',
+  instagram: 'https://instagram.com/arsamsarabi',
+}
