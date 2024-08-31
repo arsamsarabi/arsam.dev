@@ -18,10 +18,13 @@ export const NavLink = ({ text, link, icon }: NavLinkProps) => {
   return (
     <Link
       href={link}
-      className={cn('flex items-center justify-center gap-2 px-2 py-1', {
-        'rounded-md border-b-4 border-brand-success text-brand-success':
-          isActive,
-      })}
+      className={cn(
+        'flex items-center justify-center gap-2 px-2 py-1 transition-all hover:text-brand-primary-dark',
+        {
+          'pointer-events-none rounded border-b-2 border-brand-primary font-bold text-brand-primary':
+            isActive,
+        }
+      )}
     >
       <Icon name={icon} />
       {text}
