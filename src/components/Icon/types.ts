@@ -6,16 +6,17 @@ export type IconProps = LucideProps & {
 }
 
 export const IconNames = [
+  'blog',
+  'briefcase',
+  'broken-link',
+  'code',
+  'forward',
   'github',
   'instagram',
+  'link',
   'linkedin',
   'play',
   'youtube',
-  'blog',
-  'forward',
-  'briefcase',
-  'link',
-  'broken-link',
 ] as const
 
 export type IconNamesType = (typeof IconNames)[number]

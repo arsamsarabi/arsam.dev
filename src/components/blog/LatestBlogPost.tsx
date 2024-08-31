@@ -34,7 +34,7 @@ export const LatestBlogPost = () => {
           className="ml-auto"
         >
           <Link href="/blog" className="text-xs">
-            See more
+            Read more
           </Link>
         </Button>
       }
