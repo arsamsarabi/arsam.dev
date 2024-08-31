@@ -6,23 +6,15 @@ import { YoutubeIntro } from '#/components/youtube'
 
 export default function Home() {
   return (
-    <div className="wrapper flex h-svh w-svw">
-      <div className="h-full flex-1">
+    <div className="wrapper h-svh w-svw overflow-y-auto md:flex md:flex-row md:overflow-y-hidden">
+      <div className="h-[100svh] md:h-full md:flex-1">
         <Hero />
       </div>
-      <div className="flex-1 overflow-y-auto overflow-x-hidden">
-        <div className="h-[85vh] bg-brand-primary-darkest">
-          <YoutubeIntro />
-        </div>
-        <div className="h-[85vh] bg-brand-primary">
-          <LatestBlogPost />
-        </div>
-        <div className="h-[85vh] bg-brand-primary-lightest">
-          <Experience />
-        </div>
-        <div className="h-[85vh] bg-gray-100">
-          <Projects />
-        </div>
+      <div className="overflow-hidden md:flex-1 md:overflow-y-auto">
+        <YoutubeIntro />
+        <LatestBlogPost />
+        <Experience />
+        <Projects />
       </div>
     </div>
   )

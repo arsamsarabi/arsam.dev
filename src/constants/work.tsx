@@ -20,7 +20,7 @@ export type WorkExperience = {
 export const MY_RECENT_EMPLOYERS: Array<WorkExperience> = [
   {
     logo: { Comp: <ONILogo /> },
-    title: 'Oxford Nano Imaging',
+    title: 'ONI',
     role: 'Senior Frontend Engineer',
     duration: 'Sep 2024',
     link: 'https://oni.bio',
@@ -85,7 +85,7 @@ export const MY_RECENT_EMPLOYERS: Array<WorkExperience> = [
       h: '90px',
       w: '90px',
     },
-    title: 'Contact Partners',
+    title: 'ContactPartners',
     role: 'Senior Frontend Developer',
     duration: 'May 2017 - Dec 2018',
     link: 'https://www.google.com/search?q=contactpartners',

@@ -5,6 +5,7 @@ import { WorkExperienceCarousel } from './WorkExperienceCarousel'
 export const Experience = () => {
   return (
     <HomeSection
+      bgColour="bg-brand-primary-lightest"
       Header={
         <SectionHeader
           icon="briefcase"

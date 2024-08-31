@@ -24,10 +24,10 @@ export const EmployerCard = ({
           {Comp}
         </div>
       </div>
-      <div className="flex h-[120px] w-full flex-col items-start justify-end space-y-1 rounded-bl-lg rounded-br-lg bg-brand-primary-dark p-4">
+      <div className="flex h-[120px] w-full flex-col items-start justify-around space-y-1 rounded-bl-lg rounded-br-lg bg-brand-primary-dark p-4">
         <a href={link} target="_blank" rel="noreferrer" className="w-full">
           <div className="flex w-full items-center justify-between gap-2">
-            <p className="font-heading text-xl text-brand-accent-lightest">
+            <p className="font-heading text-2xl text-brand-accent-lightest md:text-xl">
               {title}
             </p>
             <Icon name={icon} size={20} color="var(--brand-accent-lightest)" />

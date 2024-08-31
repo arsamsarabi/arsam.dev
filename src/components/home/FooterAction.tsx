@@ -39,7 +39,11 @@ export const FooterAction = ({
       colour={variant}
       RightIcon={<Icon name={icon} size={18} className={cn(color)} />}
     >
-      <LinkComp href={link} className={cn('text-xs', color)} {...linkAttr}>
+      <LinkComp
+        href={link}
+        className={cn('text-sm md:text-xs', color)}
+        {...linkAttr}
+      >
         {text}
       </LinkComp>
     </Button>

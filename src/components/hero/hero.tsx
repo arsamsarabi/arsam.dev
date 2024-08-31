@@ -4,30 +4,31 @@ import { Socials } from './Socials'
 export const Hero = () => {
   return (
     <section className="center-child h-full flex-col">
-      <div className="fixed left-6 top-4">
+      <div className="fixed left-0 right-0 top-0 z-50 flex h-12 items-center bg-brand-light px-8 md:bg-transparent">
         <h1 className="text-2xl text-brand-primary-dark">
           arsam<span className="text-text text-[14px] opacity-65">.dev</span>
         </h1>
       </div>
 
-      <div className="center-child w-full flex-1 flex-col">
-        <div className="flex w-5/6 items-center justify-around gap-4">
-          <Image
-            className="rounded-lg mix-blend-luminosity"
-            src="/images/arsam.JPG"
-            width={180}
-            height={180}
-            alt="Arsam"
-            priority
-          />
-          <div>
-            <p className="text-center font-heading text-5xl font-bold text-brand-primary-dark">
+      <div className="center-child w-full flex-1">
+        <div className="flex w-full flex-col items-center justify-around gap-4 px-8 md:w-5/6 md:px-0 xl:flex-row">
+          <div className="relative h-56 w-44 xl:w-[175px]">
+            <Image
+              src="/images/arsam.JPG"
+              alt="Arsam"
+              fill
+              className="aspect-auto rounded-lg mix-blend-luminosity"
+              priority
+            />
+          </div>
+          <div className="flex-1">
+            <p className="text-center font-heading text-4xl font-bold text-brand-primary-dark lg:text-5xl xl:text-4xl 2xl:text-5xl">
               Software Engineer
             </p>
-            <p className="text-center font-heading text-5xl font-bold text-brand-primary-dark">
+            <p className="text-center font-heading text-4xl font-bold text-brand-primary-dark lg:text-5xl xl:text-4xl 2xl:text-5xl">
               Content Creator
             </p>
-            <p className="text-md mt-4 text-justify leading-normal text-gray-600">
+            <p className="mt-4 text-justify text-xl leading-normal text-gray-600 md:text-base 2xl:text-lg">
               Hi, I&apos;m{' '}
               <span className="font-heading font-bold text-brand-primary">
                 Arsam

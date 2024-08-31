@@ -7,9 +7,10 @@ export const LatestBlogPost = () => {
 
   return (
     <HomeSection
+      bgColour="bg-brand-primary"
       Header={<SectionHeader icon="blog" text="Latest blog posts" />}
       Body={
-        <div className="flex flex-1 flex-wrap content-center items-center gap-4">
+        <div className="flex flex-1 flex-col content-center items-center gap-8 md:flex-row md:flex-wrap lg:gap-4">
           {posts.map((p) => (
             <PostPreview key={p.slug} {...p} />
           ))}

@@ -5,6 +5,7 @@ import { MY_SOCIAL_LINKS } from '#/constants/socials'
 export const YoutubeIntro = () => {
   return (
     <HomeSection
+      bgColour="bg-brand-primary-darkest"
       Header={<SectionHeader icon="play" text="Find me on YouTube" />}
       Body={
         <div className="w-full">
@@ -16,7 +17,7 @@ export const YoutubeIntro = () => {
         </div>
       }
       Footer={
-        <div className="ml-auto space-x-2">
+        <div className="ml-auto space-x-4 md:space-x-2">
           <FooterAction
             icon="youtube"
             text="subscribe"

@@ -5,6 +5,7 @@ import { MyProjects } from './MyProjects'
 export const Projects = () => {
   return (
     <HomeSection
+      bgColour="bg-gray-100"
       Header={<SectionHeader icon="code" text="Projects" variant="dark" />}
       Body={<MyProjects />}
       Footer={

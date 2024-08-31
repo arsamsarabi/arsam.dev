@@ -12,7 +12,7 @@ import { EmployerCard } from './EmployerCard'
 export const WorkExperienceCarousel = () => {
   return (
     <Carousel
-      className="w-full"
+      className="w-[80%] lg:w-[95%] xl:w-full"
       opts={{
         align: 'start',
         loop: false,
@@ -22,7 +22,7 @@ export const WorkExperienceCarousel = () => {
         {MY_RECENT_EMPLOYERS.map((work) => (
           <CarouselItem
             key={work.title}
-            className="pl-1 md:basis-1/2 2xl:basis-1/3"
+            className="pl-1 lg:basis-1/2 2xl:basis-1/3"
           >
             <div className="p-1">
               <Card className="h-[300px] shadow-md shadow-brand-primary-light">
