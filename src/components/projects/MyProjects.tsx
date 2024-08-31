@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { AnimateInView } from '#/components/animated'
 import { MY_PROJECT_LINKS } from '#/constants/projects'
 
 export const MyProjects = () => {
@@ -18,7 +19,10 @@ export const MyProjects = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <div className="flex h-full w-full flex-col overflow-hidden rounded-md bg-brand-primary-lightest">
+                <AnimateInView
+                  from="bottom"
+                  className="flex h-full w-full flex-col overflow-hidden rounded-md bg-brand-primary-lightest"
+                >
                   <div className="flex h-[50%] flex-col justify-around bg-brand-primary-dark p-4 lg:space-y-1">
                     <p className="font-heading text-3xl text-brand-accent-lightest md:text-2xl lg:text-xl">
                       {title}
@@ -45,7 +49,7 @@ export const MyProjects = () => {
                       />
                     </div>
                   </div>
-                </div>
+                </AnimateInView>
               </a>
             </li>
           )

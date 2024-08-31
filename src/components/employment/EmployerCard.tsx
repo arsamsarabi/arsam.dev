@@ -1,5 +1,5 @@
+import { Icon } from '#/components/Icon'
 import { WorkExperience } from '#/constants/work'
-import { Icon } from '../Icon'
 
 export type EmployerCardProps = WorkExperience
 

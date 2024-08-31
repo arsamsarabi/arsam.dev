@@ -1,6 +1,7 @@
 import Color from 'color'
 import Link from 'next/link'
 import { Post } from 'contentlayer/generated'
+import { AnimateInView } from '#/components/animated'
 
 export type PostPreviewProps = Omit<Post, 'body'>
 
@@ -14,7 +15,8 @@ export const PostPreview = ({
   slug,
 }: PostPreviewProps) => {
   return (
-    <div
+    <AnimateInView
+      from="bottom"
       className="bg-no-cover flex h-[400px] w-full items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest md:h-[300px] md:w-full lg:w-[48%]"
       style={{
         backgroundImage: `url(${cover})`,
@@ -47,6 +49,6 @@ export const PostPreview = ({
           </p>
         </div>
       </div>
-    </div>
+    </AnimateInView>
   )
 }

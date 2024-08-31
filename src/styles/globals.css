@@ -69,14 +69,16 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-brand-light font-body text-brand-dark;
-  }
+
   html,
   body {
     width: 100svw;
     height: 100svh;
     overflow: hidden;
+  }
+
+  body {
+    @apply bg-brand-light font-body text-brand-dark;
   }
 
   h1,
@@ -86,6 +88,27 @@
   h5,
   h6 {
     @apply font-heading font-semibold;
+  }
+
+  ::selection {
+    background-color: var(--brand-primary-dark);
+    color: var(--brand-primary-lightest);
+  }
+
+  ::-webkit-scrollbar-track {
+    position: absolute;
+    border: 2px solid var(--brand-primary-lightest);
+    background-color: var(--brand-primary);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--brand-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--brand-primary);
+    border-radius: 2px;
   }
 }
 
