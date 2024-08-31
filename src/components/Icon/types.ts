@@ -12,6 +12,7 @@ export const IconNames = [
   'code',
   'forward',
   'github',
+  'home',
   'instagram',
   'link',
   'linkedin',
