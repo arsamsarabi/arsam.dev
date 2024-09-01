@@ -24,7 +24,7 @@ export const PostHero = ({
       style={{
         backgroundImage: `url(${cover})`,
       }}
-      className="flex h-[250px] items-end bg-cover bg-bottom bg-no-repeat"
+      className="flex h-[250px] items-end overflow-hidden rounded-bl-sm rounded-br-sm bg-cover bg-bottom bg-no-repeat"
     >
       <div
         style={{

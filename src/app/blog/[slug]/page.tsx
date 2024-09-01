@@ -55,7 +55,9 @@ export default async function BlogPostPage({ params }: Props) {
         readingTime={readingTime}
         wordCount={wordCount}
       />
-      <MDXContent components={mdxComponents} />
+      <div className="px-4 py-4 sm:px-6 lg:px-0">
+        <MDXContent components={mdxComponents} />
+      </div>
     </div>
   )
 }
