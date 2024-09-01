@@ -6,6 +6,7 @@ module.exports = {
   singleQuote: true,
   // A collection of Regular expressions in string format.
   importOrder: [
+    '#/styles/one-dark.css',
     '#/styles/globals.css',
     '<THIRD_PARTY_MODULES>',
     'contentlayer/generated',

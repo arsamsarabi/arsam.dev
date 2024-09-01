@@ -1,6 +1,6 @@
+import { Footer } from '#/components/Footer'
 import { Header } from '#/components/Header'
 import { HeroContent } from './HeroContent'
-import { Socials } from './Socials'
 
 export const Hero = () => {
   return (
@@ -9,9 +9,7 @@ export const Hero = () => {
 
       <HeroContent />
 
-      <div className="flex h-[40px] w-5/6 flex-row items-center justify-start pb-4 text-brand-primary-lightest">
-        <Socials />
-      </div>
+      <Footer />
     </section>
   )
 }
