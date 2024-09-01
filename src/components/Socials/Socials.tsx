@@ -1,9 +1,22 @@
 import { Icon } from '#/components/Icon'
 import { MY_SOCIAL_LINKS, Socials as SocialSites } from '#/constants/socials'
+import { cn } from '#/utils/cn'
+import type { PartialRecord } from '#/utils/types'
 
-export const Socials = () => {
+type ClassNamesElements = 'container' | 'anchor' | 'icon'
+
+export type SocialsProps = {
+  classNames?: PartialRecord<ClassNamesElements, string>
+}
+
+export const Socials = ({ classNames }: SocialsProps) => {
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div
+      className={cn(
+        'flex items-center justify-center gap-4',
+        classNames?.container
+      )}
+    >
       {(Object.keys(MY_SOCIAL_LINKS) as Array<SocialSites>).map((key) => {
         return (
           <a
@@ -11,8 +24,13 @@ export const Socials = () => {
             href={MY_SOCIAL_LINKS[key]}
             target="_blank"
             rel="noreferrer"
+            className={cn(classNames?.anchor)}
           >
-            <Icon name={key} size={22} className="text-brand-primary-dark" />
+            <Icon
+              name={key}
+              size={22}
+              className={cn('text-brand-primary-dark', classNames?.icon)}
+            />
           </a>
         )
       })}

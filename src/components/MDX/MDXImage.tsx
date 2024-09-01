@@ -15,6 +15,6 @@ export const MDXImage = ({ width, height, ...props }: MDXImageProps) => (
       height,
     }}
   >
-    <Image fill className="aspect-auto rounded-sm" {...props} />
+    <Image fill className="aspect-auto rounded-md" {...props} />
   </div>
 )
