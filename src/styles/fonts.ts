@@ -1,4 +1,4 @@
-import { Alegreya, Comfortaa } from 'next/font/google'
+import { Alegreya, Comfortaa, JetBrains_Mono } from 'next/font/google'
 
 export const heading = Alegreya({
   display: 'swap',
@@ -10,4 +10,10 @@ export const body = Comfortaa({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-body',
+})
+
+export const code = JetBrains_Mono({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-code',
 })

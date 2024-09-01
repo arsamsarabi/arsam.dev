@@ -90,6 +90,10 @@
     @apply font-heading font-semibold;
   }
 
+  code {
+    @apply font-code;
+  }
+
   ::selection {
     background-color: var(--brand-primary-dark);
     color: var(--brand-primary-lightest);

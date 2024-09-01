@@ -3,6 +3,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { notFound } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
+import { Sidebar } from '#/components/Sidebar'
 import { PostHero } from '#/components/blog'
 
 type Props = {
@@ -56,7 +57,10 @@ export default async function BlogPostPage({ params }: Props) {
         wordCount={wordCount}
       />
       <div className="px-4 py-4 sm:px-6 lg:px-0">
-        <MDXContent components={mdxComponents} />
+        <Sidebar />
+        <div className="max-w-3xl">
+          <MDXContent components={mdxComponents} />
+        </div>
       </div>
     </div>
   )

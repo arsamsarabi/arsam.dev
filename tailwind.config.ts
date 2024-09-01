@@ -117,6 +117,10 @@ const config = {
       fontFamily: {
         heading: 'var(--font-heading)',
         body: 'var(--font-body)',
+        code: [
+          'var(--font-code)',
+          "'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace",
+        ],
       },
     },
   },

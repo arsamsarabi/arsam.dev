@@ -2,8 +2,8 @@
 date: 31 august 2024
 title: TypeScript Branded types
 excerpt: Take advantage of Branded types in your TypeScript projects.
-cover: /blog/typescript-branded-types.jpg
-thumbnail: /blog/typescript-branded-types.jpg
+cover: /blog/typescript-branded-types/cover.jpg
+thumbnail: /blog/typescript-branded-types/cover.jpg
 tags:
   - TypeScript
   - Validation
@@ -11,60 +11,146 @@ tags:
   - Tutorial
 ---
 
-# Hello World!
+In TypeScript, a branded type is a way to create more specific types by adding an additional layer of type safety. It allows you to differentiate between types that are structurally identical but conceptually different by "branding" one or more of them with a unique identifier. This branding does not affect the runtime behavior but provides additional compile-time safety, preventing accidental misuse of the types.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut posuere turpis. Pellentesque posuere, lectus pulvinar condimentum finibus, sem neque rutrum neque, id porttitor nisl ante vitae elit. In hac habitasse platea dictumst. Praesent lobortis facilisis justo, eu accumsan ligula mattis ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris fermentum egestas lacus. Nunc ullamcorper lacinia est, molestie egestas magna rutrum eu. Vestibulum quis viverra justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus, odio sit amet euismod posuere, tortor orci convallis tellus, ac commodo nunc purus id libero. Vivamus vel ipsum sit amet ligula dictum posuere sit amet non metus. Sed at turpis metus. Suspendisse sed nunc at augue molestie cursus. Integer lobortis malesuada nisi sit amet venenatis. In hac habitasse platea dictumst.
+I'll explain further with an example. Consider the code below:
 
 ```typescript
-'use client'
+const isEmailAddress = (email: string) => {
+  const emailRegexp = new RegExp(
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  )
 
-import { useInView } from 'framer-motion'
-import { CSSProperties, type PropsWithChildren, useRef } from 'react'
-import { cn } from '#/utils/cn'
+  return emailRegexp.test(email)
+}
 
-export type AnimateInViewProps = PropsWithChildren<{
-  className?: string
-  from?: 'top' | 'right' | 'bottom' | 'left'
-  style?: CSSProperties
-  transition?: string
-}>
-
-export const AnimateInView = ({
-  children,
-  className,
-  from = 'top',
-  transition,
-  style,
-}: AnimateInViewProps) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  const translateMap = {
-    top: 'translateY(-100px)',
-    right: 'translateX(100px)',
-    bottom: 'translateY(100px)',
-    left: 'translateX(-100px)',
+const handleSignUp = (email: string) => {
+  // validate email
+  if (!isEmailAddress(email)) {
+    throw new Error(`${email} is not a valid email address`)
   }
 
-  return (
-    <div
-      ref={ref}
-      className={cn(className)}
-      style={{
-        transform: isInView ? 'none' : translateMap[from],
-        opacity: isInView ? 1 : 0,
-        transition: transition ?? 'all 0.5s ease-out 0.125s',
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  )
+  // Send welcome email
 }
 ```
 
-Aliquam eu est quis sapien accumsan sollicitudin vitae eget libero. Fusce consectetur congue risus. Vivamus auctor et est mattis cursus. Maecenas quis feugiat leo. Duis faucibus erat nisl, quis interdum libero imperdiet vitae. Aenean eu neque vitae metus vulputate dignissim. Maecenas eget eleifend nunc. Vivamus a maximus est. Nam malesuada, urna ut volutpat pretium, lacus ex blandit diam, vel faucibus augue sapien consectetur ante. Nulla facilisi.
+The drawbacks of this approach is that, 1. with this type of validation, we're forced to write an <Code>if</Code> block anywhere we use our validation functions, such as the above <Code>isEmailAddress</Code>. And 2. as far as the TypeScript complier is concerned, our <Code>email</Code> variable is just a plain <Code>string</Code>. Let me show you how we can make this implementation cleaner using TypeScript Branded types.
 
-Sed vestibulum finibus elit, vel blandit elit euismod id. Quisque sit amet sem ut nibh auctor luctus non sed sapien. Suspendisse potenti. Nulla elementum mauris quis porta tincidunt. Aenean pulvinar malesuada est. Cras eu elit vel libero accumsan faucibus. Praesent convallis rhoncus egestas. Mauris maximus faucibus vestibulum. Integer vehicula libero sem, quis rhoncus nisl iaculis eu. Nulla non dolor at mauris posuere sollicitudin a elementum felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec porta venenatis vestibulum. Nullam id ligula luctus, pulvinar leo hendrerit, efficitur sem. Mauris suscipit urna ac ligula suscipit sagittis. Integer elementum enim metus, et sagittis neque accumsan eu.
+First, lets create our generic <Code>Brand</Code> utility type.
 
-Integer facilisis nulla lorem, vitae tincidunt turpis mattis non. Vestibulum sit amet mauris non dui euismod ullamcorper. Aliquam quis malesuada urna. Pellentesque vulputate tempus est, et placerat sem blandit ut. Mauris a consequat odio. Etiam consequat nunc non dignissim imperdiet. Mauris neque erat, faucibus in augue in, ultrices tristique magna. Maecenas eget nibh congue risus consectetur hendrerit nec eu nunc. Maecenas malesuada aliquam euismod. Morbi vitae metus vitae justo tempus vehicula vitae ut urna. Ut mattis nunc at urna pellentesque aliquam quis sit amet neque. Praesent sollicitudin, ipsum eget posuere varius, magna erat dapibus tortor, nec laoreet ex lacus ut ante. Suspendisse potenti. Morbi eu condimentum risus, ut lacinia dolor.
+```typescript
+type Brand<T> = T & { readonly __brand: unique symbol }
+```
+
+Here we are accepting our base type as an argument <Code>T</Code> and attaching an arbitrary object to it, which does affect the runtime behaviour of our variables at all.
+
+Now that we have our <Code>Brand</Code> type let's go ahead and use it to create our branded email address type like below.
+
+```typescript
+type EmailAddress = Brand<string>
+```
+
+This is what you'll see when you hover over the <Code>EmailAddress</Code> type in VS Code.
+
+<MDXImage
+  alt="email address type peak"
+  src="/blog/typescript-branded-types/email-address-type.png"
+  width="400px"
+  height="110px"
+/>
+
+Looks a bit weird, but we won't have to worry about the attached object at all when we need to work with our branded types. The <Code>readonly brand: unique symbol</Code> part is the branding mechanism. The unique symbol ensures that each brand is unique and can't be confused with others.
+
+Next, lets create our <Code>sendWelcomeEmail</Code> function that take an argument of type <Code>EmailAddress</Code>.
+
+```typescript
+const sendWelcomeEmail = (email: EmailAddress) => {
+  // Send welcome email to a valid email address
+}
+```
+
+The nice thing here is that this function no longer needs to worry about validating the email that's passed to it, since by this point we'll have already taken care of that.
+
+If you now use this function within our <Code>handleSignUp</Code> function, you'll see a TypeScript error that says <Code>Argument of type 'string' is not assignable to parameter of type 'EmailAddress'.</Code> and that's expected for now, since we haven't really told TypeScript how to determine whether our <Code>email</Code> variable is really of type <Code>EmailAddress</Code> or not.
+
+To fix this issue, all we have to do is make our <Code>isEmailAddress</Code> function a "type guard" by adding <Code>: email is EmailAddress</Code> return type to it. See below:
+
+```typescript
+const isEmailAddress = (email: string): email is EmailAddress => {
+  const emailRegexp = new RegExp(
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  )
+
+  return emailRegexp.test(email)
+}
+```
+
+By specifying <Code>email is EmailAddress</Code> as the return type of this function, we're telling the typescript compiler that if this function returns <Code>true</Code>, the email argument must be of type <Code>EmailAddress</Code>!
+
+Cool! Now we have a type-safe way of making sure that a string is a valid email address. But let's make this implementation even cleaner. We can get rid of that repetitive <Code>if</Code> block when working with the branded type.
+
+To do that, we'll create an assertion function that abstracts away that part of the logic for us.
+
+```typescript
+function assertEmailAddress(email: string): asserts email is EmailAddress {
+  if (!isEmailAddress(email)) {
+    throw new Error(`${email} is not a valid email address`)
+  }
+}
+```
+
+Just a quick note: TypeScript doesn't support using arrow functions for assertions, so we'll need to use a regular function here.
+
+Now, we can use our new <Code>assertEmailAddress</Code> function to tidy up our <Code>handleSignUp</Code> function.
+
+```typescript
+const handleSignUp = (email: string) => {
+  // Assert email address
+  assertEmailAddress(email)
+
+  // Send welcome email
+  sendWelcomeEmail(email)
+}
+```
+
+And that's it! This was a quick look at how you can use TypeScript Branded types. If you've used this pattern before, let me know what cool use cases you've come across. And how I can improve my implementation.
+
+The final state of the code:
+
+```typescript
+type Brand<T> = T & { readonly __brand: unique symbol }
+
+type EmailAddress = Brand<string>
+
+const isEmailAddress = (email: string): email is EmailAddress => {
+  const emailRegexp = new RegExp(
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  )
+
+  return emailRegexp.test(email)
+}
+
+const sendWelcomeEmail = (email: EmailAddress) => {
+  // Send welcome email to a valid email address
+}
+
+function assertEmailAddress(email: string): asserts email is EmailAddress {
+  if (!isEmailAddress(email)) {
+    throw new Error(`${email} is not a valid email address`)
+  }
+}
+
+const handleSignUp = (email: string) => {
+  // Assert email address
+  assertEmailAddress(email)
+
+  // Send welcome email
+  sendWelcomeEmail(email)
+}
+```
+
+If you want to listen to me walk you through this, have a look at my video version of this on my YouTube channel. If you have any comments for me you can leave them there under the video.
+
+<YouTubeVideo id="x57GYTMVxqI" />
+
+Thanks for tagging a long. Until next time 👋🏼

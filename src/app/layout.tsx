@@ -1,6 +1,6 @@
 import '#/styles/globals.css'
 import type { Metadata } from 'next'
-import { body, heading } from '#/styles/fonts'
+import { body, code, heading } from '#/styles/fonts'
 
 export const metadata: Metadata = {
   title: 'Arsam',
@@ -17,7 +17,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/logo.png" sizes="any" />
       </head>
-      <body className={`${heading.variable} ${body.variable}`}>{children}</body>
+      <body className={`${code.variable} ${heading.variable} ${body.variable}`}>
+        {children}
+      </body>
     </html>
   )
 }
