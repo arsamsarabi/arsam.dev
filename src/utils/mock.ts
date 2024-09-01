@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker'
 import { Post } from 'contentlayer/generated'
 
-const { lorem, date, string } = faker
+const { lorem, date, string, helpers, word } = faker
 
 export const makeFakePost = (): Post => {
   return {
@@ -19,12 +19,14 @@ export const makeFakePost = (): Post => {
       code: '',
     },
     slug: lorem.slug(),
-    date: date.recent().toLocaleDateString(),
+    date: date.recent().toUTCString(),
     title: lorem.words(),
     excerpt: lorem.paragraph(),
     wordCount: Number(string.numeric({ length: { min: 3, max: 4 } })),
     readingTime: string.numeric({ length: { min: 1, max: 2 } }),
-    cover: `https://picsum.photos/id/${string.numeric({ length: { min: 1, max: 3 } })}/600`,
+    cover: `https://picsum.photos/id/${string.numeric({ length: { min: 1, max: 3 } })}/1200`,
+    thumbnail: `https://picsum.photos/id/${string.numeric({ length: { min: 1, max: 3 } })}/600`,
+    tags: helpers.uniqueArray(word.sample, 3),
   }
 }
 

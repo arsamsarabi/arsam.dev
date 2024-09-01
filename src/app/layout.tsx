@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="images/logo.png" sizes="any" />
+        <link rel="icon" href="/images/logo.png" sizes="any" />
       </head>
       <body className={`${heading.variable} ${body.variable}`}>{children}</body>
     </html>

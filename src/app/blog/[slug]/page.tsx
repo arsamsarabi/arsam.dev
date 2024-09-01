@@ -3,6 +3,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { notFound } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
+import { PostHero } from '#/components/blog'
 
 type Props = {
   params: { slug: string }
@@ -35,15 +36,25 @@ export async function generateMetadata(
   }
 }
 
-export default async function Page({ params }: Props) {
+export default async function BlogPostPage({ params }: Props) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
   if (!post) notFound()
 
-  const MDXContent = useMDXComponent(post.body.code)
+  const { body, date, title, cover, tags, readingTime, wordCount } = post
+
+  const MDXContent = useMDXComponent(body.code)
 
   return (
     <div>
+      <PostHero
+        date={date}
+        title={title}
+        cover={cover}
+        tags={tags}
+        readingTime={readingTime}
+        wordCount={wordCount}
+      />
       <MDXContent components={mdxComponents} />
     </div>
   )

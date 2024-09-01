@@ -1,4 +1,4 @@
-import { AnimateInView } from '#/components/animated'
+import { FadeInView } from '#/components/animated'
 import { Card, CardContent } from '#/components/ui/card'
 import {
   Carousel,
@@ -25,13 +25,13 @@ export const WorkExperienceCarousel = () => {
             key={work.title}
             className="pl-1 lg:basis-1/2 2xl:basis-1/3"
           >
-            <AnimateInView from="left" className="p-1">
+            <FadeInView className="-1">
               <Card className="h-[300px] shadow-md shadow-brand-primary-light">
                 <CardContent className="h-full p-0">
                   <EmployerCard {...work} />
                 </CardContent>
               </Card>
-            </AnimateInView>
+            </FadeInView>
           </CarouselItem>
         ))}
       </CarouselContent>
