@@ -3,11 +3,13 @@ import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
 import { PostPreview } from './PostPreview'
 import { PostPreviewSkeleton } from './PostPreviewSkeleton'
 
-export const LatestBlogPost = () => {
-  const postsToShow = allPosts.slice(0, 4)
+const MAX_POSTS_TO_SHOW = 3
 
-  // Hack until I have at least 4 posts!
-  while (postsToShow.length < 4) {
+export const LatestBlogPost = () => {
+  const postsToShow = allPosts.slice(0, MAX_POSTS_TO_SHOW)
+
+  // Hack until I have at least MAX_POSTS_TO_SHOW posts!
+  while (postsToShow.length < MAX_POSTS_TO_SHOW) {
     postsToShow.push({ type: 'skeleton' as Post['type'] } as Post)
   }
 

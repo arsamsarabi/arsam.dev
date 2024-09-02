@@ -2,7 +2,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { Post } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
 import { Sidebar } from '#/components/Sidebar'
-import { PostHero } from '#/components/blog'
+import { PostHero } from './PostHero'
 
 export type BlogPostProps = {
   post: Post
