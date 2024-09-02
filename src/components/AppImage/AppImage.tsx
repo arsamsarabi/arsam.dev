@@ -1,29 +1,34 @@
 import Image from 'next/image'
 import { cn } from '#/utils/cn'
+import { PartialRecord } from '#/utils/types'
+
+export type ClassNamesElements = 'container' | 'image'
 
 export type AppImageProps = {
-  width: string
-  height: string
+  width?: string
+  height?: string
   alt: string
   src: string
-  containerCn?: string
-  imageCn?: string
+  classNames?: PartialRecord<ClassNamesElements, string>
 }
 
 export const AppImage = ({
-  width,
-  height,
-  containerCn,
-  imageCn,
+  width = '100%',
+  height = 'auto',
+  classNames,
   ...props
 }: AppImageProps) => (
-  <div
-    className={cn('relative', containerCn)}
-    style={{
-      width,
-      height,
-    }}
-  >
-    <Image fill className={cn('aspect-auto rounded-md', imageCn)} {...props} />
+  <div className={cn(classNames?.container)}>
+    <Image
+      className={cn('rounded-md', classNames?.image)}
+      sizes="100vw"
+      style={{
+        width,
+        height,
+      }}
+      width={500}
+      height={300}
+      {...props}
+    />
   </div>
 )

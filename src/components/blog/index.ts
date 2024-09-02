@@ -1,3 +1,6 @@
+export * from './AllPostsPage'
+export * from './BlogPostPage'
 export * from './LatestBlogPost'
 export * from './PostPreview'
 export * from './PostHero'
+export * from './TagPage'

@@ -1,10 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import { notFound } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
-import { mdxComponents } from '#/components/MDX'
-import { Sidebar } from '#/components/Sidebar'
-import { PostHero } from '#/components/blog'
+import { BlogPostPage } from '#/components/blog'
 
 type Props = {
   params: { slug: string }
@@ -37,31 +34,10 @@ export async function generateMetadata(
   }
 }
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function PostPage({ params }: Props) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
 
   if (!post) notFound()
 
-  const { body, date, title, cover, tags, readingTime, wordCount } = post
-
-  const MDXContent = useMDXComponent(body.code)
-
-  return (
-    <div>
-      <PostHero
-        date={date}
-        title={title}
-        cover={cover}
-        tags={tags}
-        readingTime={readingTime}
-        wordCount={wordCount}
-      />
-      <div className="flex flex-col-reverse px-4 py-4 sm:px-6 lg:px-0">
-        <Sidebar />
-        <div className="max-w-3xl">
-          <MDXContent components={mdxComponents} />
-        </div>
-      </div>
-    </div>
-  )
+  return <BlogPostPage post={post} />
 }

@@ -2,17 +2,19 @@ import Color from 'color'
 import { Icon } from '#/components/Icon'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
 import { MY_SOCIAL_MEDIA } from '#/constants/socials'
+import { AppImage } from '../AppImage'
 import { IconAndText } from './IconAndText'
 
 export const MiniProfile = () => {
   return (
-    <div className="my-4 w-full overflow-hidden rounded-md bg-white shadow-lg lg:max-w-xs">
-      <div
-        style={{
-          backgroundImage: 'url(/images/arsam.png)',
-          backgroundPositionY: -25,
+    <div className="my-4 w-full overflow-hidden rounded-md bg-white shadow-lg">
+      <AppImage
+        alt="Arsam"
+        src="/images/arsam.png"
+        classNames={{
+          container: 'overflow-hidden h-[250px] sm:h-[350px] lg:h-[240px]',
+          image: 'relative rounded-none sm:-top-[100px] lg:-top-[25px]',
         }}
-        className="h-56 w-full bg-cover bg-no-repeat"
       />
 
       <div
@@ -27,7 +29,7 @@ export const MiniProfile = () => {
           size={24}
         />
         <p className="mx-3 text-sm font-semibold text-brand-primary-lightest">
-          I&apos;m starting a a YouTube channel!
+          I&apos;m starting a YouTube channel!
         </p>
       </div>
 

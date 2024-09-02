@@ -1,10 +1,9 @@
 import Color from 'color'
-import Link from 'next/link'
 import { PropsWithChildren } from 'react'
 import { Post } from 'contentlayer/generated'
-import { Pill } from '#/components/Pill'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
 import { formatDate } from '#/utils/date'
+import { TagsList } from './TagsList'
 
 export type PostHeroProps = Pick<
   Post,
@@ -37,15 +36,7 @@ export const PostHero = ({
           <SmallText>{formatDate(date)}</SmallText>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <Link key={tag} href={`/blog/tags/${tag.replaceAll(' ', '-')}`}>
-                <Pill variant="light" size="sm">
-                  {tag}
-                </Pill>
-              </Link>
-            ))}
-          </div>
+          <TagsList tags={tags} />
           <div className="flex gap-6">
             <SmallText>{readingTime.text}</SmallText>
             <SmallText>{wordCount} words</SmallText>

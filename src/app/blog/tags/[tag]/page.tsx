@@ -1,11 +1,11 @@
-import Link from 'next/link'
 import { allPosts } from 'contentlayer/generated'
+import { TagPage } from '#/components/blog'
 
 type Props = {
   params: { tag: string }
 }
 
-export default async function TagsPage({ params }: Props) {
+export default async function Page({ params }: Props) {
   const posts = allPosts.filter((post) =>
     post.tags.includes(params.tag.replaceAll('-', ' '))
   )
@@ -18,15 +18,5 @@ export default async function TagsPage({ params }: Props) {
     )
   }
 
-  return (
-    <div>
-      {posts.map((post) => {
-        return (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
-            {post.title}
-          </Link>
-        )
-      })}
-    </div>
-  )
+  return <TagPage posts={posts} />
 }
