@@ -3,6 +3,7 @@ import readingTime from 'reading-time'
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeTitles from 'rehype-code-titles'
+import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
@@ -46,7 +47,8 @@ export default makeSource({
       rehypeSlug,
       rehypeCodeTitles,
       rehypePrism,
-      rehypeAccessibleEmojis,
+      [rehypeAccessibleEmojis, { rel: ['nofollow'], target: ['_blank'] }],
+      rehypeExternalLinks,
       [
         rehypeAutolinkHeadings,
         {

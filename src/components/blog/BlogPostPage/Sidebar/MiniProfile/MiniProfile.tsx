@@ -1,9 +1,9 @@
 import Color from 'color'
 import { AppImage } from '#/components/AppImage'
 import { Icon } from '#/components/Icon'
+import { IconAndLabel } from '#/components/IconAndLabel'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
 import { MY_SOCIAL_MEDIA } from '#/constants/socials'
-import { IconAndText } from './IconAndText'
 
 export const MiniProfile = () => {
   return (
@@ -46,15 +46,15 @@ export const MiniProfile = () => {
 
         <div className="grid grid-cols-2 gap-2">
           <a href="mailto:me@arsam.dev" className="flex-1">
-            <IconAndText icon="email" text="me@arsam.dev" />
+            <IconAndLabel icon="email" label="me@arsam.dev" />
           </a>
 
-          <IconAndText icon="location" text="Oxford, UK" />
+          <IconAndLabel icon="location" label="Oxford, UK" />
 
           {MY_SOCIAL_MEDIA.map(({ icon, link, text }) => {
             return (
               <a key={icon} href={link} className="flex-1">
-                <IconAndText icon={icon} text={text} />
+                <IconAndLabel icon={icon} label={text} />
               </a>
             )
           })}

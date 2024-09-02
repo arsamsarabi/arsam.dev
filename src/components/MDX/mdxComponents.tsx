@@ -1,12 +1,11 @@
 import type { MDXComponents } from 'mdx/types'
-import Link from 'next/link'
 import { Alert, AlertProps } from '#/components/Alert'
 import { Code } from './Code'
 import { MDXImage, type MDXImageProps } from './MDXImage'
 import { YouTubeVideo, type YouTubeVideoProps } from './YouTubeVideo'
 
 export const mdxComponents: MDXComponents = {
-  a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
+  a: (props) => <a className="text-brand-accent" {...props} />,
   p: (props) => (
     <p className="my-4 text-brand-primary-darkest first:mt-0" {...props} />
   ),

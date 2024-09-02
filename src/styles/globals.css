@@ -4,19 +4,19 @@
 
 @layer base {
   :root {
-    --brand-primary-lightest: #e0deeb;
+    --brand-primary-lightest: #f3f2f7;
     --brand-primary-light: #a39cc3;
     --brand-primary: #665a9b;
     --brand-primary-dark: #3d365d;
     --brand-primary-darkest: #1f1b2f;
 
-    --brand-secondary-lightest: #f7f2f7;
+    --brand-secondary-lightest: #fcfafc;
     --brand-secondary-light: #c39cc2;
     --brand-secondary: #9b5a9a;
     --brand-secondary-dark: #5d365c;
     --brand-secondary-darkest: #2f1b2e;
 
-    --brand-accent-lightest: #e2eef7;
+    --brand-accent-lightest: #f3f8fc;
     --brand-accent-light: #84b4dc;
     --brand-accent: #3282c5;
     --brand-accent-dark: #1e4e76;
