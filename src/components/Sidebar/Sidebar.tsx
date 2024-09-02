@@ -1,4 +1,4 @@
-import { MiniProfile } from '#/components/MiniProfile'
+import { MiniProfile } from './MiniProfile'
 
 export const Sidebar = () => {
   return (

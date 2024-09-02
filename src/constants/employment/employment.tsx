@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { ReactNode } from 'react'
 import type { IconNamesType } from '#/components/Icon'
-import { MooLogo } from '#/components/employment/logos/MooLogo'
-import { ONILogo } from '#/components/employment/logos/ONILogo'
+import { MooLogo, ONILogo } from './logos'
 
 export type WorkExperience = {
   logo: {

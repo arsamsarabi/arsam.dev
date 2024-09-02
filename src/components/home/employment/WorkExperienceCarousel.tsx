@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '#/components/ui/carousel'
-import { MY_RECENT_EMPLOYERS } from '#/constants/work'
+import { MY_RECENT_EMPLOYERS } from '#/constants/employment'
 import { EmployerCard } from './EmployerCard'
 
 export const WorkExperienceCarousel = () => {

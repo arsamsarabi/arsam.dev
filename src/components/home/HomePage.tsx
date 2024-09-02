@@ -1,8 +1,8 @@
-import { Hero } from '#/components/Hero'
-import { LatestBlogPost } from '#/components/blog'
-import { Experience } from '#/components/employment'
-import { Projects } from '#/components/projects'
-import { YoutubeIntro } from '#/components/youtube'
+import { Hero } from './Hero'
+import { LatestBlogPost } from './blog-preview'
+import { Experience } from './employment'
+import { Projects } from './projects'
+import { YoutubeIntro } from './youtube'
 
 export const HomePage = () => {
   return (

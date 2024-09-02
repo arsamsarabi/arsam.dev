@@ -1,8 +1,8 @@
 import Color from 'color'
+import { AppImage } from '#/components/AppImage'
 import { Icon } from '#/components/Icon'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
 import { MY_SOCIAL_MEDIA } from '#/constants/socials'
-import { AppImage } from '../AppImage'
 import { IconAndText } from './IconAndText'
 
 export const MiniProfile = () => {
