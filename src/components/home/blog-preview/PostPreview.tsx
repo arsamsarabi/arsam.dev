@@ -19,19 +19,19 @@ export const PostPreview = ({
   return (
     <AnimateInView
       from="bottom"
-      className="bg-no-cover flex h-[400px] w-full items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest md:h-[300px] md:w-full lg:w-[48%]"
+      className="bg-no-cover flex h-[400px] w-full items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest sm:h-[300px]"
       style={{
         backgroundImage: `url(${cover})`,
       }}
     >
       <div
-        className="space-y-4 p-4 md:space-y-2"
+        className="w-full space-y-4 p-4 md:space-y-2"
         style={{
-          backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(0.85).string(),
+          backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(0.95).string(),
         }}
       >
         <Link href={`/blog/${slug}`} className="space-y-2">
-          <p className="font-heading text-3xl text-brand-primary-lightest md:text-2xl lg:text-xl">
+          <p className="font-heading text-3xl text-brand-primary-lightest md:text-2xl lg:text-xl xl:text-2xl">
             {title}
           </p>
           <p className="text-xs text-brand-accent-lightest md:text-xs">
@@ -44,7 +44,7 @@ export const PostPreview = ({
 
         <div className="flex w-full items-center justify-between border-t border-brand-primary-light pt-2">
           <p className="text-sm text-brand-accent-lightest md:text-xs">
-            {JSON.stringify(readingTime)} Minutes to read
+            {readingTime.text}
           </p>
           <p className="text-sm text-brand-accent-lightest md:text-xs">
             {wordCount} Words
