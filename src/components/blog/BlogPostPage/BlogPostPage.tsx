@@ -3,6 +3,7 @@ import type { Post } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
 import { BlogBreadcrumbs } from './BlogBreadcrumbs'
 import { PostHero } from './PostHero'
+import { ShareButton } from './ShareButton'
 import { Sidebar } from './Sidebar'
 
 export type BlogPostProps = {
@@ -10,8 +11,18 @@ export type BlogPostProps = {
 }
 
 export const BlogPostPage = ({ post }: BlogPostProps) => {
-  const { body, date, title, cover, tags, readingTime, wordCount, video_id } =
-    post
+  const {
+    slug,
+    body,
+    date,
+    title,
+    cover,
+    tags,
+    readingTime,
+    wordCount,
+    video_id,
+    excerpt,
+  } = post
 
   const MDXContent = useMDXComponent(body.code)
 
@@ -26,8 +37,9 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
         wordCount={wordCount}
       />
 
-      <div className="py-4">
+      <div className="flex items-center justify-between py-4">
         <BlogBreadcrumbs postTitle={title} />
+        <ShareButton slug={slug} title={title} excerpt={excerpt} tags={tags} />
       </div>
 
       <div className="flex flex-col-reverse px-4 pb-4 sm:px-6 lg:flex-row lg:px-0">

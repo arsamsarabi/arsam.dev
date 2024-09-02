@@ -34,6 +34,7 @@ export const IconNames = [
   'location',
   'menu-dots',
   'play',
+  'share',
   'suitcase',
   'telescope',
   'youtube',
