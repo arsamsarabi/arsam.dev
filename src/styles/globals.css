@@ -10,25 +10,25 @@
     --brand-primary-dark: #3d365d;
     --brand-primary-darkest: #1f1b2f;
 
-    --brand-secondary-lightest: #ebdeeb;
+    --brand-secondary-lightest: #f7f2f7;
     --brand-secondary-light: #c39cc2;
     --brand-secondary: #9b5a9a;
     --brand-secondary-dark: #5d365c;
     --brand-secondary-darkest: #2f1b2e;
 
-    --brand-accent-lightest: #d6e6f3;
+    --brand-accent-lightest: #e2eef7;
     --brand-accent-light: #84b4dc;
     --brand-accent: #3282c5;
     --brand-accent-dark: #1e4e76;
     --brand-accent-darkest: #0a1a27;
 
-    --brand-success-lightest: #dcf0ea;
+    --brand-success-lightest: #eef8f5;
     --brand-success-light: #96d2c1;
     --brand-success: #50b498;
     --brand-success-dark: #306c5b;
     --brand-success-darkest: #10241e;
 
-    --brand-danger-lightest: #fcdee2;
+    --brand-danger-lightest: #fef2f3;
     --brand-danger-light: #f59ca9;
     --brand-danger: #ef5a6f;
     --brand-danger-dark: #8f3643;
@@ -112,7 +112,6 @@
 
   ::-webkit-scrollbar-thumb {
     background-color: var(--brand-primary);
-    border-radius: 2px;
   }
 }
 

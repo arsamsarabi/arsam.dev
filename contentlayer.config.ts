@@ -18,6 +18,8 @@ export const Post = defineDocumentType(() => ({
     cover: { type: 'string', required: true },
     thumbnail: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' }, required: true },
+    video_id: { type: 'string', required: false },
+    short_id: { type: 'string', required: false },
   },
   computedFields: {
     readingTime: {
