@@ -7,6 +7,7 @@ export type IconProps = LucideProps & {
 
 export const IconNames = [
   'blog',
+  'blog-post',
   'book',
   'briefcase',
   'broken-link',
@@ -31,6 +32,7 @@ export const IconNames = [
   'link',
   'linkedin',
   'location',
+  'menu-dots',
   'play',
   'suitcase',
   'telescope',

@@ -1,6 +1,7 @@
 import { type LucideProps } from 'lucide-react'
 import { ReactNode } from 'react'
 import {
+  BlogPostIcon,
   BookIcon,
   BriefcaseIcon,
   BrokenLinkIcon,
@@ -25,6 +26,7 @@ import {
   LinkIcon,
   LinkedInIcon,
   LocationIcon,
+  MenuDotsIcon,
   NotebookIcon,
   PlayIcon,
   SuitcaseIcon,
@@ -38,6 +40,7 @@ export const ICONS: Record<IconNamesType, (props: LucideProps) => ReactNode> = {
   'broken-link': BrokenLinkIcon,
   book: BookIcon,
   blog: NotebookIcon,
+  'blog-post': BlogPostIcon,
   briefcase: BriefcaseIcon,
   'chevron-down': ChevronDownIcon,
   'chevron-left': ChevronLeftIcon,
@@ -60,6 +63,7 @@ export const ICONS: Record<IconNamesType, (props: LucideProps) => ReactNode> = {
   link: LinkIcon,
   linkedin: LinkedInIcon,
   location: LocationIcon,
+  'menu-dots': MenuDotsIcon,
   play: PlayIcon,
   suitcase: SuitcaseIcon,
   telescope: TelescopeIcon,

@@ -7,7 +7,7 @@ import { IconAndText } from './IconAndText'
 
 export const MiniProfile = () => {
   return (
-    <div className="my-4 w-full overflow-hidden rounded-md bg-white shadow-lg">
+    <div className="w-full overflow-hidden rounded-md bg-white shadow-lg">
       <AppImage
         alt="Arsam"
         src="/images/arsam.png"
