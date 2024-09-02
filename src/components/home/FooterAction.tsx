@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Anchor } from '#/components/Anchor'
 import { Icon, IconNamesType } from '#/components/Icon'
 import { Button } from '#/components/ui/button'
 import { cn } from '#/utils/cn'
@@ -23,15 +23,6 @@ export const FooterAction = ({
       ? 'text-brand-accent-lightest'
       : 'text-brand-primary-dark'
 
-  const linkAttr = external
-    ? {
-        target: '_blank',
-        rel: 'noreferrer',
-      }
-    : {}
-
-  const LinkComp = external ? 'a' : Link
-
   return (
     <Button
       variant="outline"
@@ -39,13 +30,13 @@ export const FooterAction = ({
       colour={variant}
       RightIcon={<Icon name={icon} size={18} className={cn(color)} />}
     >
-      <LinkComp
+      <Anchor
         href={link}
         className={cn('text-sm md:text-xs', color)}
-        {...linkAttr}
+        external={external}
       >
         {text}
-      </LinkComp>
+      </Anchor>
     </Button>
   )
 }
