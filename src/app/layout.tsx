@@ -1,7 +1,7 @@
 import '#/styles/globals.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
-import { Toaster } from '#/components/Toaster'
+import { Toaster } from '#/components/ui/sonner'
 import { body, code, heading } from '#/styles/fonts'
 import { env } from '#/utils/env'
 
