@@ -38,7 +38,7 @@ export const BlogWithSidebar = ({
         {Sidebar}
         <div
           className={cn(
-            'w-full border-b-2 border-brand-primary-darkest pb-4 lg:w-8/12 lg:max-w-3xl lg:border-none lg:pb-0 lg:pl-4',
+            'w-full border-b-2 border-brand-primary-darkest pb-4 lg:w-8/12 lg:border-none lg:pb-0 lg:pl-4',
             classNames?.content
           )}
         >

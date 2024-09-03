@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types'
 import { Alert, AlertProps } from '#/components/Alert'
 import { Code } from './Code'
 import { MDXImage, type MDXImageProps } from './MDXImage'
+import { Pre } from './Pre'
 import { YouTubeVideo, type YouTubeVideoProps } from './YouTubeVideo'
 
 export const mdxComponents: MDXComponents = {
@@ -45,6 +46,7 @@ export const mdxComponents: MDXComponents = {
       {...props}
     />
   ),
+  pre: (props) => <Pre {...props} />,
   Code: ({ children }) => <Code>{children}</Code>,
   YouTubeVideo: (props: YouTubeVideoProps) => <YouTubeVideo {...props} />,
   MDXImage: (props: MDXImageProps) => <MDXImage {...props} />,

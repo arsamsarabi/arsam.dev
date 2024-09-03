@@ -102,7 +102,7 @@ const buttonVariants = cva(
       {
         variant: 'ghost',
         colour: 'light',
-        class: 'text-brand-primary-lightest hover:bg-transparent',
+        class: 'text-brand-primary-lightest hover:bg-brand-primary-light',
       },
       {
         variant: 'ghost',

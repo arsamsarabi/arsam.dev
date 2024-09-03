@@ -1,6 +1,7 @@
 import '#/styles/globals.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
+import { Toaster } from '#/components/ui/sonner'
 import { body, code, heading } from '#/styles/fonts'
 import { env } from '#/utils/env'
 
@@ -23,6 +24,8 @@ export default function RootLayout({
       <body className={`${code.variable} ${heading.variable} ${body.variable}`}>
         {children}
       </body>
+
+      <Toaster />
 
       {env.GA4_ID && <GoogleAnalytics gaId={env.GA4_ID} />}
     </html>

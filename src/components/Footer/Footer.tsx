@@ -1,16 +1,20 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
 import { Socials } from '#/components/Socials'
+import { cn } from '#/utils/cn'
 
-export const Footer = () => {
-  const pathname = usePathname()
-  const shouldShowFooter = pathname === '/blog' || pathname === '/'
+export type FooterProps = {
+  className?: string
+}
 
-  if (!shouldShowFooter) return null
-
+export const Footer = ({ className }: FooterProps) => {
   return (
-    <footer className="flex h-12 w-full items-center justify-start px-8">
+    <footer
+      className={cn(
+        'mt-8 flex w-full items-center justify-start border-t-2 border-brand-primary-dark px-8 py-6 lg:px-0',
+        className
+      )}
+    >
       <Socials />
     </footer>
   )
