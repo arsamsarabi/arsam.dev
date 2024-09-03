@@ -1,4 +1,4 @@
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { useMDXComponent } from 'next-contentlayer2/hooks'
 import type { Post } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
 import { FadeInView } from '#/components/animated'

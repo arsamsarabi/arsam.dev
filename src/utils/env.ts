@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const env = createEnv({
   server: {
-    GA4_ID: z.string().min(1),
+    GA4_ID: z.string().min(12).optional(),
   },
   client: {},
 

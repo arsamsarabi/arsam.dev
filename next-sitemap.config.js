@@ -4,6 +4,6 @@ const config = {
   generateRobotsTxt: true,
   output: 'export',
   generateIndexSitemap: false,
-};
+}
 
-export default config;
+module.exports = config
