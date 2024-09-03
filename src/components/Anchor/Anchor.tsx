@@ -16,7 +16,10 @@ export const Anchor = ({
   if (external) {
     return (
       <a
-        className={cn(className)}
+        className={cn(
+          'text-brand-accent decoration-brand-accent transition-all hover:underline',
+          className
+        )}
         href={props.href.toString()}
         target="_blank"
         rel="noreferrer"
@@ -26,5 +29,13 @@ export const Anchor = ({
     )
   }
 
-  return <Link className={cn(className)} {...props} />
+  return (
+    <Link
+      className={cn(
+        'text-brand-accent decoration-brand-accent transition-all hover:underline',
+        className
+      )}
+      {...props}
+    />
+  )
 }

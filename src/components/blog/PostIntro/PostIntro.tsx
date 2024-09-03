@@ -2,6 +2,9 @@ import type { Post } from 'contentlayer/generated'
 import { Anchor } from '#/components/Anchor'
 import { AppImage } from '#/components/AppImage'
 import { IconAndLabel } from '#/components/IconAndLabel'
+import { Pill } from '#/components/Pill'
+import { AnimateInView } from '#/components/animated'
+import { cn } from '#/utils/cn'
 import { formatDate } from '#/utils/date'
 import { makeYouTubeVideoWatchUrl } from '#/utils/youtube'
 import { TagsList } from '../TagsList'
@@ -21,23 +24,31 @@ export const PostIntro = ({ post }: PostIntroProps) => {
     wordCount,
     video_id,
     slug,
+    comingSoon,
   } = post
   return (
-    <div className="flex flex-col gap-2 rounded-md border-2 border-brand-primary bg-brand-accent-lightest">
+    <AnimateInView className="flex flex-col gap-2 rounded-md border-2 border-brand-primary bg-brand-accent-lightest">
       <div className="flex w-full items-center justify-between bg-brand-primary-dark px-2 py-2 text-brand-primary-lightest">
         <p className="text-xs">{formatDate(date)}</p>
         <p className="text-xs">{readingTime.text}</p>
         <p className="text-xs">{wordCount} words</p>
       </div>
 
-      <div className="px-2 py-2 sm:flex sm:flex-col sm:gap-4">
+      <div className="flex-1 items-stretch justify-between px-2 py-2 sm:flex sm:flex-col sm:gap-4">
         <div className="flex flex-col gap-2 sm:gap-2">
           <Anchor
             href={`/blog/${slug}`}
-            className="text-2xl font-semibold text-brand-primary-dark"
+            className={cn('text-2xl font-semibold text-brand-primary-dark', {
+              'pointer-events-none': comingSoon,
+            })}
           >
             {title}
           </Anchor>
+          {comingSoon && (
+            <Pill size="sm" variant="danger">
+              Coming Soon
+            </Pill>
+          )}
           <p>{excerpt}</p>
         </div>
         <div className="flex">
@@ -63,12 +74,16 @@ export const PostIntro = ({ post }: PostIntroProps) => {
       </div>
 
       {video_id && (
-        <div className="bg-brand-primary-dark px-2 py-2 text-brand-primary-lightest">
-          <Anchor href={makeYouTubeVideoWatchUrl(video_id)} external>
-            <IconAndLabel label="Watch the video instead!" icon="youtube" />
+        <div className="border-t border-brand-primary px-2 py-2 text-brand-primary-lightest">
+          <Anchor
+            href={makeYouTubeVideoWatchUrl(video_id)}
+            external
+            className="pointer-events-none text-brand-danger"
+          >
+            <IconAndLabel label="YouTube video coming soon!" icon="youtube" />
           </Anchor>
         </div>
       )}
-    </div>
+    </AnimateInView>
   )
 }

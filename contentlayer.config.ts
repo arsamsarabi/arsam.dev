@@ -21,6 +21,7 @@ export const Post = defineDocumentType(() => ({
     tags: { type: 'list', of: { type: 'string' }, required: true },
     video_id: { type: 'string', required: false },
     short_id: { type: 'string', required: false },
+    comingSoon: { type: 'boolean', required: false },
   },
   computedFields: {
     readingTime: {
@@ -47,8 +48,8 @@ export default makeSource({
       rehypeSlug,
       rehypeCodeTitles,
       rehypePrism,
-      [rehypeAccessibleEmojis, { rel: ['nofollow'], target: ['_blank'] }],
-      rehypeExternalLinks,
+      rehypeAccessibleEmojis,
+      [rehypeExternalLinks, { rel: ['nofollow'], target: ['_blank'] }],
       [
         rehypeAutolinkHeadings,
         {

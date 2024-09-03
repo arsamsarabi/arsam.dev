@@ -1,4 +1,5 @@
-import { YouTubeEmbed } from '@next/third-parties/google'
+// import { YouTubeEmbed } from '@next/third-parties/google'
+import { YouTubeComingSoon } from '#/components/YouTubeComingSoon'
 import { AnimateInView } from '#/components/animated'
 import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
 import { MY_SOCIAL_LINKS } from '#/constants/socials'
@@ -10,11 +11,12 @@ export const YoutubeSection = () => {
       Header={<SectionHeader icon="play" text="Find me on YouTube" />}
       Body={
         <AnimateInView from="top" className="w-full">
-          <YouTubeEmbed
+          {/* <YouTubeEmbed
             videoid="Q9lA4jKtzvM"
             params="controls=0"
             style="box-shadow: 0px 0px 6px 0px rgba(255,255,255,0.5);"
-          />
+          /> */}
+          <YouTubeComingSoon />
         </AnimateInView>
       }
       Footer={

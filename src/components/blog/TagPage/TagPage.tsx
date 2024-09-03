@@ -1,7 +1,9 @@
 import type { Post } from 'contentlayer/generated'
-import { BlogContentWrapper } from '../BlogContentWrapper'
+import { BlogWithSidebar } from '../BlogWithSidebar'
+import { MorePostsAreComing } from '../MorePostsAreComing'
 import { PageTitle } from '../PageTitle'
 import { PostsList } from '../PostsList'
+import { TagPageSidebar } from './TagPageSidebar'
 
 export type TagPageProps = {
   posts: Array<Post>
@@ -10,9 +12,14 @@ export type TagPageProps = {
 
 export const TagPage = ({ posts, tag }: TagPageProps) => {
   return (
-    <BlogContentWrapper>
-      <PageTitle>All posts for tag &quot; {tag} &quot;</PageTitle>
+    <BlogWithSidebar
+      Sidebar={<TagPageSidebar />}
+      Header={<PageTitle>All posts for &quot; {tag} &quot; tag</PageTitle>}
+    >
+      <div className="mb-4">
+        <MorePostsAreComing />
+      </div>
       <PostsList posts={posts} />
-    </BlogContentWrapper>
+    </BlogWithSidebar>
   )
 }

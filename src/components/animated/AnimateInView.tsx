@@ -22,10 +22,10 @@ export const AnimateInView = ({
   const isInView = useInView(ref, { once: true })
 
   const translateMap = {
-    top: 'translateY(-100px)',
-    right: 'translateX(100px)',
-    bottom: 'translateY(100px)',
-    left: 'translateX(-100px)',
+    top: 'translateY(-50px)',
+    right: 'translateX(50px)',
+    bottom: 'translateY(50px)',
+    left: 'translateX(-50px)',
   }
 
   return (

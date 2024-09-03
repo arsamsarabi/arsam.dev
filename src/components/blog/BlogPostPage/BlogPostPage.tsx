@@ -1,11 +1,12 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { Post } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
-import { BlogContentWrapper } from '../BlogContentWrapper'
+import { FadeInView } from '#/components/animated'
+import { BlogWithSidebar } from '../BlogWithSidebar'
 import { BlogBreadcrumbs } from './BlogBreadcrumbs'
+import { BlogPostSidebar } from './BlogPostSidebar'
 import { PostHero } from './PostHero'
 import { ShareButton } from './ShareButton'
-import { Sidebar } from './Sidebar'
 
 export type BlogPostProps = {
   post: Post
@@ -38,24 +39,24 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
         wordCount={wordCount}
       />
 
-      <BlogContentWrapper>
-        <div className="flex items-center justify-between py-4">
-          <BlogBreadcrumbs postTitle={title} />
-          <ShareButton
-            slug={slug}
-            title={title}
-            excerpt={excerpt}
-            tags={tags}
-          />
-        </div>
-
-        <div className="flex flex-col-reverse lg:flex-row">
-          <Sidebar youtubeVideoId={video_id} />
-          <div className="max-w-3xl border-b-2 border-brand-primary-darkest lg:w-8/12 lg:border-none lg:pl-8">
-            <MDXContent components={mdxComponents} />
-          </div>
-        </div>
-      </BlogContentWrapper>
+      <BlogWithSidebar
+        Header={
+          <>
+            <BlogBreadcrumbs postTitle={title} />
+            <ShareButton
+              slug={slug}
+              title={title}
+              excerpt={excerpt}
+              tags={tags}
+            />
+          </>
+        }
+        Sidebar={<BlogPostSidebar youtubeVideoId={video_id} />}
+      >
+        <FadeInView>
+          <MDXContent components={mdxComponents} />
+        </FadeInView>
+      </BlogWithSidebar>
     </div>
   )
 }

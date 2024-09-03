@@ -1,13 +1,22 @@
 import { allPosts } from 'contentlayer/generated'
-import { BlogContentWrapper } from '../BlogContentWrapper'
+import { BlogWithSidebar } from '../BlogWithSidebar'
+import { MorePostsAreComing } from '../MorePostsAreComing'
 import { PageTitle } from '../PageTitle'
 import { PostsList } from '../PostsList'
+import { AllPostsSidebar } from './AllPostsSidebar'
+
+const filteredPosts = allPosts.reverse()
 
 export const AllPostsPage = () => {
   return (
-    <BlogContentWrapper>
-      <PageTitle>All posts</PageTitle>
-      <PostsList posts={allPosts} />
-    </BlogContentWrapper>
+    <BlogWithSidebar
+      Sidebar={<AllPostsSidebar />}
+      Header={<PageTitle>All posts</PageTitle>}
+    >
+      <div className="mb-4">
+        <MorePostsAreComing />
+      </div>
+      <PostsList posts={filteredPosts} />
+    </BlogWithSidebar>
   )
 }

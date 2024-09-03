@@ -17,7 +17,7 @@ export const BlogBreadcrumbs = ({ postTitle }: BlogBreadcrumbsProps) => {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">
+          <BreadcrumbLink href="/blog">
             <div className="flex items-center gap-1">
               <Icon name="blog" />
               Blog

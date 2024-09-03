@@ -1,8 +1,10 @@
 import Color from 'color'
 import Link from 'next/link'
 import { Post } from 'contentlayer/generated'
+import { Pill } from '#/components/Pill'
 import { AnimateInView } from '#/components/animated'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
+import { cn } from '#/utils/cn'
 import { formatDate } from '#/utils/date'
 
 export type PostPreviewProps = Omit<Post, 'body'>
@@ -15,6 +17,7 @@ export const PostPreview = ({
   readingTime,
   cover,
   slug,
+  comingSoon,
 }: PostPreviewProps) => {
   return (
     <AnimateInView
@@ -30,7 +33,13 @@ export const PostPreview = ({
           backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(0.95).string(),
         }}
       >
-        <Link href={`/blog/${slug}`} className="space-y-2">
+        <Link
+          href={`/blog/${slug}`}
+          className={cn('space-y-2', {
+            'pointer-events-none': comingSoon,
+          })}
+        >
+          {comingSoon && <Pill variant="danger">Coming Soon</Pill>}
           <p className="font-heading text-3xl text-brand-primary-lightest md:text-2xl lg:text-xl xl:text-2xl">
             {title}
           </p>
