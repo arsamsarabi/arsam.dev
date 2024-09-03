@@ -1,1 +1,1 @@
-export * from './YoutubeIntro'
+export * from './YoutubeSection'

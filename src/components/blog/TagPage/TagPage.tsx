@@ -1,20 +1,18 @@
-import Link from 'next/link'
 import type { Post } from 'contentlayer/generated'
+import { BlogContentWrapper } from '../BlogContentWrapper'
+import { PageTitle } from '../PageTitle'
+import { PostsList } from '../PostsList'
 
 export type TagPageProps = {
   posts: Array<Post>
+  tag: string
 }
 
-export const TagPage = ({ posts }: TagPageProps) => {
+export const TagPage = ({ posts, tag }: TagPageProps) => {
   return (
-    <div>
-      {posts.map((post) => {
-        return (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
-            {post.title}
-          </Link>
-        )
-      })}
-    </div>
+    <BlogContentWrapper>
+      <PageTitle>All posts for tag &quot; {tag} &quot;</PageTitle>
+      <PostsList posts={posts} />
+    </BlogContentWrapper>
   )
 }

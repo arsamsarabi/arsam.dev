@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 import { Post } from 'contentlayer/generated'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
 import { formatDate } from '#/utils/date'
-import { TagsList } from './TagsList'
+import { TagsList } from '../TagsList'
 
 export type PostHeroProps = Pick<
   Post,

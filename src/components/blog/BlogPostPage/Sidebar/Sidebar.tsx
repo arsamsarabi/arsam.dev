@@ -13,16 +13,12 @@ export const Sidebar = ({ youtubeVideoId }: SidebarProps) => {
         <div className="flex flex-col gap-4">
           <Alert
             icon="youtube"
-            title="Rather watch the video?"
+            title="This article also has a video!"
             description="If you want to listen to me walk you through this, have a look at my video version of this on my YouTube channel."
             variant="primary"
           />
-          <div className="mb-4 overflow-hidden rounded-md">
-            <YouTubeEmbed
-              videoid={youtubeVideoId}
-              params="controls=0"
-              style="box-shadow: 0px 0px 12px 0px rgba(255,255,255,0.5);"
-            />
+          <div className="mb-4 overflow-hidden rounded-md shadow-md">
+            <YouTubeEmbed videoid={youtubeVideoId} params="controls=0" />
           </div>
         </div>
       )}

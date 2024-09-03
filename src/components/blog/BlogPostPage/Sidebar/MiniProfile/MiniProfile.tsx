@@ -7,7 +7,7 @@ import { MY_SOCIAL_MEDIA } from '#/constants/socials'
 
 export const MiniProfile = () => {
   return (
-    <div className="w-full overflow-hidden rounded-md bg-white shadow-lg">
+    <div className="w-full overflow-hidden rounded-md bg-white shadow-md shadow-black/15">
       <AppImage
         alt="Arsam"
         src="/images/arsam.png"

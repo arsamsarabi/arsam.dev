@@ -3,7 +3,7 @@ import { AnimateInView } from '#/components/animated'
 import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
 import { MY_SOCIAL_LINKS } from '#/constants/socials'
 
-export const YoutubeIntro = () => {
+export const YoutubeSection = () => {
   return (
     <HomeSection
       bgColour="bg-brand-primary-darkest"
@@ -13,7 +13,7 @@ export const YoutubeIntro = () => {
           <YouTubeEmbed
             videoid="Q9lA4jKtzvM"
             params="controls=0"
-            style="box-shadow: 0px 0px 12px 0px rgba(255,255,255,0.5);"
+            style="box-shadow: 0px 0px 6px 0px rgba(255,255,255,0.5);"
           />
         </AnimateInView>
       }

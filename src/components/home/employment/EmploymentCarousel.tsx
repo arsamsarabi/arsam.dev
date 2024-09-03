@@ -10,7 +10,7 @@ import {
 import { MY_RECENT_EMPLOYERS } from '#/constants/employment'
 import { EmployerCard } from './EmployerCard'
 
-export const WorkExperienceCarousel = () => {
+export const EmploymentCarousel = () => {
   return (
     <Carousel
       className="w-[80%] lg:w-[95%] xl:w-full"
@@ -26,7 +26,7 @@ export const WorkExperienceCarousel = () => {
             className="pl-1 lg:basis-1/2 2xl:basis-1/3"
           >
             <FadeInView className="-1">
-              <Card className="h-[300px] shadow-md shadow-brand-primary-light">
+              <Card className="h-[300px] shadow-md shadow-brand-primary-darkest">
                 <CardContent className="h-full p-0">
                   <EmployerCard {...work} />
                 </CardContent>
@@ -35,8 +35,8 @@ export const WorkExperienceCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious color="var(--brand-primary-lightest)" />
+      <CarouselNext color="var(--brand-primary-lightest)" />
     </Carousel>
   )
 }

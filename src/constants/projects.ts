@@ -1,4 +1,4 @@
-export type Projects = {
+export type ProjectType = {
   name: string
   title: string
   description: string
@@ -8,7 +8,7 @@ export type Projects = {
   display: boolean
 }
 
-export const MY_PROJECT_LINKS: Array<Projects> = [
+export const MY_PROJECT_LINKS: Array<ProjectType> = [
   {
     title: 'arsam cli',
     name: 'arsam',

@@ -6,9 +6,8 @@ type Props = {
 }
 
 export default async function Page({ params }: Props) {
-  const posts = allPosts.filter((post) =>
-    post.tags.includes(params.tag.replaceAll('-', ' '))
-  )
+  const readableTag = params.tag.replaceAll('-', ' ')
+  const posts = allPosts.filter((post) => post.tags.includes(readableTag))
 
   if (!posts?.length) {
     return (
@@ -18,5 +17,5 @@ export default async function Page({ params }: Props) {
     )
   }
 
-  return <TagPage posts={posts} />
+  return <TagPage tag={readableTag} posts={posts} />
 }

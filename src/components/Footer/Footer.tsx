@@ -5,7 +5,7 @@ import { Socials } from '#/components/Socials'
 
 export const Footer = () => {
   const pathname = usePathname()
-  const shouldShowFooter = pathname === '/blog'
+  const shouldShowFooter = pathname === '/blog' || pathname === '/'
 
   if (!shouldShowFooter) return null
 

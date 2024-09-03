@@ -1,20 +1,20 @@
 import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
 import { MY_SOCIAL_LINKS } from '#/constants/socials'
-import { MyProjects } from './MyProjects'
+import { ProjectsList } from './ProjectsList'
 
-export const Projects = () => {
+export const ProjectsSection = () => {
   return (
     <HomeSection
-      bgColour="bg-gray-100"
-      Header={<SectionHeader icon="code" text="Projects" variant="dark" />}
-      Body={<MyProjects />}
+      bgColour="bg-brand-primary-light"
+      Header={<SectionHeader icon="code" text="Projects" variant="light" />}
+      Body={<ProjectsList />}
       Footer={
         <div className="ml-auto">
           <FooterAction
             icon="github"
             text="See more"
             link={MY_SOCIAL_LINKS.github}
-            variant="dark"
+            variant="light"
             external
           />
         </div>

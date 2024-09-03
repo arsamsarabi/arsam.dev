@@ -1,6 +1,7 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import type { Post } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
+import { BlogContentWrapper } from '../BlogContentWrapper'
 import { BlogBreadcrumbs } from './BlogBreadcrumbs'
 import { PostHero } from './PostHero'
 import { ShareButton } from './ShareButton'
@@ -37,17 +38,24 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
         wordCount={wordCount}
       />
 
-      <div className="flex items-center justify-between py-4">
-        <BlogBreadcrumbs postTitle={title} />
-        <ShareButton slug={slug} title={title} excerpt={excerpt} tags={tags} />
-      </div>
-
-      <div className="flex flex-col-reverse px-4 pb-4 sm:px-6 lg:flex-row lg:px-0">
-        <Sidebar youtubeVideoId={video_id} />
-        <div className="max-w-3xl border-b-2 border-brand-primary-darkest lg:w-8/12 lg:border-none lg:pl-8">
-          <MDXContent components={mdxComponents} />
+      <BlogContentWrapper>
+        <div className="flex items-center justify-between py-4">
+          <BlogBreadcrumbs postTitle={title} />
+          <ShareButton
+            slug={slug}
+            title={title}
+            excerpt={excerpt}
+            tags={tags}
+          />
         </div>
-      </div>
+
+        <div className="flex flex-col-reverse lg:flex-row">
+          <Sidebar youtubeVideoId={video_id} />
+          <div className="max-w-3xl border-b-2 border-brand-primary-darkest lg:w-8/12 lg:border-none lg:pl-8">
+            <MDXContent components={mdxComponents} />
+          </div>
+        </div>
+      </BlogContentWrapper>
     </div>
   )
 }

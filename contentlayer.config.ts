@@ -28,8 +28,8 @@ export const Post = defineDocumentType(() => ({
       resolve: (doc) => readingTime(doc.body.raw),
     },
     wordCount: {
-      type: 'number',
-      resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
+      type: 'string',
+      resolve: (doc) => `${doc.body.raw.split(/\s+/gu).length} words`,
     },
     slug: {
       type: 'string',

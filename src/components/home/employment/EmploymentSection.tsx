@@ -1,26 +1,26 @@
 import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
 import { MY_SOCIAL_LINKS } from '#/constants/socials'
-import { WorkExperienceCarousel } from './WorkExperienceCarousel'
+import { EmploymentCarousel } from './EmploymentCarousel'
 
-export const Experience = () => {
+export const EmploymentSection = () => {
   return (
     <HomeSection
-      bgColour="bg-brand-primary-lightest"
+      bgColour="bg-brand-primary"
       Header={
         <SectionHeader
           icon="briefcase"
           text="Recent employments"
-          variant="dark"
+          variant="light"
         />
       }
-      Body={<WorkExperienceCarousel />}
+      Body={<EmploymentCarousel />}
       Footer={
         <div className="ml-auto">
           <FooterAction
             icon="linkedin"
             text="Learn more"
             link={MY_SOCIAL_LINKS.linkedin}
-            variant="dark"
+            variant="light"
             external
           />
         </div>
