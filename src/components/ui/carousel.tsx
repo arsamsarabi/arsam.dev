@@ -203,6 +203,7 @@ const CarouselPrevious = React.forwardRef<
     <Button
       ref={ref}
       variant={variant}
+      colour="light"
       size={size}
       className={cn(
         'absolute h-8 w-8',
@@ -232,6 +233,7 @@ const CarouselNext = React.forwardRef<
     <Button
       ref={ref}
       variant={variant}
+      colour="light"
       size={size}
       className={cn(
         'absolute h-8 w-8',

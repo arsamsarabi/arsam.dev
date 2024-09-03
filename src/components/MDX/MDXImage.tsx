@@ -9,7 +9,7 @@ export type MDXImageProps = {
 
 export const MDXImage = ({ width, height, ...props }: MDXImageProps) => (
   <div
-    className="relative"
+    className="relative max-w-full overflow-hidden"
     style={{
       width,
       height,
