@@ -1,6 +1,8 @@
 import '#/styles/globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { body, code, heading } from '#/styles/fonts'
+import { env } from '#/utils/env'
 
 export const metadata: Metadata = {
   title: 'Arsam',
@@ -17,9 +19,12 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/logo.png" sizes="any" />
       </head>
+
       <body className={`${code.variable} ${heading.variable} ${body.variable}`}>
         {children}
       </body>
+
+      {env.GA4_ID && <GoogleAnalytics gaId={env.GA4_ID} />}
     </html>
   )
 }
