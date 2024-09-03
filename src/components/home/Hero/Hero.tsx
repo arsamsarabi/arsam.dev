@@ -5,11 +5,11 @@ import { HeroContent } from './HeroContent'
 export const Hero = () => {
   return (
     <section className="center-child h-full flex-col">
-      <Header className="fixed left-0 right-0 top-0 md:bg-transparent" />
+      <Header className="max-w-min self-start" />
 
       <HeroContent />
 
-      <Footer />
+      <Footer className="max-w-min self-start border-none lg:pl-4" />
     </section>
   )
 }

@@ -6,8 +6,8 @@ export type IconProps = LucideProps & {
 }
 
 export const IconNames = [
-  'blog',
   'blog-post',
+  'blog',
   'book',
   'briefcase',
   'broken-link',
@@ -17,10 +17,13 @@ export const IconNames = [
   'chevron-up',
   'clapper-board',
   'code',
+  'copy',
+  'double-check',
   'email',
   'flag-iran',
   'flag-spain',
   'flag-uk',
+  'flame',
   'forward',
   'gamepad',
   'github',
@@ -30,17 +33,19 @@ export const IconNames = [
   'home',
   'instagram',
   'laptop',
+  'lightbulb',
   'link',
   'linkedin',
   'location',
   'menu-dots',
   'play',
+  'sad',
   'share',
   'star-shine',
   'suitcase',
   'telescope',
-  'youtube',
   'video-frame-cut',
+  'youtube',
 ] as const
 
 export type IconNamesType = (typeof IconNames)[number]

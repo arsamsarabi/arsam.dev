@@ -47,7 +47,7 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      rehypePrism,
+      [rehypePrism, { showLineNumbers: true, defaultLanguage: 'typescript' }],
       rehypeAccessibleEmojis,
       [rehypeExternalLinks, { rel: ['nofollow'], target: ['_blank'] }],
       [
