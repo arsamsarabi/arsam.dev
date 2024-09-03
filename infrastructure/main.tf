@@ -2,7 +2,7 @@ terraform {
   required_providers {
     vercel = {
       source  = "vercel/vercel"
-      version = "~> 1.6.0"
+      version = "~> 1.13.0"
     }
   }
 }
@@ -10,10 +10,10 @@ terraform {
 locals {
   project_name                     = "arsam-dev"
   git_repository_type              = "github"
-  git_repository_repo              = "arsamsarabi/arsam-dev"
+  git_repository_repo              = "arsamsarabi/arsam.dev"
   git_repository_production_branch = "prod"
   git_repository_demo_branch       = "main"
-  prod_url                         = "beta.arsam.dev"
+  prod_url                         = "arsam.dev"
   demo_url                         = "demo.arsam.dev"
 }
 
@@ -48,4 +48,11 @@ resource "vercel_project_domain" "demo_domain" {
   project_id = vercel_project.arsamdev.id
   domain     = local.demo_url
   git_branch = local.git_repository_demo_branch
+}
+
+resource "vercel_shared_environment_variable" "GA4_ID" {
+  key         = "GA4_ID"
+  value       = var.ga4_id
+  target      = ["production"]
+  project_ids = [vercel_project.arsamdev.id]
 }
