@@ -35,7 +35,7 @@ export const PostIntro = ({ post }: PostIntroProps) => {
 
       <IntroTitle link={`/blog/${slug}`} title={title} thumbnail={thumbnail} />
 
-      <div className="flex flex-col gap-4 px-4">
+      <div className="flex flex-col gap-4 px-4 md:py-4">
         <p>{excerpt}</p>
 
         {video_id && (
@@ -53,10 +53,10 @@ export const PostIntro = ({ post }: PostIntroProps) => {
         <TagsList variant="primary" tags={tags} />
       </div>
 
-      <div className="flex w-full items-center justify-between bg-brand-primary-dark px-4 py-2 text-brand-primary-lightest">
+      <div className="mt-auto flex w-full items-center justify-between bg-brand-primary-dark px-4 py-2 text-brand-primary-lightest">
         <p className="text-xs">{formatDate(date)}</p>
         <p className="text-xs">{readingTime.text}</p>
-        <p className="text-xs">{wordCount} words</p>
+        <p className="text-xs">{wordCount}</p>
       </div>
     </AnimateInView>
   )

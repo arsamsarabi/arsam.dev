@@ -17,7 +17,9 @@ export const BlogWithSidebar = ({
   Sidebar,
 }: BlogWithSidebarProps) => {
   return (
-    <section className={cn('flex flex-col gap-4 md:gap-6', classNames?.root)}>
+    <section
+      className={cn('flex flex-col gap-4 md:gap-6 2xl:gap-8', classNames?.root)}
+    >
       <div
         className={cn(
           'flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between',
@@ -29,14 +31,14 @@ export const BlogWithSidebar = ({
 
       <div
         className={cn(
-          'flex flex-col-reverse gap-4 pb-6 md:gap-6 lg:flex-row',
+          'flex flex-col-reverse gap-4 pb-6 md:gap-6 lg:flex-row 2xl:gap-8 2xl:pb-8',
           classNames?.body
         )}
       >
         {Sidebar}
         <div
           className={cn(
-            'w-full border-b-2 border-brand-primary-darkest pb-4 md:pb-6 lg:w-8/12 lg:border-none lg:pb-0 lg:pl-4',
+            'w-full border-b-2 border-brand-primary-darkest pb-4 md:pb-6 lg:w-8/12 lg:border-none lg:pb-0',
             classNames?.content
           )}
         >

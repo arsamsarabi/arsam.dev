@@ -117,7 +117,7 @@
 
 @layer utilities {
   .container-max-w {
-    @apply mx-auto w-full max-w-[1224px] lg:w-11/12;
+    @apply mx-auto w-full max-w-[1440px] lg:w-11/12;
   }
 
   .center-child {

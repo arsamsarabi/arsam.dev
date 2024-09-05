@@ -7,7 +7,7 @@ export type PostsListProps = {
 
 export const PostsList = ({ posts }: PostsListProps) => {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 2xl:gap-8">
       {posts.map((p) => (
         <PostIntro key={p.slug} post={p} />
       ))}

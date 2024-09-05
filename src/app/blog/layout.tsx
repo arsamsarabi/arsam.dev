@@ -8,7 +8,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
     <div className="flex h-[100%] flex-col items-start justify-start">
       <Header
         classNames={{
-          root: 'w-screen p-8 pb-4',
+          root: 'w-screen p-8 pb-4 2xl:pb-8',
           inner: 'container-max-w',
         }}
       />

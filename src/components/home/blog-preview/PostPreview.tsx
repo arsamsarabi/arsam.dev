@@ -57,7 +57,7 @@ export const PostPreview = ({
 
         <div className="mt-auto flex w-full items-center justify-between border-t border-brand-primary-light pt-2">
           <DisplayCardDetail>{readingTime.text}</DisplayCardDetail>
-          <DisplayCardDetail>{wordCount} Words</DisplayCardDetail>
+          <DisplayCardDetail>{wordCount}</DisplayCardDetail>
         </div>
       </div>
     </AnimateInView>
