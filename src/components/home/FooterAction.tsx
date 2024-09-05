@@ -28,11 +28,11 @@ export const FooterAction = ({
       variant="outline"
       size="xs"
       colour={variant}
-      RightIcon={<Icon name={icon} size={18} className={cn(color)} />}
+      LeftIcon={<Icon name={icon} className={cn(color)} />}
     >
       <Anchor
         href={link}
-        className={cn('text-sm md:text-xs', color)}
+        className={cn('text-sm md:text-xs 3xl:text-lg', color)}
         external={external}
       >
         {text}

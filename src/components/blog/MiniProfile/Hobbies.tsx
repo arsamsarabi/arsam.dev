@@ -15,7 +15,7 @@ export const Hobbies = () => {
   return (
     <div className="flex items-center justify-between">
       {HOBBY_ICONS.map((hobby) => (
-        <Icon key={hobby} name={hobby} size={28} />
+        <Icon key={hobby} name={hobby} />
       ))}
     </div>
   )

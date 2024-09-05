@@ -19,8 +19,10 @@ export const SectionHeader = ({
 
   return (
     <>
-      <Icon name={icon} className={cn(color)} size={28} />
-      <h2 className={cn(color, 'text-xl')}>{text}</h2>
+      <Icon name={icon} className={cn(color)} />
+      <h2 className={cn(color, 'text-2xl xl:text-3xl 3xl:ml-4 3xl:text-4xl')}>
+        {text}
+      </h2>
     </>
   )
 }

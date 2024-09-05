@@ -1,8 +1,8 @@
 // import { YouTubeEmbed } from '@next/third-parties/google'
-import { YouTubeComingSoon } from '#/components/YouTubeComingSoon'
 import { AnimateInView } from '#/components/animated'
 import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
 import { MY_SOCIAL_LINKS } from '#/constants/socials'
+import { YouTubeComingSoon } from './YouTubeComingSoon'
 
 export const YoutubeSection = () => {
   return (
@@ -20,7 +20,7 @@ export const YoutubeSection = () => {
         </AnimateInView>
       }
       Footer={
-        <div className="ml-auto space-x-4 md:space-x-2">
+        <div className="ml-auto flex items-center gap-4 md:gap-2 3xl:gap-4">
           <FooterAction
             icon="youtube"
             text="subscribe"

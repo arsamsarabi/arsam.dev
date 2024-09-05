@@ -6,12 +6,17 @@ import { Header } from '#/components/Header'
 export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex h-[100%] flex-col items-start justify-start">
-      <Header className="w-screen" />
+      <Header
+        classNames={{
+          root: 'w-screen p-8 pb-4',
+          inner: 'container-max-w',
+        }}
+      />
 
-      <div className="flex w-screen flex-1 flex-col items-center justify-start overflow-y-auto">
-        <div className="container-max-w flex h-full flex-col">
+      <div className="w-screen flex-1 overflow-y-auto">
+        <div className="container-max-w flex h-[100%] flex-col px-8">
           {children}
-          <Footer />
+          <Footer className="mt-auto pb-8 pt-4" />
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { ProjectCard } from './ProjectCard'
 
 export const ProjectsList = () => {
   return (
-    <ul className="flex w-full flex-1 flex-col content-center items-center gap-8 lg:flex-row lg:flex-wrap lg:gap-4">
+    <ul className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
       {MY_PROJECT_LINKS.map(({ name, ...rest }) => {
         return <ProjectCard key={name} name={name} {...rest} />
       })}

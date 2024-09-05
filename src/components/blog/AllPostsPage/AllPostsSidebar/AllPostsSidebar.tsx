@@ -3,7 +3,7 @@ import { UnderConstruction } from '#/components/blog/UnderConstruction'
 
 export const AllPostsSidebar = () => {
   return (
-    <aside className="flex w-full flex-col gap-4 lg:w-4/12">
+    <aside className="flex w-full flex-col gap-4 md:gap-6 lg:w-4/12">
       <UnderConstruction />
       <MiniProfile />
     </aside>

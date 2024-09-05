@@ -13,7 +13,7 @@ export const AllPostsPage = () => {
       Sidebar={<AllPostsSidebar />}
       Header={<PageTitle>All posts</PageTitle>}
     >
-      <div className="mb-4">
+      <div className="mb-4 md:mb-6">
         <MorePostsAreComing />
       </div>
       <PostsList posts={filteredPosts} />

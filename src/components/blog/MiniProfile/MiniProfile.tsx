@@ -24,11 +24,7 @@ export const MiniProfile = () => {
           backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(1).string(),
         }}
       >
-        <Icon
-          name="clapper-board"
-          color="var(--brand-primary-lightest)"
-          size={24}
-        />
+        <Icon name="clapper-board" color="var(--brand-primary-lightest)" />
         <p className="mx-3 text-sm font-semibold text-brand-primary-lightest">
           I&apos;m starting a YouTube channel!
         </p>

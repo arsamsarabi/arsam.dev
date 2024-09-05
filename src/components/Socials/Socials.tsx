@@ -1,3 +1,5 @@
+'use client'
+
 import { Icon } from '#/components/Icon'
 import { MY_SOCIAL_LINKS, Socials as SocialSites } from '#/constants/socials'
 import { cn } from '#/utils/cn'
@@ -28,7 +30,6 @@ export const Socials = ({ classNames }: SocialsProps) => {
           >
             <Icon
               name={key}
-              size={22}
               className={cn('text-brand-primary-dark', classNames?.icon)}
             />
           </a>

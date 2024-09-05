@@ -25,6 +25,7 @@ type CarouselContextProps = {
   api: ReturnType<typeof useEmblaCarousel>[1]
   scrollPrev: () => void
   scrollNext: () => void
+  scrollTo: (index: number) => void
   canScrollPrev: boolean
   canScrollNext: boolean
 } & CarouselProps
@@ -84,6 +85,13 @@ const Carousel = React.forwardRef<
       api?.scrollNext()
     }, [api])
 
+    const scrollTo = React.useCallback(
+      (index: number) => {
+        api?.scrollTo(index)
+      },
+      [api]
+    )
+
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
         if (event.key === 'ArrowLeft') {
@@ -129,6 +137,7 @@ const Carousel = React.forwardRef<
             orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
           scrollPrev,
           scrollNext,
+          scrollTo,
           canScrollPrev,
           canScrollNext,
         }}
@@ -184,7 +193,7 @@ const CarouselItem = React.forwardRef<
       aria-roledescription="slide"
       className={cn(
         'min-w-0 shrink-0 grow-0 basis-full',
-        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        orientation === 'horizontal' ? 'px-2' : 'pt-4',
         className
       )}
       {...props}
@@ -197,7 +206,7 @@ const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = 'ghost', size = 'icon', color, ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  const { scrollPrev, canScrollPrev } = useCarousel()
 
   return (
     <Button
@@ -205,18 +214,12 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       colour="light"
       size={size}
-      className={cn(
-        'absolute h-8 w-8',
-        orientation === 'horizontal'
-          ? '-left-12 top-1/2 -translate-y-1/2'
-          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
-        className
-      )}
+      className={cn('', className)}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <Icon name="chevron-left" size={28} color={color} />
+      <Icon name="chevron-left" color={color} />
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -227,7 +230,7 @@ const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = 'ghost', size = 'icon', color, ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
+  const { scrollNext, canScrollNext } = useCarousel()
 
   return (
     <Button
@@ -235,23 +238,39 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       colour="light"
       size={size}
-      className={cn(
-        'absolute h-8 w-8',
-        orientation === 'horizontal'
-          ? '-right-12 top-1/2 -translate-y-1/2'
-          : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
-        className
-      )}
+      className={cn('', className)}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <Icon name="chevron-right" size={28} color={color} />
+      <Icon name="chevron-right" color={color} />
       <span className="sr-only">Next slide</span>
     </Button>
   )
 })
 CarouselNext.displayName = 'CarouselNext'
+
+const CarouselDotButton = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentProps<typeof Button> & { index: number }
+>(({ index, className, variant = 'ghost', size = 'icon', ...props }, ref) => {
+  const { scrollTo } = useCarousel()
+
+  return (
+    <Button
+      ref={ref}
+      variant={variant}
+      colour="light"
+      size={size}
+      className={cn('h-4 w-4 rounded-full border', className)}
+      onClick={() => scrollTo(index)}
+      {...props}
+    >
+      <span className="sr-only">Scroll to slide {index + 1}</span>
+    </Button>
+  )
+})
+CarouselDotButton.displayName = 'CarouselDotButton'
 
 export {
   type CarouselApi,
@@ -260,4 +279,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselDotButton,
 }

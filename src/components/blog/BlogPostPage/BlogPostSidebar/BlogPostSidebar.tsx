@@ -1,6 +1,6 @@
 // import { YouTubeEmbed } from '@next/third-parties/google'
 import { Alert } from '#/components/Alert'
-import { YouTubeComingSoon } from '#/components/YouTubeComingSoon'
+import { YouTubeComingSoon } from '#/components/home/youtube/YouTubeComingSoon'
 import { MiniProfile } from '../../MiniProfile'
 
 type SidebarProps = {
