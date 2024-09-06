@@ -1,5 +1,6 @@
 // import { YouTubeEmbed } from '@next/third-parties/google'
 import { Alert } from '#/components/Alert'
+import { Battery } from '#/components/Battery'
 import { YouTubeComingSoon } from '#/components/home/youtube/YouTubeComingSoon'
 import { MiniProfile } from '../../MiniProfile'
 import { Sidebar } from '../../Sidebar'
@@ -26,6 +27,7 @@ export const BlogPostSidebar = ({ youtubeVideoId }: SidebarProps) => {
         </div>
       )}
       <MiniProfile />
+      <Battery />
     </Sidebar>
   )
 }
