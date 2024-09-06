@@ -7,10 +7,5 @@ export type TagPageProps = {
 }
 
 export const TagPage = ({ posts, tag }: TagPageProps) => {
-  return (
-    <PostListPage
-      posts={posts}
-      title={`All posts for &quot; ${tag} &quot; tag`}
-    />
-  )
+  return <PostListPage posts={posts} title={`All posts for " ${tag} " tag`} />
 }
