@@ -41,7 +41,7 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
 
       <BlogWithSidebar
         Header={
-          <>
+          <div className="mt-4 flex w-full flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-between md:mt-6 md:gap-6 2xl:mt-8 2xl:gap-8">
             <BlogBreadcrumbs postTitle={title} />
             <ShareButton
               slug={slug}
@@ -49,7 +49,7 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
               excerpt={excerpt}
               tags={tags}
             />
-          </>
+          </div>
         }
         Sidebar={<BlogPostSidebar youtubeVideoId={video_id} />}
       >

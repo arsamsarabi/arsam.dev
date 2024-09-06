@@ -42,7 +42,7 @@ export const Pre = (
           aria-label="Copy to Clipboard"
           className="absolute right-2 top-2 hidden transition fade-in focus:outline-none disabled:flex group-hover:flex"
         >
-          <Icon name="copy" size={22} />
+          <Icon name="copy" />
         </Button>
 
         {props.children}

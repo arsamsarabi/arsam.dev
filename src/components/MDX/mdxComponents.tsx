@@ -8,7 +8,10 @@ import { YouTubeVideo, type YouTubeVideoProps } from './YouTubeVideo'
 export const mdxComponents: MDXComponents = {
   a: (props) => <a className="text-brand-accent" {...props} />,
   p: (props) => (
-    <p className="my-4 text-brand-primary-darkest first:mt-0" {...props} />
+    <p
+      className="my-4 text-brand-primary-darkest first:mt-0 last:mb-0"
+      {...props}
+    />
   ),
   h1: (props) => (
     <h1

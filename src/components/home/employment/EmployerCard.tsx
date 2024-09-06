@@ -1,5 +1,9 @@
+'use client'
+
 import { Icon } from '#/components/Icon'
 import { WorkExperience } from '#/constants/employment'
+import { DisplayCardDescription } from '../DisplayCard/DisplayCardDescription'
+import { DisplayCardTitle } from '../DisplayCard/DisplayCardTitle'
 
 export type EmployerCardProps = WorkExperience
 
@@ -24,17 +28,19 @@ export const EmployerCard = ({
           {Comp}
         </div>
       </div>
-      <div className="flex h-[120px] w-full flex-col items-start justify-around space-y-1 rounded-bl-lg rounded-br-lg bg-brand-primary-dark p-4">
-        <a href={link} target="_blank" rel="noreferrer" className="w-full">
+      <div className="flex h-[160px] w-full flex-col items-start justify-start space-y-1 rounded-bl-lg rounded-br-lg bg-brand-primary-dark p-4 3xl:h-[180px]">
+        <a href={link} target="_blank" rel="noreferrer" className="mb-2 w-full">
           <div className="flex w-full items-center justify-between gap-2">
-            <p className="font-heading text-2xl text-brand-accent-lightest md:text-xl">
-              {title}
-            </p>
-            <Icon name={icon} size={20} color="var(--brand-accent-lightest)" />
+            <DisplayCardTitle>{title}</DisplayCardTitle>
+            <Icon name={icon} color="var(--brand-accent-lightest)" />
           </div>
         </a>
-        <p className="text-sm text-brand-primary-lightest">{role}</p>
-        <p className="text-sm text-brand-primary-lightest">{duration}</p>
+        <DisplayCardDescription className="sm:text-sm">
+          {role}
+        </DisplayCardDescription>
+        <DisplayCardDescription className="!mt-auto sm:text-sm">
+          {duration}
+        </DisplayCardDescription>
       </div>
     </div>
   )

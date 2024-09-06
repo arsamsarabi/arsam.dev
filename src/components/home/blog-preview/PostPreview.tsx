@@ -6,6 +6,9 @@ import { AnimateInView } from '#/components/animated'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
 import { cn } from '#/utils/cn'
 import { formatDate } from '#/utils/date'
+import { DisplayCardDescription } from '../DisplayCard/DisplayCardDescription'
+import { DisplayCardDetail } from '../DisplayCard/DisplayCardDetail'
+import { DisplayCardTitle } from '../DisplayCard/DisplayCardTitle'
 
 export type PostPreviewProps = Omit<Post, 'body'>
 
@@ -22,42 +25,39 @@ export const PostPreview = ({
   return (
     <AnimateInView
       from="bottom"
-      className="bg-no-cover flex h-[400px] w-full items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest sm:h-[300px]"
+      className="bg-no-cover relative flex h-[400px] w-full items-end overflow-hidden rounded-lg bg-cover shadow-md shadow-brand-primary-darkest sm:h-[300px] 3xl:h-[480px]"
       style={{
         backgroundImage: `url(${cover})`,
       }}
     >
+      {comingSoon && (
+        <Pill className="absolute right-4 top-4" variant="danger">
+          Coming Soon
+        </Pill>
+      )}
       <div
-        className="w-full space-y-4 p-4 md:space-y-2"
+        className="flex min-h-[50%] w-full flex-col items-start justify-between p-4"
         style={{
           backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(0.95).string(),
         }}
       >
         <Link
           href={`/blog/${slug}`}
-          className={cn('space-y-2', {
-            'pointer-events-none': comingSoon,
-          })}
+          className={cn(
+            'mb-2 flex flex-1 flex-col items-start justify-start gap-2',
+            {
+              'pointer-events-none': comingSoon,
+            }
+          )}
         >
-          {comingSoon && <Pill variant="danger">Coming Soon</Pill>}
-          <p className="font-heading text-3xl text-brand-primary-lightest md:text-2xl lg:text-xl xl:text-2xl">
-            {title}
-          </p>
-          <p className="text-xs text-brand-accent-lightest md:text-xs">
-            {formatDate(date)}
-          </p>
-          <p className="my-2 line-clamp-2 text-gray-200 md:text-sm">
-            {excerpt}
-          </p>
+          <DisplayCardTitle>{title}</DisplayCardTitle>
+          <DisplayCardDetail>{formatDate(date)}</DisplayCardDetail>
+          <DisplayCardDescription>{excerpt}</DisplayCardDescription>
         </Link>
 
-        <div className="flex w-full items-center justify-between border-t border-brand-primary-light pt-2">
-          <p className="text-sm text-brand-accent-lightest md:text-xs">
-            {readingTime.text}
-          </p>
-          <p className="text-sm text-brand-accent-lightest md:text-xs">
-            {wordCount} Words
-          </p>
+        <div className="mt-auto flex w-full items-center justify-between border-t border-brand-primary-light pt-2">
+          <DisplayCardDetail>{readingTime.text}</DisplayCardDetail>
+          <DisplayCardDetail>{wordCount}</DisplayCardDetail>
         </div>
       </div>
     </AnimateInView>

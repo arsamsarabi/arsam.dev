@@ -85,7 +85,7 @@ const BreadcrumbSeparator = ({
     className={cn(className)}
     {...props}
   >
-    {children ?? <Icon name="chevron-right" size={20} />}
+    {children ?? <Icon name="chevron-right" />}
   </li>
 )
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator'
@@ -100,7 +100,7 @@ const BreadcrumbEllipsis = ({
     className={cn('flex h-9 w-9 items-center justify-center', className)}
     {...props}
   >
-    <Icon name="menu-dots" size={20} />
+    <Icon name="menu-dots" />
     <span className="sr-only">More</span>
   </span>
 )

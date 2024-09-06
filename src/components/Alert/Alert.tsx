@@ -21,7 +21,7 @@ export const Alert = ({
 }: AlertProps) => {
   return (
     <ShadAlert variant={variant}>
-      <Icon name={icon} size={22} />
+      <Icon name={icon} />
       <AlertTitle>{title}</AlertTitle>
       <AlertDescription>{description}</AlertDescription>
     </ShadAlert>

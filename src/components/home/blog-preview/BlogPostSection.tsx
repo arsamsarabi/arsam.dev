@@ -12,7 +12,7 @@ export const BlogPostSection = () => {
       bgColour="bg-brand-primary-dark"
       Header={<SectionHeader icon="blog" text="Latest blog posts" />}
       Body={
-        <div className="flex w-full flex-1 flex-col content-center items-center gap-8 lg:gap-4">
+        <div className="grid w-full flex-1 grid-cols-1 content-center items-center justify-center gap-4 sm:grid-cols-2 md:grid-cols-1 lg:gap-4 xl:grid-cols-2">
           {postsToShow.map((post) => {
             return <PostPreview key={post.slug} {...post} />
           })}

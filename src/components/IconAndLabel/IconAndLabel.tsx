@@ -19,11 +19,7 @@ export const IconAndLabel = ({
 }: IconAndTextProps) => {
   return (
     <div className={cn('flex items-center gap-2', classNames?.root)}>
-      {icon ? (
-        <Icon name={icon} size={22} className={cn(classNames?.icon)} />
-      ) : (
-        children
-      )}
+      {icon ? <Icon name={icon} className={cn(classNames?.icon)} /> : children}
       <p className={cn('truncate text-sm', classNames?.label)}>{label}</p>
     </div>
   )

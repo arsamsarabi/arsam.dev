@@ -10,7 +10,7 @@ export const Languages = () => {
   return (
     <div className="flex items-center justify-between">
       {COUNTRY_FLAGS.map((language) => (
-        <Icon key={language} name={language} size={28} />
+        <Icon key={language} name={language} />
       ))}
     </div>
   )

@@ -1,11 +1,12 @@
 import { MiniProfile } from '#/components/blog/MiniProfile'
 import { UnderConstruction } from '#/components/blog/UnderConstruction'
+import { Sidebar } from '../Sidebar'
 
-export const TagPageSidebar = () => {
+export const PostsPagesSidebar = () => {
   return (
-    <aside className="flex w-full flex-col gap-4 lg:w-4/12">
+    <Sidebar>
       <UnderConstruction />
       <MiniProfile />
-    </aside>
+    </Sidebar>
   )
 }

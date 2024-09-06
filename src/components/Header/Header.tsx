@@ -1,17 +1,23 @@
 import { cn } from '#/utils/cn'
+import { PartialRecord } from '#/utils/types'
 import { Logo } from './Logo'
 import { Navbar } from './Navbar'
 
+type ClassNamesElements = 'root' | 'inner'
+
 export type HeaderProps = {
-  className?: string
+  classNames?: PartialRecord<ClassNamesElements, string>
+  showNav?: boolean
 }
 
-export const Header = ({ className }: HeaderProps) => {
+export const Header = ({ classNames, showNav = true }: HeaderProps) => {
   return (
-    <header className={cn('z-50 flex w-screen bg-brand-light', className)}>
-      <div className="container-max-w flex h-14 items-center justify-start space-x-16 px-8 lg:px-0">
+    <header
+      className={cn('z-50 flex w-screen bg-brand-light', classNames?.root)}
+    >
+      <div className={cn('flex items-center justify-start', classNames?.inner)}>
         <Logo />
-        <Navbar />
+        {showNav && <Navbar />}
       </div>
     </header>
   )
