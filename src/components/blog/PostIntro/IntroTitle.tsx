@@ -4,16 +4,26 @@ import { sendGAEvent } from '@next/third-parties/google'
 import Color from 'color'
 import Link from 'next/link'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
+import { cn } from '#/utils/cn'
 
 export type IntroTitleProps = {
   thumbnail: string
   title: string
   link: string
+  comingSoon: boolean
 }
 
-export const IntroTitle = ({ link, thumbnail, title }: IntroTitleProps) => {
+export const IntroTitle = ({
+  link,
+  thumbnail,
+  title,
+  comingSoon,
+}: IntroTitleProps) => {
   return (
     <Link
+      className={cn({
+        'pointer-events-none': comingSoon,
+      })}
       href={link}
       onClick={() =>
         sendGAEvent({

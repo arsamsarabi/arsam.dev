@@ -22,7 +22,7 @@ export const PostIntro = ({ post }: PostIntroProps) => {
     wordCount,
     video_id,
     slug,
-    comingSoon,
+    comingSoon = false,
     thumbnail,
   } = post
   return (
@@ -33,7 +33,12 @@ export const PostIntro = ({ post }: PostIntroProps) => {
         </Pill>
       )}
 
-      <IntroTitle link={`/blog/${slug}`} title={title} thumbnail={thumbnail} />
+      <IntroTitle
+        comingSoon={comingSoon}
+        link={`/blog/${slug}`}
+        title={title}
+        thumbnail={thumbnail}
+      />
 
       <div className="flex flex-col gap-4 px-4 md:py-4">
         <p>{excerpt}</p>
