@@ -1,3 +1,6 @@
+'use client'
+
+import { sendGAEvent } from '@next/third-parties/google'
 import { Post } from 'contentlayer/generated'
 import { Anchor } from '#/components/Anchor'
 import { Pill, type PillProps } from '#/components/Pill'
@@ -24,6 +27,12 @@ export const TagsList = ({
           key={tag}
           href={`/blog/tags/${tag.replaceAll(' ', '-')}`}
           className={cn(classNames?.link)}
+          onClick={() =>
+            sendGAEvent({
+              event: 'Tag click',
+              tag,
+            })
+          }
         >
           <Pill variant={variant} size="sm" className={cn(classNames?.pill)}>
             {tag}

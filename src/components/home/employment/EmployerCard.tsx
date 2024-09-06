@@ -1,9 +1,6 @@
-'use client'
-
-import { Icon } from '#/components/Icon'
 import { WorkExperience } from '#/constants/employment'
 import { DisplayCardDescription } from '../DisplayCard/DisplayCardDescription'
-import { DisplayCardTitle } from '../DisplayCard/DisplayCardTitle'
+import { EmploymentCardLink } from './EmploymentCardLink'
 
 export type EmployerCardProps = WorkExperience
 
@@ -29,12 +26,7 @@ export const EmployerCard = ({
         </div>
       </div>
       <div className="flex h-[160px] w-full flex-col items-start justify-start space-y-1 rounded-bl-lg rounded-br-lg bg-brand-primary-dark p-4 3xl:h-[180px]">
-        <a href={link} target="_blank" rel="noreferrer" className="mb-2 w-full">
-          <div className="flex w-full items-center justify-between gap-2">
-            <DisplayCardTitle>{title}</DisplayCardTitle>
-            <Icon name={icon} color="var(--brand-accent-lightest)" />
-          </div>
-        </a>
+        <EmploymentCardLink title={title} link={link} icon={icon} />
         <DisplayCardDescription className="sm:text-sm">
           {role}
         </DisplayCardDescription>

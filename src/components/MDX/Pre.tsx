@@ -1,5 +1,6 @@
 'use client'
 
+import { sendGAEvent } from '@next/third-parties/google'
 import { useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
 import { Icon } from '#/components/Icon'
@@ -26,6 +27,10 @@ export const Pre = (
       setCopied(true)
       toast.success('Success!', {
         description: 'Code block copied to clipboard!',
+      })
+      sendGAEvent({
+        event: 'Code copy event',
+        code: `${preRef.current.innerText}`,
       })
     }
   }

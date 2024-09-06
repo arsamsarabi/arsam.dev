@@ -1,3 +1,6 @@
+'use client'
+
+import { sendGAEvent } from '@next/third-parties/google'
 import Color from 'color'
 import { AppImage } from '#/components/AppImage'
 import { Icon } from '#/components/Icon'
@@ -42,7 +45,16 @@ export const MiniProfile = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-2">
-          <a href="mailto:me@arsam.dev" className="flex-1">
+          <a
+            href="mailto:me@arsam.dev"
+            className="flex-1"
+            onClick={() =>
+              sendGAEvent({
+                event: 'Email link click',
+                source: 'mini profile',
+              })
+            }
+          >
             <IconAndLabel icon="email" label="me@arsam.dev" />
           </a>
 
@@ -50,7 +62,18 @@ export const MiniProfile = () => {
 
           {MY_SOCIAL_MEDIA.map(({ icon, link, text }) => {
             return (
-              <a key={icon} href={link} className="flex-1">
+              <a
+                key={icon}
+                href={link}
+                className="flex-1"
+                onClick={() =>
+                  sendGAEvent({
+                    event: 'Social link click',
+                    source: 'mini profile',
+                    social: text,
+                  })
+                }
+              >
                 <IconAndLabel icon={icon} label={text} />
               </a>
             )
