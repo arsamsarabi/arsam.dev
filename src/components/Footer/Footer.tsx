@@ -2,24 +2,32 @@
 
 import { Socials } from '#/components/Socials'
 import { cn } from '#/utils/cn'
+import { PartialRecord } from '#/utils/types'
+
+type ClassNamesElements = 'root' | 'inner'
 
 export type FooterProps = {
-  className?: string
+  classNames?: PartialRecord<ClassNamesElements, string>
   hideBorder?: boolean
 }
 
-export const Footer = ({ className, hideBorder = false }: FooterProps) => {
+export const Footer = ({ classNames, hideBorder = false }: FooterProps) => {
   return (
     <footer
       className={cn(
         'flex w-full flex-col items-center justify-start gap-4',
-        className
+        classNames?.root
       )}
     >
       {hideBorder ? null : (
         <div className="h-[2px] w-full bg-brand-primary-dark" />
       )}
-      <div className="flex w-full items-center">
+      <div
+        className={cn(
+          'flex w-full items-center justify-start',
+          classNames?.inner
+        )}
+      >
         <Socials />
       </div>
     </footer>

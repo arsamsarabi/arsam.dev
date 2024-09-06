@@ -60,6 +60,13 @@ const config = {
             dark: 'var(--brand-danger-dark)',
             darkest: 'var(--brand-danger-darkest)',
           },
+          warning: {
+            lightest: 'var(--brand-warning-lightest)',
+            light: 'var(--brand-warning-light)',
+            DEFAULT: 'var(--brand-warning)',
+            dark: 'var(--brand-warning-dark)',
+            darkest: 'var(--brand-warning-darkest)',
+          },
           light: 'hsl(var(--brand-light))',
           dark: 'hsl(var(--brand-dark))',
         },

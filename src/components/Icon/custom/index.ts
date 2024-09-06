@@ -1,3 +1,7 @@
+export * from './BatteryCriticalIcon'
+export * from './BatteryFullIcon'
+export * from './BatteryHalfIcon'
+export * from './BatteryLowIcon'
 export * from './BriefcaseIcon'
 export * from './BookIcon'
 export * from './BlogPostIcon'

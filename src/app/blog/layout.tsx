@@ -16,7 +16,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
       <div className="w-screen flex-1 overflow-y-auto">
         <div className="container-max-w flex h-[100%] flex-col">
           {children}
-          <Footer className="mt-auto px-8 pb-8 pt-4 lg:px-0" />
+          <Footer classNames={{ root: 'mt-auto px-8 pb-8 pt-4 lg:px-0' }} />
         </div>
       </div>
     </div>
