@@ -23,13 +23,13 @@ export const PostHero = ({
       style={{
         backgroundImage: `url(${cover})`,
       }}
-      className="flex h-[250px] items-end overflow-hidden bg-cover bg-bottom bg-no-repeat lg:rounded-bl-md lg:rounded-br-md"
+      className="flex h-[250px] items-end overflow-hidden bg-cover bg-bottom bg-no-repeat md:h-[300px] lg:h-[320px] lg:rounded-bl-md lg:rounded-br-md xl:h-[360px] 2xl:h-[420px]"
     >
       <div
         style={{
           backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(0.85).string(),
         }}
-        className="flex w-full flex-col gap-2 bg-opacity-75 px-4 py-2 text-brand-primary-lightest sm:px-6 sm:py-4 lg:gap-4 xl:gap-8"
+        className="flex w-full flex-col gap-2 bg-opacity-75 px-8 py-4 text-brand-primary-lightest lg:gap-4 lg:py-8 xl:gap-8"
       >
         <div className="flex flex-col content-center items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h1 className="text-2xl md:text-3xl xl:text-4xl">{title}</h1>

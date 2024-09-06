@@ -22,7 +22,7 @@ export const ProjectCard = ({
       <a className="h-full w-full" href={link} target="_blank" rel="noreferrer">
         <AnimateInView
           from="bottom"
-          className="flex h-full w-full flex-col overflow-hidden rounded-md border-2 border-brand-primary-light bg-brand-primary-lightest shadow-md"
+          className="flex h-full w-full flex-col overflow-hidden rounded-md border-2 border-brand-primary-lightest bg-brand-primary-lightest shadow-md shadow-brand-primary"
         >
           <div className="flex flex-1 flex-col justify-around gap-4 bg-brand-primary-dark p-4">
             <DisplayCardTitle>{title}</DisplayCardTitle>

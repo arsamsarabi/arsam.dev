@@ -34,7 +34,7 @@ export const HomeSection = ({
     >
       <section
         className={cn(
-          'center-child flex-1 flex-col p-8 3xl:p-16',
+          'center-child flex-1 flex-col px-8 py-4 lg:py-8 3xl:p-16',
           classNames?.inner
         )}
       >

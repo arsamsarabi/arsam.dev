@@ -8,15 +8,15 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
     <div className="flex h-[100%] flex-col items-start justify-start">
       <Header
         classNames={{
-          root: 'w-screen p-8 pb-4 2xl:pb-8',
+          root: 'w-screen px-8 py-4 2xl:py-8 lg:px-0',
           inner: 'container-max-w',
         }}
       />
 
       <div className="w-screen flex-1 overflow-y-auto">
-        <div className="container-max-w flex h-[100%] flex-col px-8">
+        <div className="container-max-w flex h-[100%] flex-col">
           {children}
-          <Footer className="mt-auto pb-8 pt-4" />
+          <Footer className="mt-auto px-8 pb-8 pt-4 lg:px-0" />
         </div>
       </div>
     </div>

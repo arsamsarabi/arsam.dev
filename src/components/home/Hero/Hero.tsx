@@ -12,7 +12,7 @@ export const Hero = () => {
       bgColour="transparent"
       Header={<Header />}
       Body={<HeroContent />}
-      Footer={<Footer className="border-none" />}
+      Footer={<Footer hideBorder />}
     />
   )
 }

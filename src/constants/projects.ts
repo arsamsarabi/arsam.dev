@@ -38,6 +38,15 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     display: true,
   },
   {
+    title: 'konami-codes-react',
+    name: '@arsams/konami-codes-react',
+    description: 'A React hook that provides Konami codes functionality.',
+    link: 'https://www.npmjs.com/package/@arsams/konami-codes-react',
+    color: 'var(--brand-success)',
+    badge: 'Updated',
+    display: true,
+  },
+  {
     title: 'readable-http-codes',
     name: 'readable-http-codes',
     description:
@@ -73,14 +82,5 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     color: 'var(--brand-success)',
     badge: 'Updated',
     display: false,
-  },
-  {
-    title: 'konami-codes-react',
-    name: '@arsams/konami-codes-react',
-    description: 'A React hook that provides Konami codes functionality.',
-    link: 'https://www.npmjs.com/package/@arsams/konami-codes-react',
-    color: 'var(--brand-success)',
-    badge: 'Updated',
-    display: true,
   },
 ]

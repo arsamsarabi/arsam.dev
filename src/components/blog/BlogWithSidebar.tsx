@@ -18,7 +18,10 @@ export const BlogWithSidebar = ({
 }: BlogWithSidebarProps) => {
   return (
     <section
-      className={cn('flex flex-col gap-4 md:gap-6 2xl:gap-8', classNames?.root)}
+      className={cn(
+        'flex flex-col gap-4 px-8 md:gap-6 lg:px-0 2xl:gap-8',
+        classNames?.root
+      )}
     >
       <div
         className={cn(
