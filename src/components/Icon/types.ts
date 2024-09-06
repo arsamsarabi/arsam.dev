@@ -1,4 +1,8 @@
 export const IconNames = [
+  'battery-full',
+  'battery-half',
+  'battery-low',
+  'battery-critical',
   'blog-post',
   'blog',
   'book',

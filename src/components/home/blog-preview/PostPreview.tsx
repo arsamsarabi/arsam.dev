@@ -1,14 +1,10 @@
 import Color from 'color'
-import Link from 'next/link'
 import { Post } from 'contentlayer/generated'
 import { Pill } from '#/components/Pill'
 import { AnimateInView } from '#/components/animated'
 import { BRAND_PRIMARY_DARKEST } from '#/constants/colors'
-import { cn } from '#/utils/cn'
-import { formatDate } from '#/utils/date'
-import { DisplayCardDescription } from '../DisplayCard/DisplayCardDescription'
 import { DisplayCardDetail } from '../DisplayCard/DisplayCardDetail'
-import { DisplayCardTitle } from '../DisplayCard/DisplayCardTitle'
+import { PostPreviewLink } from './PostPreviewLink'
 
 export type PostPreviewProps = Omit<Post, 'body'>
 
@@ -41,19 +37,13 @@ export const PostPreview = ({
           backgroundColor: Color(BRAND_PRIMARY_DARKEST).alpha(0.95).string(),
         }}
       >
-        <Link
-          href={`/blog/${slug}`}
-          className={cn(
-            'mb-2 flex flex-1 flex-col items-start justify-start gap-2',
-            {
-              'pointer-events-none': comingSoon,
-            }
-          )}
-        >
-          <DisplayCardTitle>{title}</DisplayCardTitle>
-          <DisplayCardDetail>{formatDate(date)}</DisplayCardDetail>
-          <DisplayCardDescription>{excerpt}</DisplayCardDescription>
-        </Link>
+        <PostPreviewLink
+          date={date}
+          excerpt={excerpt}
+          title={title}
+          slug={slug}
+          comingSoon={comingSoon}
+        />
 
         <div className="mt-auto flex w-full items-center justify-between border-t border-brand-primary-light pt-2">
           <DisplayCardDetail>{readingTime.text}</DisplayCardDetail>

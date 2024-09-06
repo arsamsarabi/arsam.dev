@@ -1,6 +1,10 @@
 import { type LucideProps } from 'lucide-react'
 import { ReactNode } from 'react'
 import {
+  BatteryCriticalIcon,
+  BatteryFullIcon,
+  BatteryHalfIcon,
+  BatteryLowIcon,
   BlogPostIcon,
   BookIcon,
   BriefcaseIcon,
@@ -45,6 +49,10 @@ import {
 import { IconNamesType } from './types'
 
 export const ICONS: Record<IconNamesType, (props: LucideProps) => ReactNode> = {
+  'battery-full': BatteryCriticalIcon,
+  'battery-half': BatteryFullIcon,
+  'battery-low': BatteryHalfIcon,
+  'battery-critical': BatteryLowIcon,
   'blog-post': BlogPostIcon,
   'broken-link': BrokenLinkIcon,
   'chevron-down': ChevronDownIcon,

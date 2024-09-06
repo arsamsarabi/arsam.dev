@@ -1,7 +1,10 @@
+'use client'
+
 import { useMDXComponent } from 'next-contentlayer2/hooks'
 import type { Post } from 'contentlayer/generated'
 import { mdxComponents } from '#/components/MDX'
 import { FadeInView } from '#/components/animated'
+import { useSendPageLoadedEvent } from '#/hooks/useSendPageLoadedEvent'
 import { BlogWithSidebar } from '../BlogWithSidebar'
 import { BlogBreadcrumbs } from './BlogBreadcrumbs'
 import { BlogPostSidebar } from './BlogPostSidebar'
@@ -25,6 +28,8 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
     video_id,
     excerpt,
   } = post
+
+  useSendPageLoadedEvent({ page: 'Blog post page', title })
 
   const MDXContent = useMDXComponent(body.code)
 

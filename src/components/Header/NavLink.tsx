@@ -1,5 +1,6 @@
 'use client'
 
+import { sendGAEvent } from '@next/third-parties/google'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -25,6 +26,7 @@ export const NavLink = ({ text, link, icon }: NavLinkProps) => {
           'pointer-events-none font-bold text-brand-primary': isActive,
         }
       )}
+      onClick={() => sendGAEvent({ event: 'NavLink click', link })}
     >
       <Icon name={icon} />
       {text}

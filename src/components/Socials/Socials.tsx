@@ -1,5 +1,6 @@
 'use client'
 
+import { sendGAEvent } from '@next/third-parties/google'
 import { Icon } from '#/components/Icon'
 import { MY_SOCIAL_LINKS, Socials as SocialSites } from '#/constants/socials'
 import { cn } from '#/utils/cn'
@@ -27,6 +28,12 @@ export const Socials = ({ classNames }: SocialsProps) => {
             target="_blank"
             rel="noreferrer"
             className={cn(classNames?.anchor)}
+            onClick={() =>
+              sendGAEvent({
+                event: 'Social link click',
+                name: key,
+              })
+            }
           >
             <Icon
               name={key}

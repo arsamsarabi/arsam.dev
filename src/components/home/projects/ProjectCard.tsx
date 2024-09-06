@@ -1,3 +1,6 @@
+'use client'
+
+import { sendGAEvent } from '@next/third-parties/google'
 import Image from 'next/image'
 import { AnimateInView } from '#/components/animated'
 import type { ProjectType } from '#/constants/projects'
@@ -19,7 +22,18 @@ export const ProjectCard = ({
 
   return (
     <li key={name} className="flex h-[300px] w-full md:h-[280px] lg:h-[240px]">
-      <a className="h-full w-full" href={link} target="_blank" rel="noreferrer">
+      <a
+        className="h-full w-full"
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        onClick={() =>
+          sendGAEvent({
+            event: 'Project link click',
+            title,
+          })
+        }
+      >
         <AnimateInView
           from="bottom"
           className="flex h-full w-full flex-col overflow-hidden rounded-md border-2 border-brand-primary-lightest bg-brand-primary-lightest shadow-md shadow-brand-primary"
