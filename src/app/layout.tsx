@@ -1,6 +1,7 @@
 import '#/styles/globals.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
+import { NetworkStatus } from '#/components/NetworkStatus'
 import { Toaster } from '#/components/ui/sonner'
 import { body, code, heading } from '#/styles/fonts'
 import { env } from '#/utils/env'
@@ -26,6 +27,8 @@ export default function RootLayout({
       </body>
 
       <Toaster />
+
+      <NetworkStatus />
 
       {env.GA4_ID && <GoogleAnalytics gaId={env.GA4_ID} />}
     </html>
