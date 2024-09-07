@@ -1,5 +1,6 @@
 import '#/styles/globals.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { NetworkStatus } from '#/components/NetworkStatus'
@@ -31,6 +32,8 @@ export default function RootLayout({
       <NetworkStatus />
 
       <SpeedInsights />
+      <Analytics />
+
       {env.GA4_ID && <GoogleAnalytics gaId={env.GA4_ID} />}
     </html>
   )
