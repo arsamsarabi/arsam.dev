@@ -26,8 +26,7 @@ export const IntroTitle = ({
       })}
       href={link}
       onClick={() =>
-        sendGAEvent({
-          event: 'Post intro click',
+        sendGAEvent('event', 'Post intro click', {
           title,
         })
       }

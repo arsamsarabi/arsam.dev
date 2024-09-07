@@ -29,8 +29,7 @@ export const Socials = ({ classNames }: SocialsProps) => {
             rel="noreferrer"
             className={cn(classNames?.anchor)}
             onClick={() =>
-              sendGAEvent({
-                event: 'Social link click',
+              sendGAEvent('event', 'Social link click', {
                 name: key,
               })
             }

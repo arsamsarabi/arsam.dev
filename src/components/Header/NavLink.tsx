@@ -26,7 +26,11 @@ export const NavLink = ({ text, link, icon }: NavLinkProps) => {
           'pointer-events-none font-bold text-brand-primary': isActive,
         }
       )}
-      onClick={() => sendGAEvent({ event: 'NavLink click', link })}
+      onClick={() =>
+        sendGAEvent('event', 'NavLink click', {
+          link,
+        })
+      }
     >
       <Icon name={icon} />
       {text}

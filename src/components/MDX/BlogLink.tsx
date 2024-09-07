@@ -11,8 +11,7 @@ export const BlogLink = forwardRef<
     <a
       ref={ref}
       onClick={() =>
-        sendGAEvent({
-          event: 'Block link click',
+        sendGAEvent('event', 'Blog link click', {
           link: href,
         })
       }

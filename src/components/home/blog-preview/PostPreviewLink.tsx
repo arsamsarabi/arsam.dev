@@ -31,8 +31,7 @@ export const PostPreviewLink = ({
         }
       )}
       onClick={() =>
-        sendGAEvent({
-          event: 'Post preview click',
+        sendGAEvent('event', 'Post preview click', {
           post: title,
         })
       }
