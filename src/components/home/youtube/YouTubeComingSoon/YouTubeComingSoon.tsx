@@ -27,7 +27,7 @@ export const YouTubeComingSoon = ({ className }: { className?: string }) => {
           I&apos;m adding the final touches to my very first YouTube video.
           It&apos;ll be published in the next few days.{' '}
           <Anchor
-            href="https://instagram.com/codealongwitharsam"
+            href="https://youtube.com/@codealongwitharsam"
             className="text-brand-accent-light decoration-brand-accent-light"
             external
           >
