@@ -10,7 +10,7 @@ export const Hero = () => {
         wrapper: 'h-svh',
       }}
       bgColour="transparent"
-      Header={<Header />}
+      Header={<Header showNav={false} />}
       Body={<HeroContent />}
       Footer={<Footer hideBorder />}
     />

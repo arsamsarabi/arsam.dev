@@ -11,6 +11,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
           root: 'w-screen px-8 py-4 2xl:py-8 lg:px-0',
           inner: 'container-max-w',
         }}
+        showNav={false}
       />
 
       <div className="w-screen flex-1 overflow-y-auto">

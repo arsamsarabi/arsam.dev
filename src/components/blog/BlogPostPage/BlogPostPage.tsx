@@ -6,6 +6,7 @@ import { mdxComponents } from '#/components/MDX'
 import { FadeInView } from '#/components/animated'
 import { useSendPageLoadedEvent } from '#/hooks/useSendPageLoadedEvent'
 import { BlogWithSidebar } from '../BlogWithSidebar'
+import { PageTitle } from '../PageTitle'
 import { BlogBreadcrumbs } from './BlogBreadcrumbs'
 import { BlogPostSidebar } from './BlogPostSidebar'
 import { PostHero } from './PostHero'
@@ -35,6 +36,14 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
 
   return (
     <div className="flex flex-col">
+      <div className="px-8 md:gap-6 lg:px-0">
+        <PageTitle>{title}</PageTitle>
+      </div>
+      <div className="my-4 flex w-full flex-col items-start justify-center gap-4 px-8 sm:flex-row sm:items-center sm:justify-between md:gap-6 lg:px-0 2xl:gap-8">
+        <BlogBreadcrumbs postTitle={title} />
+        <ShareButton slug={slug} title={title} excerpt={excerpt} tags={tags} />
+      </div>
+
       <PostHero
         date={date}
         title={title}
@@ -45,17 +54,7 @@ export const BlogPostPage = ({ post }: BlogPostProps) => {
       />
 
       <BlogWithSidebar
-        Header={
-          <div className="mt-4 flex w-full flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-between md:mt-6 md:gap-6 2xl:mt-8 2xl:gap-8">
-            <BlogBreadcrumbs postTitle={title} />
-            <ShareButton
-              slug={slug}
-              title={title}
-              excerpt={excerpt}
-              tags={tags}
-            />
-          </div>
-        }
+        Header={<></>}
         Sidebar={<BlogPostSidebar youtubeVideoId={video_id} />}
       >
         <FadeInView>
