@@ -31,8 +31,8 @@ const COLOR_MAP: Record<BatteryLevel, ParsedBatteryState['color']> = {
 }
 
 const getBatteryLevel = (state: BatteryState): BatteryLevel => {
-  if (state.level === 1) return 'full'
-  if (0.75 >= state.level && state.level >= 0.65) return 'high'
+  if (state.level === 1 || state.level >= 0.85) return 'full'
+  if (0.85 >= state.level && state.level >= 0.65) return 'high'
   if (0.65 >= state.level && state.level >= 0.2) return 'low'
   return 'critical'
 }
