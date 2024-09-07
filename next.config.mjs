@@ -18,6 +18,9 @@ const nextConfig = {
       {
         hostname: 'img.shields.io',
       },
+      {
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
 }

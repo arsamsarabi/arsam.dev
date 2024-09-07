@@ -22,8 +22,7 @@ export const EmploymentCardLink = ({
       rel="noreferrer"
       className="mb-2 w-full"
       onClick={() =>
-        sendGAEvent({
-          event: 'Employer link click',
+        sendGAEvent('event', 'Employer link click', {
           employer: title,
         })
       }

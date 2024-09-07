@@ -52,8 +52,7 @@ export const ShareButton = ({
       <DropdownMenuContent>
         <DropdownMenuItem
           onClick={() =>
-            sendGAEvent({
-              event: 'Share button click',
+            sendGAEvent('event', 'Share button click', {
               shareTo: 'facebook',
               title,
             })
@@ -72,8 +71,7 @@ export const ShareButton = ({
 
         <DropdownMenuItem
           onClick={() =>
-            sendGAEvent({
-              event: 'Share button click',
+            sendGAEvent('event', 'Share button click', {
               shareTo: 'linkedin',
               title,
             })
@@ -88,8 +86,7 @@ export const ShareButton = ({
 
         <DropdownMenuItem
           onClick={() =>
-            sendGAEvent({
-              event: 'Share button click',
+            sendGAEvent('event', 'Share button click', {
               shareTo: 'reddit',
               title,
             })
@@ -104,8 +101,7 @@ export const ShareButton = ({
 
         <DropdownMenuItem
           onClick={() =>
-            sendGAEvent({
-              event: 'Share button click',
+            sendGAEvent('event', 'Share button click', {
               shareTo: 'x',
               title,
             })
@@ -120,8 +116,7 @@ export const ShareButton = ({
 
         <DropdownMenuItem
           onClick={() =>
-            sendGAEvent({
-              event: 'Share button click',
+            sendGAEvent('event', 'Share button click', {
               shareTo: 'workplace',
               title,
             })
@@ -136,8 +131,7 @@ export const ShareButton = ({
 
         <DropdownMenuItem
           onClick={() =>
-            sendGAEvent({
-              event: 'Share button click',
+            sendGAEvent('event', 'Share button click', {
               shareTo: 'instapaper',
               title,
             })

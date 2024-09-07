@@ -8,7 +8,8 @@ export const HeroContent = () => {
       <div className="flex w-full flex-col items-center justify-around gap-4 xl:flex-row xl:gap-8">
         <div className="relative h-56 w-44 xl:w-[175px] 3xl:h-[320px] 3xl:w-[250px]">
           <Image
-            src="/images/arsam.png"
+            // src="/images/arsam.png"
+            src="https://res.cloudinary.com/de3qgopmt/image/upload/v1725689347/arsam.dev/images/crfyvankmouzrjiijtkb.png"
             alt="Arsam"
             fill
             className="aspect-auto rounded-lg"

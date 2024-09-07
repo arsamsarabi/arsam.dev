@@ -28,8 +28,7 @@ export const ProjectCard = ({
         target="_blank"
         rel="noreferrer"
         onClick={() =>
-          sendGAEvent({
-            event: 'Project link click',
+          sendGAEvent('event', 'Project link click', {
             title,
           })
         }

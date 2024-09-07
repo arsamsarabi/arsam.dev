@@ -28,8 +28,8 @@ export const Pre = (
       toast.success('Success!', {
         description: 'Code block copied to clipboard!',
       })
-      sendGAEvent({
-        event: 'Code copy event',
+
+      sendGAEvent('event', 'Code copy event', {
         code: `${preRef.current.innerText}`,
       })
     }

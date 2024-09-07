@@ -49,8 +49,7 @@ export const MiniProfile = () => {
             href="mailto:me@arsam.dev"
             className="flex-1"
             onClick={() =>
-              sendGAEvent({
-                event: 'Email link click',
+              sendGAEvent('event', 'Email link click', {
                 source: 'mini profile',
               })
             }
@@ -67,10 +66,9 @@ export const MiniProfile = () => {
                 href={link}
                 className="flex-1"
                 onClick={() =>
-                  sendGAEvent({
-                    event: 'Social link click',
+                  sendGAEvent('event', 'Social link click', {
                     source: 'mini profile',
-                    social: text,
+                    platform: text,
                   })
                 }
               >
