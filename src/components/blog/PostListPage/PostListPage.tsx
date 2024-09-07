@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { type Post } from 'contentlayer/generated'
 import { useSendPageLoadedEvent } from '#/hooks/useSendPageLoadedEvent'
 import { BlogWithSidebar } from '../BlogWithSidebar'
@@ -11,15 +12,25 @@ import { PostsPagesSidebar } from '../PostsPagesSidebar'
 type PostListPageProps = {
   posts: Array<Post>
   title: string
+  Breadcrumbs?: ReactNode
 }
 
-export const PostListPage = ({ posts, title }: PostListPageProps) => {
+export const PostListPage = ({
+  posts,
+  title,
+  Breadcrumbs,
+}: PostListPageProps) => {
   useSendPageLoadedEvent({ page: 'All posts page' })
 
   return (
     <BlogWithSidebar
       Sidebar={<PostsPagesSidebar />}
-      Header={<PageTitle>{title}</PageTitle>}
+      Header={
+        <>
+          <PageTitle>{title}</PageTitle>
+          {Breadcrumbs}
+        </>
+      }
     >
       <MorePostsAreComing />
       <PostsList posts={posts} />

@@ -1,5 +1,6 @@
 'use client'
 
+import { sendGAEvent } from '@next/third-parties/google'
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -49,7 +50,15 @@ export const ShareButton = ({
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            sendGAEvent({
+              event: 'Share button click',
+              shareTo: 'facebook',
+              title,
+            })
+          }
+        >
           <FacebookShareButton
             url={url}
             quote={excerpt}
@@ -61,7 +70,15 @@ export const ShareButton = ({
           </FacebookShareButton>
         </DropdownMenuItem>
 
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            sendGAEvent({
+              event: 'Share button click',
+              shareTo: 'linkedin',
+              title,
+            })
+          }
+        >
           <LinkedinShareButton url={url}>
             <IconAndLabel label="Share on LinkedIn">
               <LinkedinIcon size={24} round />
@@ -69,7 +86,15 @@ export const ShareButton = ({
           </LinkedinShareButton>
         </DropdownMenuItem>
 
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            sendGAEvent({
+              event: 'Share button click',
+              shareTo: 'reddit',
+              title,
+            })
+          }
+        >
           <RedditShareButton url={url} title={title}>
             <IconAndLabel label="Share on Reddit">
               <RedditIcon size={24} round />
@@ -77,7 +102,15 @@ export const ShareButton = ({
           </RedditShareButton>
         </DropdownMenuItem>
 
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            sendGAEvent({
+              event: 'Share button click',
+              shareTo: 'x',
+              title,
+            })
+          }
+        >
           <TwitterShareButton url={url} title={title}>
             <IconAndLabel label="Share on X">
               <TwitterIcon size={24} round />
@@ -85,7 +118,15 @@ export const ShareButton = ({
           </TwitterShareButton>
         </DropdownMenuItem>
 
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            sendGAEvent({
+              event: 'Share button click',
+              shareTo: 'workplace',
+              title,
+            })
+          }
+        >
           <WorkplaceShareButton url={url} quote={title}>
             <IconAndLabel label="Share on Workplace">
               <WorkplaceIcon size={24} round />
@@ -93,7 +134,15 @@ export const ShareButton = ({
           </WorkplaceShareButton>
         </DropdownMenuItem>
 
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() =>
+            sendGAEvent({
+              event: 'Share button click',
+              shareTo: 'instapaper',
+              title,
+            })
+          }
+        >
           <InstapaperShareButton url={url} title={title}>
             <IconAndLabel label="Save on Instapaper">
               <InstapaperIcon size={24} round />

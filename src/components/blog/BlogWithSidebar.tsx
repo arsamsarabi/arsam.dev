@@ -24,10 +24,7 @@ export const BlogWithSidebar = ({
       )}
     >
       <div
-        className={cn(
-          'flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between',
-          classNames?.header
-        )}
+        className={cn('flex flex-col items-start gap-4', classNames?.header)}
       >
         {Header}
       </div>
