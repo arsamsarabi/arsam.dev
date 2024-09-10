@@ -28,7 +28,7 @@ export const NavLink = ({ text, link, icon }: NavLinkProps) => {
       )}
       onClick={() =>
         sendGAEvent('event', 'NavLink click', {
-          link,
+          value: { link },
         })
       }
     >

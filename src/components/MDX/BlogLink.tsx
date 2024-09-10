@@ -12,7 +12,7 @@ export const BlogLink = forwardRef<
       ref={ref}
       onClick={() =>
         sendGAEvent('event', 'Blog link click', {
-          link: href,
+          value: { link: href },
         })
       }
       className="text-brand-accent"

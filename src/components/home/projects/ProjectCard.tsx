@@ -29,7 +29,7 @@ export const ProjectCard = ({
         rel="noreferrer"
         onClick={() =>
           sendGAEvent('event', 'Project link click', {
-            title,
+            value: { title },
           })
         }
       >

@@ -27,7 +27,7 @@ export const TagsList = ({
           key={tag}
           href={`/blog/tags/${tag.replaceAll(' ', '-')}`}
           className={cn(classNames?.link)}
-          onClick={() => sendGAEvent('event', 'Tag click', { tag })}
+          onClick={() => sendGAEvent('event', 'Tag click', { value: { tag } })}
         >
           <Pill variant={variant} size="sm" className={cn(classNames?.pill)}>
             {tag}
