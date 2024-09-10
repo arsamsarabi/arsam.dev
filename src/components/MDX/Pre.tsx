@@ -30,7 +30,7 @@ export const Pre = (
       })
 
       sendGAEvent('event', 'Code copy event', {
-        code: `${preRef.current.innerText}`,
+        value: { code: `${preRef.current.innerText}` },
       })
     }
   }

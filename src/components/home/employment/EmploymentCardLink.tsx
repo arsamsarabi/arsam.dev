@@ -23,7 +23,7 @@ export const EmploymentCardLink = ({
       className="mb-2 w-full"
       onClick={() =>
         sendGAEvent('event', 'Employer link click', {
-          employer: title,
+          value: { employer: title },
         })
       }
     >

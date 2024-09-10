@@ -50,7 +50,7 @@ export const MiniProfile = () => {
             className="flex-1"
             onClick={() =>
               sendGAEvent('event', 'Email link click', {
-                source: 'mini profile',
+                value: { source: 'mini profile' },
               })
             }
           >
@@ -67,8 +67,7 @@ export const MiniProfile = () => {
                 className="flex-1"
                 onClick={() =>
                   sendGAEvent('event', 'Social link click', {
-                    source: 'mini profile',
-                    platform: text,
+                    value: { source: 'mini profile', platform: text },
                   })
                 }
               >

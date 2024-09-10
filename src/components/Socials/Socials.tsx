@@ -30,7 +30,7 @@ export const Socials = ({ classNames }: SocialsProps) => {
             className={cn(classNames?.anchor)}
             onClick={() =>
               sendGAEvent('event', 'Social link click', {
-                name: key,
+                value: { name: key },
               })
             }
           >
