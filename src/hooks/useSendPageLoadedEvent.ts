@@ -12,7 +12,13 @@ type Args = {
 export const useSendPageLoadedEvent = ({ page, ...rest }: Args) => {
   useEffect(() => {
     sendGAEvent('event', 'Page loaded', {
-      value: { page, ...rest },
+      value: { page, mode: 'sendGAEvent("event",', ...rest },
+    })
+
+    sendGAEvent({
+      event: 'Page loaded',
+      data: { page, mode: 'sendGAEvent({},', ...rest },
+      value: { page, mode: 'sendGAEvent({},', ...rest },
     })
   }, [])
 }
