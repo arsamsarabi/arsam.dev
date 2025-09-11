@@ -1,0 +1,20 @@
+FROM node:22-bullseye-slim
+
+WORKDIR /app
+
+# Copy only package manifests first (for better caching)
+COPY package.json pnpm-lock.yaml ./
+
+# Enable Corepack to use pnpm properly
+RUN corepack enable
+
+# Install dependencies (cached in image)
+RUN pnpm install --frozen-lockfile
+
+# Copy the rest of the app (in dev we’ll override this with a bind mount)
+COPY . .
+
+ENV NODE_ENV=development
+EXPOSE 3000
+
+CMD ["pnpm", "dev"]

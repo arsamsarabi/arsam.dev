@@ -9,6 +9,7 @@ jiti('./src/utils/env')
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone',
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [

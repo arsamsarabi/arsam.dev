@@ -1,0 +1,18 @@
+services:
+  nextapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextapp
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    expose:
+      - "3000:3000"   # exposed to other containers only
+    networks:
+      - swag
+
+networks:
+  swag:
+    external: true
