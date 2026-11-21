@@ -42,7 +42,9 @@
 
     /* Home page theme: light by default, dark when the OS asks for it */
     --site-bg: #f6f5fa;
-    --site-card: rgb(255 255 255 / 0.82);
+    --site-card: rgb(255 255 255 / 0.7);
+    /* Black wash laid over the pattern, under the cards */
+    --site-overlay: rgb(0 0 0 / 0.06);
     /* Khatam-style eight-point star lattice, tiled behind the cards */
     --site-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%234e4380' stroke-opacity='.09'%3E%3Cpath d='M20 20h40v40H20zM40 11.7 68.3 40 40 68.3 11.7 40zM40 0v11.7M40 68.3V80M0 40h11.7M68.3 40H80M0 0l20 20M80 0 60 20M0 80l20-20M80 80 60 60'/%3E%3C/g%3E%3C/svg%3E");
     --site-raised: #efecf6;
@@ -87,7 +89,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --site-bg: #15121f;
-    --site-card: rgb(31 27 47 / 0.82);
+    --site-card: rgb(31 27 47 / 0.7);
+    --site-overlay: rgb(0 0 0 / 0.3);
     --site-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23b3abe0' stroke-opacity='.09'%3E%3Cpath d='M20 20h40v40H20zM40 11.7 68.3 40 40 68.3 11.7 40zM40 0v11.7M40 68.3V80M0 40h11.7M68.3 40H80M0 0l20 20M80 0 60 20M0 80l20-20M80 80 60 60'/%3E%3C/g%3E%3C/svg%3E");
     --site-raised: #2a2540;
     --site-border: #332d4a;

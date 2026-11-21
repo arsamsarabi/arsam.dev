@@ -15,7 +15,7 @@ export const HomePage = () => {
   useSendPageLoadedEvent({ page: 'Home page' })
 
   return (
-    <div className="h-svh w-svw overflow-y-auto bg-site-bg bg-[image:var(--site-pattern)] font-body text-site-text">
+    <div className="h-svh w-svw overflow-y-auto bg-site-bg bg-[image:linear-gradient(var(--site-overlay),var(--site-overlay)),var(--site-pattern)] font-body text-site-text">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
         <nav className="flex flex-wrap items-center gap-x-5 font-code text-sm">
           <span className="mr-auto text-site-accent">~/arsam.dev</span>
