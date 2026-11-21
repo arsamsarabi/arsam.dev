@@ -24,6 +24,17 @@ const config = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        site: {
+          bg: 'var(--site-bg)',
+          card: 'var(--site-card)',
+          raised: 'var(--site-raised)',
+          border: 'var(--site-border)',
+          strong: 'var(--site-strong)',
+          text: 'var(--site-text)',
+          muted: 'var(--site-muted)',
+          accent: 'var(--site-accent)',
+          live: 'var(--site-live)',
+        },
         brand: {
           primary: {
             lightest: 'var(--brand-primary-lightest)',

@@ -40,6 +40,17 @@
     --brand-warning-dark: #995237;
     --brand-warning-darkest: #331b12;
 
+    /* Home page theme: light by default, dark when the OS asks for it */
+    --site-bg: #f6f5fa;
+    --site-card: #ffffff;
+    --site-raised: #efecf6;
+    --site-border: #e2deee;
+    --site-strong: #15121f;
+    --site-text: #3d3852;
+    --site-muted: #5b5670;
+    --site-accent: #4e4380;
+    --site-live: #306c5b;
+
     --brand-dark: 249 27% 10%;
     --brand-light: 210 25% 98%;
 
@@ -71,7 +82,25 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --site-bg: #15121f;
+    --site-card: #1f1b2f;
+    --site-raised: #2a2540;
+    --site-border: #332d4a;
+    --site-strong: #ffffff;
+    --site-text: #c4c0d6;
+    --site-muted: #a9a4c0;
+    --site-accent: #b3abe0;
+    --site-live: #96d2c1;
+  }
+}
+
 @layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
   * {
     @apply border-border;
   }
@@ -105,19 +134,14 @@
     color: var(--brand-primary-lightest);
   }
 
-  ::-webkit-scrollbar-track {
-    position: absolute;
-    border: 2px solid var(--brand-primary-lightest);
-    background-color: var(--brand-primary);
-  }
-
   ::-webkit-scrollbar {
     width: 8px;
-    background-color: var(--brand-primary);
+    background-color: var(--site-bg);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--brand-primary);
+    border-radius: 4px;
+    background-color: var(--site-border);
   }
 }
 

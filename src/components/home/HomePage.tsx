@@ -1,23 +1,44 @@
 'use client'
 
+import { MY_APPS, MY_PROJECT_LINKS } from '#/constants/projects'
+import { MY_SOCIAL_MEDIA } from '#/constants/socials'
 import { useSendPageLoadedEvent } from '#/hooks/useSendPageLoadedEvent'
-import { Hero } from './Hero'
-import { AppsSection } from './apps'
-import { EmploymentSection } from './employment'
-import { ProjectsSection } from './projects'
+import { AppCard } from './AppCard'
+import { PackageCard } from './PackageCard'
+import { TerminalHero } from './TerminalHero'
+import { WorkLog } from './WorkLog'
 
 export const HomePage = () => {
   useSendPageLoadedEvent({ page: 'Home page' })
 
   return (
-    <div className="wrapper h-svh w-svw overflow-y-auto md:flex md:flex-row md:overflow-y-hidden">
-      <div className="h-[100svh] md:h-full md:w-1/2">
-        <Hero />
-      </div>
-      <div className="overflow-hidden md:w-1/2 md:overflow-y-auto">
-        <EmploymentSection />
-        <AppsSection />
-        <ProjectsSection />
+    <div className="h-svh w-svw overflow-y-auto bg-site-bg font-body text-site-text">
+      <div className="mx-auto flex max-w-6xl flex-col gap-5 px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
+        <nav className="flex flex-wrap items-center gap-x-5 font-code text-sm">
+          <span className="mr-auto text-site-accent">~/arsam.dev</span>
+          {MY_SOCIAL_MEDIA.map(({ icon, link }) => (
+            <a
+              key={link}
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-11 items-center text-site-muted transition-colors hover:text-site-strong"
+            >
+              {icon}
+            </a>
+          ))}
+        </nav>
+
+        <main className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <TerminalHero />
+          {MY_APPS.map((app) => (
+            <AppCard key={app.link} {...app} />
+          ))}
+          <WorkLog />
+          {MY_PROJECT_LINKS.filter(({ display }) => display).map((pkg) => (
+            <PackageCard key={pkg.name} {...pkg} />
+          ))}
+        </main>
       </div>
     </div>
   )
