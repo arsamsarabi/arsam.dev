@@ -4,7 +4,7 @@ import { HomePage } from '#/components/home'
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Arsam',
-    description: 'Software engineer, Content creator',
+    description: 'Staff Software Engineer and product maker',
     openGraph: {
       images: ['/images/logo.png/'],
     },

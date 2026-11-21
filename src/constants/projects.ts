@@ -3,20 +3,27 @@ export type ProjectType = {
   title: string
   description: string
   link: string
-  color: string
   badge: string
   display: boolean
 }
 
 export const MY_PROJECT_LINKS: Array<ProjectType> = [
   {
+    title: 'grit',
+    name: '@arsams/grit',
+    description:
+      'An opinionated Git assistant: interactive TUI and scriptable CLI.',
+    link: 'https://www.npmjs.com/package/@arsams/grit',
+    badge: 'New',
+    display: true,
+  },
+  {
     title: 'arsam cli',
     name: 'arsam',
-    description: "Arsam's résumé in the terminal",
+    description: 'My portfolio as an interactive terminal app.',
     link: 'https://www.npmjs.com/package/arsam',
-    color: 'var(--brand-danger)',
-    badge: 'Outdated',
-    display: false,
+    badge: 'Updated',
+    display: true,
   },
   {
     title: 'fallguys-names',
@@ -24,7 +31,6 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     description:
       'Fully customizable what-three-words generator with a default set of fallguys names.',
     link: 'https://www.npmjs.com/package/fallguys-names',
-    color: 'var(--brand-success)',
     badge: 'Updated',
     display: false,
   },
@@ -33,16 +39,14 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     name: 'awesome-mui-ripple',
     description: 'Add MUI ripple effect to your React components',
     link: 'https://www.npmjs.com/package/awesome-mui-ripple',
-    color: 'var(--brand-danger-light)',
     badge: 'Stale',
-    display: true,
+    display: false,
   },
   {
     title: 'konami-codes-react',
     name: '@arsams/konami-codes-react',
     description: 'A React hook that provides Konami codes functionality.',
     link: 'https://www.npmjs.com/package/@arsams/konami-codes-react',
-    color: 'var(--brand-success)',
     badge: 'Updated',
     display: true,
   },
@@ -50,9 +54,8 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     title: 'readable-http-codes',
     name: 'readable-http-codes',
     description:
-      '0 dependancy, readable HTTP code enums, cleaning up your codebase!',
+      'Zero-dependency, readable HTTP code enums for a cleaner codebase.',
     link: 'https://www.npmjs.com/package/readable-http-codes',
-    color: 'var(--brand-success)',
     badge: 'Updated',
     display: true,
   },
@@ -61,26 +64,48 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     name: 'gh-calendar-scraper',
     description: 'Scrapes a users GitHub contributions calendar',
     link: 'https://www.npmjs.com/package/gh-calendar-scraper',
-    color: 'var(--brand-danger)',
     badge: 'Outdated',
     display: false,
-  },
-  {
-    title: 'color-shades',
-    name: '@arsams/color-shades',
-    description: 'Color shades generator',
-    link: 'https://www.npmjs.com/package/@arsams/color-shades',
-    color: 'var(--brand-primary-light)',
-    badge: 'WIP',
-    display: true,
   },
   {
     title: 'konami-codes',
     name: '@arsams/konami-codes',
     description: 'A typescript class that provides Konami codes functionality.',
     link: 'https://www.npmjs.com/package/@arsams/konami-codes',
-    color: 'var(--brand-success)',
     badge: 'Updated',
     display: false,
+  },
+]
+
+export type AppType = {
+  title: string
+  description: string
+  link: string
+  screenshot: { light: string; dark: string }
+  status: 'development' | 'beta' | 'production' | 'maintenance'
+}
+
+export const MY_APPS: Array<AppType> = [
+  {
+    title: 'Homa',
+    description:
+      'Self-hostable calendar with two-way CalDAV, Google and Microsoft sync, ICS subscriptions, and the Jalali calendar in English and Farsi.',
+    link: 'https://homa.day',
+    screenshot: {
+      light: '/images/apps/homa-light.webp',
+      dark: '/images/apps/homa-dark.webp',
+    },
+    status: 'development',
+  },
+  {
+    title: 'Linkdean',
+    description:
+      'Self-hostable bookmarks with folders, tags, full-text search and encrypted vaults for private links.',
+    link: 'https://linkdean.app',
+    screenshot: {
+      light: '/images/apps/linkdean-light.webp',
+      dark: '/images/apps/linkdean-dark.webp',
+    },
+    status: 'beta',
   },
 ]

@@ -1,1 +1,1 @@
-export const BRAND_PRIMARY_DARKEST = '#1f1b2f'
+export const BRAND_PRIMARY_DARKEST = '#081849'
