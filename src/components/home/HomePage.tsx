@@ -2,10 +2,9 @@
 
 import { useSendPageLoadedEvent } from '#/hooks/useSendPageLoadedEvent'
 import { Hero } from './Hero'
-import { BlogPostSection } from './blog-preview'
+import { AppsSection } from './apps'
 import { EmploymentSection } from './employment'
 import { ProjectsSection } from './projects'
-import { YoutubeSection } from './youtube'
 
 export const HomePage = () => {
   useSendPageLoadedEvent({ page: 'Home page' })
@@ -16,9 +15,8 @@ export const HomePage = () => {
         <Hero />
       </div>
       <div className="overflow-hidden md:w-1/2 md:overflow-y-auto">
-        <YoutubeSection />
-        <BlogPostSection />
         <EmploymentSection />
+        <AppsSection />
         <ProjectsSection />
       </div>
     </div>

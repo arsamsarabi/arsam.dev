@@ -10,7 +10,7 @@ import { env } from '#/utils/env'
 
 export const metadata: Metadata = {
   title: 'Arsam',
-  description: 'Software engineer, Content creator',
+  description: 'Staff Software Engineer and product maker',
 }
 
 export default function RootLayout({

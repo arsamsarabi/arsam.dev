@@ -1,4 +1,5 @@
 import { FooterAction, HomeSection, SectionHeader } from '#/components/home'
+import { MY_PROJECT_LINKS } from '#/constants/projects'
 import { MY_SOCIAL_LINKS } from '#/constants/socials'
 import { ProjectsList } from './ProjectsList'
 
@@ -6,8 +7,8 @@ export const ProjectsSection = () => {
   return (
     <HomeSection
       bgColour="bg-brand-primary-light"
-      Header={<SectionHeader icon="code" text="Projects" variant="light" />}
-      Body={<ProjectsList />}
+      Header={<SectionHeader icon="code" text="Packages" variant="light" />}
+      Body={<ProjectsList projects={MY_PROJECT_LINKS} />}
       Footer={
         <div className="ml-auto">
           <FooterAction

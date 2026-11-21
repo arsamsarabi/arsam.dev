@@ -50,14 +50,16 @@ export const ProjectCard = ({
             >
               {badge}
             </p>
-            <div className="relative h-[32px] w-[200px] lg:h-[24px] lg:w-[160px]">
-              <Image
-                src={`https://img.shields.io/npm/dm/${name}`}
-                alt={name}
-                fill
-                priority
-              />
-            </div>
+            {link.startsWith('https://www.npmjs.com/') && (
+              <div className="relative h-[32px] w-[200px] lg:h-[24px] lg:w-[160px]">
+                <Image
+                  src={`https://img.shields.io/npm/dm/${name}`}
+                  alt={`${name} monthly downloads`}
+                  fill
+                  priority
+                />
+              </div>
+            )}
           </div>
         </AnimateInView>
       </a>

@@ -10,13 +10,42 @@ export type ProjectType = {
 
 export const MY_PROJECT_LINKS: Array<ProjectType> = [
   {
+    title: 'grit',
+    name: '@arsams/grit',
+    description:
+      'An opinionated Git assistant: interactive TUI and scriptable CLI.',
+    link: 'https://www.npmjs.com/package/@arsams/grit',
+    color: 'var(--brand-success)',
+    badge: 'New',
+    display: true,
+  },
+  {
     title: 'arsam cli',
     name: 'arsam',
-    description: "Arsam's résumé in the terminal",
+    description:
+      'My portfolio in an interactive terminal app. Try `npx arsam`.',
     link: 'https://www.npmjs.com/package/arsam',
-    color: 'var(--brand-danger)',
-    badge: 'Outdated',
-    display: false,
+    color: 'var(--brand-success)',
+    badge: 'Updated',
+    display: true,
+  },
+  {
+    title: 'mockkit',
+    name: '@arsams/mockkit',
+    description: 'Framework-agnostic toolkit for MSW mocking.',
+    link: 'https://www.npmjs.com/package/@arsams/mockkit',
+    color: 'var(--brand-success)',
+    badge: 'New',
+    display: true,
+  },
+  {
+    title: 'mockkit-react',
+    name: '@arsams/mockkit-react',
+    description: 'React hooks and a control panel for @arsams/mockkit.',
+    link: 'https://www.npmjs.com/package/@arsams/mockkit-react',
+    color: 'var(--brand-success)',
+    badge: 'New',
+    display: true,
   },
   {
     title: 'fallguys-names',
@@ -82,5 +111,28 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     color: 'var(--brand-success)',
     badge: 'Updated',
     display: false,
+  },
+]
+
+export const MY_APPS: Array<ProjectType> = [
+  {
+    title: 'Homa',
+    name: 'homa',
+    description:
+      'Self-hostable calendar with two-way CalDAV, Google and Microsoft sync, ICS subscriptions, and the Jalali calendar in English and Farsi.',
+    link: 'https://homa.day',
+    color: 'var(--brand-success)',
+    badge: 'Live',
+    display: true,
+  },
+  {
+    title: 'Linkdean',
+    name: 'linkdean',
+    description:
+      'Self-hostable bookmarks with folders, tags, full-text search and encrypted vaults for private links.',
+    link: 'https://linkdean.app',
+    color: 'var(--brand-success)',
+    badge: 'Live',
+    display: true,
   },
 ]

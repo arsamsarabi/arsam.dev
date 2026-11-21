@@ -18,15 +18,15 @@ export const HeroContent = () => {
         </div>
         <div className="flex flex-1 flex-col lg:gap-2">
           <LargeText>Software Engineer</LargeText>
-          <LargeText>Content Creator</LargeText>
+          <LargeText>Product Maker</LargeText>
           <p className="mt-4 text-justify text-xl leading-normal text-gray-600 md:text-base 2xl:text-lg 3xl:text-2xl">
             Hi, I&apos;m{' '}
             <span className="font-heading text-2xl font-bold text-brand-primary 2xl:text-3xl">
               Arsam
             </span>{' '}
-            👋🏼 I&apos;m a software engineer, content creator, product maker, and
-            a life-long learner. I make products from scratch, and bring ideas
-            to life!
+            👋🏼 I&apos;m a Staff Software Engineer at ONI, a product maker, and a
+            life-long learner. I make products from scratch, and bring ideas to
+            life!
           </p>
         </div>
       </div>

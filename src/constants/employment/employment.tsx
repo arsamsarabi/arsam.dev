@@ -20,8 +20,8 @@ export const MY_RECENT_EMPLOYERS: Array<WorkExperience> = [
   {
     logo: { Comp: <ONILogo /> },
     title: 'ONI',
-    role: 'Senior Frontend Engineer',
-    duration: 'Starting 16th September',
+    role: 'Staff Software Engineer',
+    duration: 'Sep 2024 - Present',
     link: 'https://oni.bio',
     icon: 'link',
   },
