@@ -2,7 +2,7 @@
 ###############################################################################
 # Stage 1. Install dependencies. Uses cache mounts when building with BuildKit.
 ###############################################################################
-FROM node:22-bullseye-slim AS deps
+FROM node:22-bookworm-slim AS deps
 WORKDIR /app
 
 # Copy package manifests first for better layer caching.
@@ -23,7 +23,7 @@ RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
 ###############################################################################
 # Stage 2. Build the Next app
 ###############################################################################
-FROM node:22-bullseye-slim AS builder
+FROM node:22-bookworm-slim AS builder
 WORKDIR /app
 
 # Copy node modules from deps stage to avoid reinstall

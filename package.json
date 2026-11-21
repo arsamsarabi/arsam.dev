@@ -1,6 +1,7 @@
 {
   "name": "arsam-dev",
   "version": "0.1.0",
+  "packageManager": "pnpm@10.30.3",
   "private": true,
   "scripts": {
     "build": "next build",
