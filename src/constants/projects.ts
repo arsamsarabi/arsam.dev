@@ -26,22 +26,6 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     display: true,
   },
   {
-    title: 'mockkit',
-    name: '@arsams/mockkit',
-    description: 'Framework-agnostic toolkit for MSW mocking.',
-    link: 'https://www.npmjs.com/package/@arsams/mockkit',
-    badge: 'New',
-    display: true,
-  },
-  {
-    title: 'mockkit-react',
-    name: '@arsams/mockkit-react',
-    description: 'React hooks and a control panel for @arsams/mockkit.',
-    link: 'https://www.npmjs.com/package/@arsams/mockkit-react',
-    badge: 'New',
-    display: true,
-  },
-  {
     title: 'fallguys-names',
     name: 'fallguys-names',
     description:
@@ -70,7 +54,7 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     title: 'readable-http-codes',
     name: 'readable-http-codes',
     description:
-      '0 dependancy, readable HTTP code enums, cleaning up your codebase!',
+      'Zero-dependency, readable HTTP code enums for a cleaner codebase.',
     link: 'https://www.npmjs.com/package/readable-http-codes',
     badge: 'Updated',
     display: true,
@@ -82,14 +66,6 @@ export const MY_PROJECT_LINKS: Array<ProjectType> = [
     link: 'https://www.npmjs.com/package/gh-calendar-scraper',
     badge: 'Outdated',
     display: false,
-  },
-  {
-    title: 'color-shades',
-    name: '@arsams/color-shades',
-    description: 'Color shades generator',
-    link: 'https://www.npmjs.com/package/@arsams/color-shades',
-    badge: 'WIP',
-    display: true,
   },
   {
     title: 'konami-codes',
