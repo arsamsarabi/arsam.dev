@@ -34,6 +34,8 @@ const config = {
           muted: 'var(--site-muted)',
           accent: 'var(--site-accent)',
           live: 'var(--site-live)',
+          info: 'var(--site-info)',
+          warn: 'var(--site-warn)',
         },
         brand: {
           primary: {
@@ -116,6 +118,9 @@ const config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
+        caret: {
+          '50%': { opacity: '0' },
+        },
         'accordion-down': {
           from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
@@ -126,6 +131,7 @@ const config = {
         },
       },
       animation: {
+        caret: 'caret 1s step-end infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },

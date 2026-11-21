@@ -1,3 +1,5 @@
+import { Typewriter } from './Typewriter'
+
 const dots = ['bg-brand-danger', 'bg-brand-warning', 'bg-brand-success']
 
 export const TerminalHero = () => {
@@ -24,13 +26,11 @@ export const TerminalHero = () => {
           Staff Software Engineer @ ONI
         </p>
         <p className="max-w-xl font-body text-base leading-relaxed sm:text-lg">
-          I make products from scratch: self-hostable apps, Git tooling and
-          small npm packages.
+          I design and build enterprise-grade web applications that scale, and
+          lead the teams behind them. In my own time I ship self-hostable apps,
+          Git tooling and npm packages.
         </p>
-        <p className="text-site-muted" aria-hidden="true">
-          <span className="text-site-live">$</span>{' '}
-          <span className="inline-block h-[18px] w-2.5 translate-y-[3px] bg-site-strong motion-safe:animate-pulse" />
-        </p>
+        <Typewriter />
       </div>
     </section>
   )

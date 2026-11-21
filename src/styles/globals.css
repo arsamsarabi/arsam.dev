@@ -4,59 +4,65 @@
 
 @layer base {
   :root {
-    --brand-primary-lightest: #f3f2f7;
-    --brand-primary-light: #a39cc3;
-    --brand-primary: #665a9b;
-    --brand-primary-dark: #3d365d;
-    --brand-primary-darkest: #1f1b2f;
+    /* Lapis velvet evening: lapis primary, plum secondary, magenta accent */
+    --brand-primary-lightest: #eef1fa;
+    --brand-primary-light: #9aa9dc;
+    --brand-primary: #213885;
+    --brand-primary-dark: #142560;
+    --brand-primary-darkest: #081849;
 
-    --brand-secondary-lightest: #fcfafc;
-    --brand-secondary-light: #c39cc2;
-    --brand-secondary: #9b5a9a;
-    --brand-secondary-dark: #5d365c;
-    --brand-secondary-darkest: #2f1b2e;
+    --brand-secondary-lightest: #f6f0f8;
+    --brand-secondary-light: #b89bc7;
+    --brand-secondary: #5f3475;
+    --brand-secondary-dark: #43234f;
+    --brand-secondary-darkest: #24132b;
 
-    --brand-accent-lightest: #f3f8fc;
-    --brand-accent-light: #84b4dc;
-    --brand-accent: #3282c5;
-    --brand-accent-dark: #1e4e76;
-    --brand-accent-darkest: #0a1a27;
+    --brand-accent-lightest: #f9eff5;
+    --brand-accent-light: #d79ac4;
+    --brand-accent: #893172;
+    --brand-accent-dark: #5f2150;
+    --brand-accent-darkest: #2d1026;
 
-    --brand-success-lightest: #eef8f5;
-    --brand-success-light: #96d2c1;
-    --brand-success: #50b498;
-    --brand-success-dark: #306c5b;
-    --brand-success-darkest: #10241e;
+    /* Status colours kept cool and dusky to sit with the palette */
+    --brand-success-lightest: #ecf7f4;
+    --brand-success-light: #8fcfbf;
+    --brand-success: #2e8a76;
+    --brand-success-dark: #1b604f;
+    --brand-success-darkest: #0d2722;
 
-    --brand-danger-lightest: #fef2f3;
-    --brand-danger-light: #f59ca9;
-    --brand-danger: #ef5a6f;
-    --brand-danger-dark: #8f3643;
-    --brand-danger-darkest: #301216;
+    --brand-danger-lightest: #fcf0f3;
+    --brand-danger-light: #f0a0b3;
+    --brand-danger: #c23b5e;
+    --brand-danger-dark: #8a2741;
+    --brand-danger-darkest: #2e0d16;
 
-    --brand-warning-lightest: #ffe7de;
-    --brand-warning-light: #ffb89d;
-    --brand-warning: #ff885b;
-    --brand-warning-dark: #995237;
-    --brand-warning-darkest: #331b12;
+    --brand-warning-lightest: #fbf3e6;
+    --brand-warning-light: #f1c98f;
+    --brand-warning: #d99a3e;
+    --brand-warning-dark: #7a4f16;
+    --brand-warning-darkest: #2e1e09;
 
-    /* Home page theme: light by default, dark when the OS asks for it */
-    --site-bg: #f6f5fa;
-    --site-card: rgb(255 255 255 / 0.7);
+    /* Home page theme: light tokens here, dark tokens under :root.dark */
+    --site-bg: #f7f2ec;
+    --site-card: rgb(255 253 250 / 0.7);
     /* Black wash laid over the pattern, under the cards */
     --site-overlay: rgb(0 0 0 / 0.06);
-    /* Khatam-style eight-point star lattice, tiled behind the cards */
-    --site-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%234e4380' stroke-opacity='.09'%3E%3Cpath d='M20 20h40v40H20zM40 11.7 68.3 40 40 68.3 11.7 40zM40 0v11.7M40 68.3V80M0 40h11.7M68.3 40H80M0 0l20 20M80 0 60 20M0 80l20-20M80 80 60 60'/%3E%3C/g%3E%3C/svg%3E");
-    --site-raised: #efecf6;
-    --site-border: #e2deee;
-    --site-strong: #15121f;
-    --site-text: #3d3852;
-    --site-muted: #5b5670;
-    --site-accent: #4e4380;
-    --site-live: #306c5b;
+    /* Colour glows, dark theme only */
+    --site-glow: none;
+    /* Interlaced strapwork with eight-point rosettes, tiled behind the cards */
+    --site-pattern: url('/images/patterns/strapwork-light.svg');
+    --site-raised: #efe7de;
+    --site-border: #e3d9ce;
+    --site-strong: #081849;
+    --site-text: #2b3560;
+    --site-muted: #4b5270;
+    --site-accent: #213885;
+    --site-live: #1b604f;
+    --site-info: #5f3475;
+    --site-warn: #7a4f16;
 
-    --brand-dark: 249 27% 10%;
-    --brand-light: 210 25% 98%;
+    --brand-dark: 225 80% 16%;
+    --brand-light: 31 48% 95%;
 
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -86,20 +92,32 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --site-bg: #15121f;
-    --site-card: rgb(31 27 47 / 0.7);
-    --site-overlay: rgb(0 0 0 / 0.3);
-    --site-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23b3abe0' stroke-opacity='.09'%3E%3Cpath d='M20 20h40v40H20zM40 11.7 68.3 40 40 68.3 11.7 40zM40 0v11.7M40 68.3V80M0 40h11.7M68.3 40H80M0 0l20 20M80 0 60 20M0 80l20-20M80 80 60 60'/%3E%3C/g%3E%3C/svg%3E");
-    --site-raised: #2a2540;
-    --site-border: #332d4a;
-    --site-strong: #ffffff;
-    --site-text: #c4c0d6;
-    --site-muted: #a9a4c0;
-    --site-accent: #b3abe0;
-    --site-live: #96d2c1;
-  }
+/* next-themes puts .dark on <html> from the saved choice, else the OS setting */
+:root.dark {
+  /* Ink with a lapis undertone; colour comes from soft glows, not the cards */
+  --site-bg: #060a1c;
+  --site-card: rgb(18 22 42 / 0.6);
+  --site-overlay: rgb(0 0 0 / 0.35);
+  --site-glow: radial-gradient(
+      60rem 40rem at 10% -10%,
+      rgb(33 56 133 / 0.6),
+      transparent 70%
+    ),
+    radial-gradient(
+      50rem 36rem at 105% 110%,
+      rgb(137 49 114 / 0.28),
+      transparent 70%
+    );
+  --site-pattern: url('/images/patterns/strapwork-dark.svg');
+  --site-raised: #141932;
+  --site-border: rgb(200 210 255 / 0.1);
+  --site-strong: #f5f6fb;
+  --site-text: #c9cdde;
+  --site-muted: #9ea4bc;
+  --site-accent: #a3b4ee;
+  --site-live: #8fcfbf;
+  --site-info: #d3b0e2;
+  --site-warn: #f1c98f;
 }
 
 @layer base {

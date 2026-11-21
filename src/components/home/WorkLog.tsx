@@ -5,10 +5,10 @@ export const WorkLog = () => {
   return (
     <section className="flex flex-col rounded-2xl border border-site-border bg-site-card p-6 md:row-span-2">
       <h2 className="mb-3 font-code text-sm font-medium text-site-muted">
-        git log --work --tail 3
+        git log --work --tail 5
       </h2>
       <ol>
-        {MY_RECENT_EMPLOYERS.slice(0, 3).map(
+        {MY_RECENT_EMPLOYERS.slice(0, 5).map(
           ({ title, role, duration, link }, index) => (
             <li key={title} className="flex gap-4 py-2.5">
               <span

@@ -15,9 +15,11 @@ export const IconNames = [
   'clapper-board',
   'code',
   'copy',
+  'circle-check',
   'double-check',
   'email',
   'flag-iran',
+  'flask-conical',
   'flag-spain',
   'flag-uk',
   'flame',
@@ -43,6 +45,7 @@ export const IconNames = [
   'suitcase',
   'telescope',
   'video-frame-cut',
+  'wrench',
   'youtube',
 ] as const
 

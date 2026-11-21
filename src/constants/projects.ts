@@ -81,8 +81,8 @@ export type AppType = {
   title: string
   description: string
   link: string
-  language: string
   screenshot: { light: string; dark: string }
+  status: 'development' | 'beta' | 'production' | 'maintenance'
 }
 
 export const MY_APPS: Array<AppType> = [
@@ -91,21 +91,21 @@ export const MY_APPS: Array<AppType> = [
     description:
       'Self-hostable calendar with two-way CalDAV, Google and Microsoft sync, ICS subscriptions, and the Jalali calendar in English and Farsi.',
     link: 'https://homa.day',
-    language: 'TypeScript',
     screenshot: {
       light: '/images/apps/homa-light.webp',
       dark: '/images/apps/homa-dark.webp',
     },
+    status: 'development',
   },
   {
     title: 'Linkdean',
     description:
       'Self-hostable bookmarks with folders, tags, full-text search and encrypted vaults for private links.',
     link: 'https://linkdean.app',
-    language: 'Rust',
     screenshot: {
       light: '/images/apps/linkdean-light.webp',
       dark: '/images/apps/linkdean-dark.webp',
     },
+    status: 'beta',
   },
 ]

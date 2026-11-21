@@ -1,4 +1,9 @@
-import { type LucideProps } from 'lucide-react'
+import {
+  CircleCheckIcon,
+  FlaskConicalIcon,
+  type LucideProps,
+  WrenchIcon,
+} from 'lucide-react'
 import { ReactNode } from 'react'
 import {
   BatteryCriticalIcon,
@@ -76,6 +81,9 @@ export const ICONS: Record<IconNamesType, (props: LucideProps) => ReactNode> = {
   briefcase: BriefcaseIcon,
   code: CodeIcon,
   copy: CopyIcon,
+  'circle-check': CircleCheckIcon,
+  'flask-conical': FlaskConicalIcon,
+  wrench: WrenchIcon,
   email: EmailIcon,
   forward: ForwardIcon,
   gamepad: GamepadIcon,
