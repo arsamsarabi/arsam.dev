@@ -26,9 +26,9 @@ export const TerminalHero = () => {
           Staff Software Engineer @ ONI
         </p>
         <p className="max-w-xl font-body text-base leading-relaxed sm:text-lg">
-          I design and build enterprise-grade web applications that scale, and
-          lead the teams behind them. In my own time I ship self-hostable apps,
-          Git tooling and npm packages.
+          I design and build enterprise-grade applications that scale, and lead
+          the teams behind them. In my own time I create open source apps,
+          developer tooling and npm packages.
         </p>
         <Typewriter />
       </div>
