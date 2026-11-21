@@ -9,6 +9,8 @@ import { SeeMoreCard } from './SeeMoreCard'
 import { TerminalHero } from './TerminalHero'
 import { WorkLog } from './WorkLog'
 
+const packages = MY_PROJECT_LINKS.filter(({ display }) => display)
+
 export const HomePage = () => {
   useSendPageLoadedEvent({ page: 'Home page' })
 
@@ -30,13 +32,23 @@ export const HomePage = () => {
           ))}
         </nav>
 
-        <main className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {/*
+          Bento on lg (4 columns, dense flow). DOM order drives placement:
+          | hero 3x1                | work 1x2 |
+          | featured pkg 2x1 | pkg  |          |
+          | app 2x1          | app 2x1         |
+          | pkg | pkg | npm more | GitHub more |
+        */}
+        <main className="grid grid-flow-row-dense grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           <TerminalHero />
+          <WorkLog />
+          {packages.slice(0, 2).map((pkg, index) => (
+            <PackageCard key={pkg.name} featured={index === 0} {...pkg} />
+          ))}
           {MY_APPS.map((app) => (
             <AppCard key={app.link} {...app} />
           ))}
-          <WorkLog />
-          {MY_PROJECT_LINKS.filter(({ display }) => display).map((pkg) => (
+          {packages.slice(2).map((pkg) => (
             <PackageCard key={pkg.name} {...pkg} />
           ))}
           <SeeMoreCard

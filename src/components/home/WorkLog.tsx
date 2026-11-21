@@ -1,8 +1,9 @@
 import { MY_RECENT_EMPLOYERS } from '#/constants/employment'
+import { MY_SOCIAL_LINKS } from '#/constants/socials'
 
 export const WorkLog = () => {
   return (
-    <section className="flex flex-col rounded-2xl border border-site-border bg-site-card p-6 md:col-span-2 lg:col-span-1">
+    <section className="flex flex-col rounded-2xl border border-site-border bg-site-card p-6 md:row-span-2">
       <h2 className="mb-3 font-code text-sm font-medium text-site-muted">
         git log --work --tail 3
       </h2>
@@ -40,6 +41,14 @@ export const WorkLog = () => {
           )
         )}
       </ol>
+      <a
+        href={MY_SOCIAL_LINKS.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-auto inline-flex min-h-11 items-center pt-4 font-code text-sm text-site-accent hover:text-site-strong"
+      >
+        more on LinkedIn ↗
+      </a>
     </section>
   )
 }

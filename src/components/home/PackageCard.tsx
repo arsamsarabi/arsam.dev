@@ -7,7 +7,8 @@ export const PackageCard = ({
   description,
   link,
   badge,
-}: ProjectType) => {
+  featured = false,
+}: ProjectType & { featured?: boolean }) => {
   return (
     <a
       href={link}
@@ -16,10 +17,16 @@ export const PackageCard = ({
       onClick={() =>
         sendGAEvent('event', 'Project link click', { value: { title } })
       }
-      className="flex flex-col gap-2 rounded-2xl border border-site-border bg-site-card px-6 py-5 transition-colors hover:border-site-accent"
+      className={`flex flex-col gap-2 rounded-2xl border border-site-border bg-site-card px-6 py-5 transition-colors hover:border-site-accent ${featured ? 'lg:col-span-2' : ''}`}
     >
-      <span className="font-code font-medium text-site-strong">{name}</span>
-      <span className="text-sm leading-relaxed">{description}</span>
+      <span
+        className={`font-code font-medium text-site-strong ${featured ? 'text-lg' : ''}`}
+      >
+        {name}
+      </span>
+      <span className={`leading-relaxed ${featured ? 'text-base' : 'text-sm'}`}>
+        {description}
+      </span>
       <span className="mt-auto pt-1 font-code text-xs text-site-muted">
         npm · {badge.toLowerCase()}
       </span>

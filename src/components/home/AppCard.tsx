@@ -16,10 +16,10 @@ export const AppCard = ({
       onClick={() =>
         sendGAEvent('event', 'Project link click', { value: { title } })
       }
-      className="flex flex-col gap-4 rounded-2xl border border-site-border bg-site-card p-6 transition-colors hover:border-site-accent"
+      className="flex flex-col gap-5 rounded-2xl border border-site-border bg-site-card p-6 transition-colors hover:border-site-accent md:col-span-2 md:flex-row"
     >
       {/* Plain <picture> so the browser loads only the screenshot matching the OS theme */}
-      <picture className="block aspect-[16/10] overflow-hidden rounded-xl border border-site-border bg-site-raised">
+      <picture className="block aspect-[16/10] shrink-0 overflow-hidden rounded-xl border border-site-border bg-site-raised md:w-1/2">
         <source srcSet={screenshot.dark} media="(prefers-color-scheme: dark)" />
         <img
           src={screenshot.light}
@@ -28,16 +28,20 @@ export const AppCard = ({
           className="size-full object-cover object-left-top"
         />
       </picture>
-      <div className="flex items-baseline gap-3">
-        <h2 className="font-body text-2xl font-semibold text-site-strong">
-          {title}
-        </h2>
-        <span className="ml-auto font-code text-xs text-site-live">● live</span>
+      <div className="flex flex-1 flex-col gap-4">
+        <div className="flex items-baseline gap-3">
+          <h2 className="font-body text-2xl font-semibold text-site-strong">
+            {title}
+          </h2>
+          <span className="ml-auto font-code text-xs text-site-live">
+            ● live
+          </span>
+        </div>
+        <p className="leading-relaxed">{description}</p>
+        <span className="mt-auto font-code text-sm text-site-accent">
+          {new URL(link).host} ↗ · {language}
+        </span>
       </div>
-      <p className="leading-relaxed">{description}</p>
-      <span className="mt-auto font-code text-sm text-site-accent">
-        {new URL(link).host} ↗ · {language}
-      </span>
     </a>
   )
 }

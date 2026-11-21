@@ -2,7 +2,7 @@ const dots = ['bg-brand-danger', 'bg-brand-warning', 'bg-brand-success']
 
 export const TerminalHero = () => {
   return (
-    <section className="col-span-full overflow-hidden rounded-2xl border border-site-border bg-site-card">
+    <section className="col-span-full overflow-hidden rounded-2xl border border-site-border bg-site-card lg:col-span-3">
       <div className="flex items-center gap-2 border-b border-site-border px-4 py-3">
         {dots.map((colour) => (
           <span
